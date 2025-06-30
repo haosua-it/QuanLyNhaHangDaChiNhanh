@@ -15,46 +15,22 @@ namespace QuanLyNhaHangDaChiNhanh
         public frmDangNhap()
         {
             InitializeComponent();
-            txtMatKhau.UseSystemPasswordChar = true;
         }
 
-        private void btnDangNhap_Click(object sender, EventArgs e)
+        private void frmDangNhap_Load(object sender, EventArgs e)
         {
-            frmDashBoard f = new frmDashBoard();
-            f.ShowDialog();
+
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Bạn có chắc muốn thoát không?", "Xác nhận thoát!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
-        private void chkHienMatKhau_CheckedChanged(object sender, EventArgs e)
-        {
-            txtMatKhau.UseSystemPasswordChar = !chkHienMatKhau.Checked;
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMatKhau_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTenDangNhap_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbDangNhap_Click(object sender, EventArgs e)
+        private void btnDangNhap_Click(object sender, EventArgs e)
         {
 
         }

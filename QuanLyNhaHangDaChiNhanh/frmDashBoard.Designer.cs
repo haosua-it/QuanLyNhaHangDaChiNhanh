@@ -31,36 +31,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashBoard));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCatalogue = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnTable = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnClients = new System.Windows.Forms.Button();
+            this.btnInvoice = new System.Windows.Forms.Button();
+            this.btnIngredients = new System.Windows.Forms.Button();
+            this.btnSupplier = new System.Windows.Forms.Button();
+            this.btnWage = new System.Windows.Forms.Button();
+            this.btnShift = new System.Windows.Forms.Button();
+            this.btnMenu = new System.Windows.Forms.Button();
+            this.btnReport = new System.Windows.Forms.Button();
+            this.btnBrands = new System.Windows.Forms.Button();
+            this.btnStaffs = new System.Windows.Forms.Button();
+            this.btnSales = new System.Windows.Forms.Button();
+            this.btnUsers = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button34 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button39 = new System.Windows.Forms.Button();
             this.button38 = new System.Windows.Forms.Button();
             this.button37 = new System.Windows.Forms.Button();
@@ -75,19 +63,19 @@
             this.button27 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
-            this.button40 = new System.Windows.Forms.Button();
-            this.button46 = new System.Windows.Forms.Button();
-            this.button48 = new System.Windows.Forms.Button();
-            this.button49 = new System.Windows.Forms.Button();
-            this.button50 = new System.Windows.Forms.Button();
-            this.button51 = new System.Windows.Forms.Button();
-            this.button52 = new System.Windows.Forms.Button();
-            this.button53 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.button24 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -96,252 +84,265 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1285, 671);
+            this.tabControl1.Size = new System.Drawing.Size(1331, 654);
             this.tabControl1.TabIndex = 11;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.button34);
-            this.tabPage1.Controls.Add(this.button23);
-            this.tabPage1.Controls.Add(this.button21);
-            this.tabPage1.Controls.Add(this.button12);
-            this.tabPage1.Controls.Add(this.button20);
-            this.tabPage1.Controls.Add(this.button11);
-            this.tabPage1.Controls.Add(this.button10);
-            this.tabPage1.Controls.Add(this.button9);
-            this.tabPage1.Controls.Add(this.button8);
-            this.tabPage1.Controls.Add(this.button7);
-            this.tabPage1.Controls.Add(this.button6);
-            this.tabPage1.Controls.Add(this.button5);
-            this.tabPage1.Controls.Add(this.button4);
-            this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.btnCatalogue);
+            this.tabPage1.Controls.Add(this.btnSearch);
+            this.tabPage1.Controls.Add(this.btnTable);
+            this.tabPage1.Controls.Add(this.btnLogout);
+            this.tabPage1.Controls.Add(this.btnClients);
+            this.tabPage1.Controls.Add(this.btnInvoice);
+            this.tabPage1.Controls.Add(this.btnIngredients);
+            this.tabPage1.Controls.Add(this.btnSupplier);
+            this.tabPage1.Controls.Add(this.btnWage);
+            this.tabPage1.Controls.Add(this.btnShift);
+            this.tabPage1.Controls.Add(this.btnMenu);
+            this.tabPage1.Controls.Add(this.btnReport);
+            this.tabPage1.Controls.Add(this.btnBrands);
+            this.tabPage1.Controls.Add(this.btnStaffs);
+            this.tabPage1.Controls.Add(this.btnSales);
+            this.tabPage1.Controls.Add(this.btnUsers);
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1277, 641);
+            this.tabPage1.Size = new System.Drawing.Size(1323, 624);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hệ thống";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // button23
+            // btnCatalogue
             // 
-            this.button23.BackColor = System.Drawing.Color.White;
-            this.button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button23.Image = ((System.Drawing.Image)(resources.GetObject("button23.Image")));
-            this.button23.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button23.Location = new System.Drawing.Point(1057, 0);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(75, 67);
-            this.button23.TabIndex = 32;
-            this.button23.Text = "Search";
-            this.button23.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button23.UseVisualStyleBackColor = false;
+            this.btnCatalogue.BackColor = System.Drawing.Color.White;
+            this.btnCatalogue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCatalogue.Image = ((System.Drawing.Image)(resources.GetObject("btnCatalogue.Image")));
+            this.btnCatalogue.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCatalogue.Location = new System.Drawing.Point(602, 18);
+            this.btnCatalogue.Name = "btnCatalogue";
+            this.btnCatalogue.Size = new System.Drawing.Size(87, 81);
+            this.btnCatalogue.TabIndex = 33;
+            this.btnCatalogue.Text = "Catalogue";
+            this.btnCatalogue.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCatalogue.UseVisualStyleBackColor = false;
             // 
-            // button21
+            // btnSearch
             // 
-            this.button21.BackColor = System.Drawing.Color.White;
-            this.button21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button21.Image = ((System.Drawing.Image)(resources.GetObject("button21.Image")));
-            this.button21.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button21.Location = new System.Drawing.Point(899, 0);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(75, 67);
-            this.button21.TabIndex = 31;
-            this.button21.Text = "Table";
-            this.button21.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button21.UseVisualStyleBackColor = false;
+            this.btnSearch.BackColor = System.Drawing.Color.White;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSearch.Location = new System.Drawing.Point(897, 18);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(87, 81);
+            this.btnSearch.TabIndex = 32;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSearch.UseVisualStyleBackColor = false;
             // 
-            // button12
+            // btnTable
             // 
-            this.button12.BackColor = System.Drawing.Color.White;
-            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button12.Location = new System.Drawing.Point(1131, 0);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 67);
-            this.button12.TabIndex = 30;
-            this.button12.Text = "Logout";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button12.UseVisualStyleBackColor = false;
+            this.btnTable.BackColor = System.Drawing.Color.White;
+            this.btnTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTable.Image = ((System.Drawing.Image)(resources.GetObject("btnTable.Image")));
+            this.btnTable.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnTable.Location = new System.Drawing.Point(15, 114);
+            this.btnTable.Name = "btnTable";
+            this.btnTable.Size = new System.Drawing.Size(87, 81);
+            this.btnTable.TabIndex = 31;
+            this.btnTable.Text = "Table";
+            this.btnTable.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnTable.UseVisualStyleBackColor = false;
             // 
-            // button20
+            // btnLogout
             // 
-            this.button20.BackColor = System.Drawing.Color.White;
-            this.button20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button20.Image = ((System.Drawing.Image)(resources.GetObject("button20.Image")));
-            this.button20.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button20.Location = new System.Drawing.Point(826, 0);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(75, 67);
-            this.button20.TabIndex = 25;
-            this.button20.Text = "Clients";
-            this.button20.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button20.UseVisualStyleBackColor = false;
+            this.btnLogout.BackColor = System.Drawing.Color.White;
+            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnLogout.Location = new System.Drawing.Point(211, 114);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(87, 81);
+            this.btnLogout.TabIndex = 30;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnLogout.UseVisualStyleBackColor = false;
             // 
-            // button11
+            // btnClients
             // 
-            this.button11.BackColor = System.Drawing.Color.White;
-            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button11.Location = new System.Drawing.Point(752, 0);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 67);
-            this.button11.TabIndex = 23;
-            this.button11.Text = "Invoice";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button11.UseVisualStyleBackColor = false;
+            this.btnClients.BackColor = System.Drawing.Color.White;
+            this.btnClients.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClients.Image = ((System.Drawing.Image)(resources.GetObject("btnClients.Image")));
+            this.btnClients.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnClients.Location = new System.Drawing.Point(1095, 18);
+            this.btnClients.Name = "btnClients";
+            this.btnClients.Size = new System.Drawing.Size(87, 81);
+            this.btnClients.TabIndex = 25;
+            this.btnClients.Text = "Clients";
+            this.btnClients.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnClients.UseVisualStyleBackColor = false;
             // 
-            // button10
+            // btnInvoice
             // 
-            this.button10.BackColor = System.Drawing.Color.White;
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button10.Location = new System.Drawing.Point(666, 0);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(88, 67);
-            this.button10.TabIndex = 22;
-            this.button10.Text = "Ingredients";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button10.UseVisualStyleBackColor = false;
+            this.btnInvoice.BackColor = System.Drawing.Color.White;
+            this.btnInvoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInvoice.Image = ((System.Drawing.Image)(resources.GetObject("btnInvoice.Image")));
+            this.btnInvoice.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnInvoice.Location = new System.Drawing.Point(113, 114);
+            this.btnInvoice.Name = "btnInvoice";
+            this.btnInvoice.Size = new System.Drawing.Size(87, 81);
+            this.btnInvoice.TabIndex = 23;
+            this.btnInvoice.Text = "Invoice";
+            this.btnInvoice.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnInvoice.UseVisualStyleBackColor = false;
             // 
-            // button9
+            // btnIngredients
             // 
-            this.button9.BackColor = System.Drawing.Color.White;
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button9.Location = new System.Drawing.Point(592, 0);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 67);
-            this.button9.TabIndex = 21;
-            this.button9.Text = "Supplier";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button9.UseVisualStyleBackColor = false;
+            this.btnIngredients.BackColor = System.Drawing.Color.White;
+            this.btnIngredients.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnIngredients.Image = ((System.Drawing.Image)(resources.GetObject("btnIngredients.Image")));
+            this.btnIngredients.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnIngredients.Location = new System.Drawing.Point(798, 18);
+            this.btnIngredients.Name = "btnIngredients";
+            this.btnIngredients.Size = new System.Drawing.Size(87, 81);
+            this.btnIngredients.TabIndex = 22;
+            this.btnIngredients.Text = "Ingredients";
+            this.btnIngredients.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnIngredients.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // btnSupplier
             // 
-            this.button8.BackColor = System.Drawing.Color.White;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button8.Location = new System.Drawing.Point(518, 0);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 67);
-            this.button8.TabIndex = 18;
-            this.button8.Text = "Wage";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnSupplier.BackColor = System.Drawing.Color.White;
+            this.btnSupplier.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSupplier.Image = ((System.Drawing.Image)(resources.GetObject("btnSupplier.Image")));
+            this.btnSupplier.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSupplier.Location = new System.Drawing.Point(700, 18);
+            this.btnSupplier.Name = "btnSupplier";
+            this.btnSupplier.Size = new System.Drawing.Size(87, 81);
+            this.btnSupplier.TabIndex = 21;
+            this.btnSupplier.Text = "Supplier";
+            this.btnSupplier.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSupplier.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // btnWage
             // 
-            this.button7.BackColor = System.Drawing.Color.White;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button7.Location = new System.Drawing.Point(444, 0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 67);
-            this.button7.TabIndex = 20;
-            this.button7.Text = "Shift";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnWage.BackColor = System.Drawing.Color.White;
+            this.btnWage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnWage.Image = ((System.Drawing.Image)(resources.GetObject("btnWage.Image")));
+            this.btnWage.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnWage.Location = new System.Drawing.Point(1196, 18);
+            this.btnWage.Name = "btnWage";
+            this.btnWage.Size = new System.Drawing.Size(87, 81);
+            this.btnWage.TabIndex = 18;
+            this.btnWage.Text = "Wage";
+            this.btnWage.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnWage.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // btnShift
             // 
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button6.Location = new System.Drawing.Point(370, 0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 67);
-            this.button6.TabIndex = 19;
-            this.button6.Text = "Menu";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnShift.BackColor = System.Drawing.Color.White;
+            this.btnShift.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnShift.Image = ((System.Drawing.Image)(resources.GetObject("btnShift.Image")));
+            this.btnShift.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnShift.Location = new System.Drawing.Point(996, 18);
+            this.btnShift.Name = "btnShift";
+            this.btnShift.Size = new System.Drawing.Size(87, 81);
+            this.btnShift.TabIndex = 20;
+            this.btnShift.Text = "Shift";
+            this.btnShift.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnShift.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnMenu
             // 
-            this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.Location = new System.Drawing.Point(296, 0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 67);
-            this.button5.TabIndex = 18;
-            this.button5.Text = "Report";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnMenu.BackColor = System.Drawing.Color.White;
+            this.btnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMenu.Location = new System.Drawing.Point(504, 18);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(87, 81);
+            this.btnMenu.TabIndex = 19;
+            this.btnMenu.Text = "Menu";
+            this.btnMenu.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMenu.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnReport
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(222, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 67);
-            this.button4.TabIndex = 17;
-            this.button4.Text = "Brands";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnReport.BackColor = System.Drawing.Color.White;
+            this.btnReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
+            this.btnReport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnReport.Location = new System.Drawing.Point(406, 18);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(87, 81);
+            this.btnReport.TabIndex = 18;
+            this.btnReport.Text = "Report";
+            this.btnReport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReport.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnBrands
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(148, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 67);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "Staffs";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnBrands.BackColor = System.Drawing.Color.White;
+            this.btnBrands.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBrands.Image = ((System.Drawing.Image)(resources.GetObject("btnBrands.Image")));
+            this.btnBrands.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnBrands.Location = new System.Drawing.Point(308, 18);
+            this.btnBrands.Name = "btnBrands";
+            this.btnBrands.Size = new System.Drawing.Size(87, 81);
+            this.btnBrands.TabIndex = 17;
+            this.btnBrands.Text = "Brands";
+            this.btnBrands.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBrands.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnStaffs
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(75, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 67);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Sales";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnStaffs.BackColor = System.Drawing.Color.White;
+            this.btnStaffs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnStaffs.Image = ((System.Drawing.Image)(resources.GetObject("btnStaffs.Image")));
+            this.btnStaffs.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnStaffs.Location = new System.Drawing.Point(211, 18);
+            this.btnStaffs.Name = "btnStaffs";
+            this.btnStaffs.Size = new System.Drawing.Size(87, 81);
+            this.btnStaffs.TabIndex = 16;
+            this.btnStaffs.Text = "Staffs";
+            this.btnStaffs.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnStaffs.UseVisualStyleBackColor = false;
+            this.btnStaffs.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button1
+            // btnSales
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(2, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 67);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Users";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSales.BackColor = System.Drawing.Color.White;
+            this.btnSales.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSales.Image = ((System.Drawing.Image)(resources.GetObject("btnSales.Image")));
+            this.btnSales.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSales.Location = new System.Drawing.Point(113, 18);
+            this.btnSales.Name = "btnSales";
+            this.btnSales.Size = new System.Drawing.Size(87, 81);
+            this.btnSales.TabIndex = 16;
+            this.btnSales.Text = "Sales";
+            this.btnSales.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSales.UseVisualStyleBackColor = false;
+            this.btnSales.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnUsers
+            // 
+            this.btnUsers.BackColor = System.Drawing.Color.White;
+            this.btnUsers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUsers.Image = ((System.Drawing.Image)(resources.GetObject("btnUsers.Image")));
+            this.btnUsers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnUsers.Location = new System.Drawing.Point(15, 18);
+            this.btnUsers.Name = "btnUsers";
+            this.btnUsers.Size = new System.Drawing.Size(87, 81);
+            this.btnUsers.TabIndex = 15;
+            this.btnUsers.Text = "Users";
+            this.btnUsers.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnUsers.UseVisualStyleBackColor = false;
             // 
             // tabPage3
             // 
@@ -358,10 +359,236 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 26);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1277, 641);
+            this.tabPage3.Size = new System.Drawing.Size(1323, 624);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nhà hàng";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button39);
+            this.panel2.Controls.Add(this.button38);
+            this.panel2.Controls.Add(this.button37);
+            this.panel2.Controls.Add(this.button36);
+            this.panel2.Controls.Add(this.button35);
+            this.panel2.Controls.Add(this.button33);
+            this.panel2.Controls.Add(this.button32);
+            this.panel2.Controls.Add(this.button31);
+            this.panel2.Controls.Add(this.button30);
+            this.panel2.Controls.Add(this.button29);
+            this.panel2.Controls.Add(this.button28);
+            this.panel2.Controls.Add(this.button27);
+            this.panel2.Controls.Add(this.button26);
+            this.panel2.Controls.Add(this.button25);
+            this.panel2.Controls.Add(this.dataGridView2);
+            this.panel2.Location = new System.Drawing.Point(3, 73);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1281, 572);
+            this.panel2.TabIndex = 34;
+            // 
+            // button39
+            // 
+            this.button39.BackColor = System.Drawing.Color.White;
+            this.button39.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button39.Image = ((System.Drawing.Image)(resources.GetObject("button39.Image")));
+            this.button39.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button39.Location = new System.Drawing.Point(1067, 474);
+            this.button39.Name = "button39";
+            this.button39.Size = new System.Drawing.Size(75, 70);
+            this.button39.TabIndex = 69;
+            this.button39.Text = "cancel";
+            this.button39.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button39.UseVisualStyleBackColor = false;
+            // 
+            // button38
+            // 
+            this.button38.BackColor = System.Drawing.Color.White;
+            this.button38.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button38.Image = ((System.Drawing.Image)(resources.GetObject("button38.Image")));
+            this.button38.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button38.Location = new System.Drawing.Point(986, 474);
+            this.button38.Name = "button38";
+            this.button38.Size = new System.Drawing.Size(75, 70);
+            this.button38.TabIndex = 68;
+            this.button38.Text = "Payment";
+            this.button38.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button38.UseVisualStyleBackColor = false;
+            // 
+            // button37
+            // 
+            this.button37.BackColor = System.Drawing.Color.White;
+            this.button37.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button37.Image = ((System.Drawing.Image)(resources.GetObject("button37.Image")));
+            this.button37.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button37.Location = new System.Drawing.Point(572, 474);
+            this.button37.Name = "button37";
+            this.button37.Size = new System.Drawing.Size(82, 70);
+            this.button37.TabIndex = 67;
+            this.button37.Text = "Exchange";
+            this.button37.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button37.UseVisualStyleBackColor = false;
+            // 
+            // button36
+            // 
+            this.button36.BackColor = System.Drawing.Color.White;
+            this.button36.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button36.Image = ((System.Drawing.Image)(resources.GetObject("button36.Image")));
+            this.button36.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button36.Location = new System.Drawing.Point(491, 474);
+            this.button36.Name = "button36";
+            this.button36.Size = new System.Drawing.Size(75, 70);
+            this.button36.TabIndex = 66;
+            this.button36.Text = "Combine";
+            this.button36.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button36.UseVisualStyleBackColor = false;
+            // 
+            // button35
+            // 
+            this.button35.BackColor = System.Drawing.Color.White;
+            this.button35.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button35.Image = ((System.Drawing.Image)(resources.GetObject("button35.Image")));
+            this.button35.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button35.Location = new System.Drawing.Point(410, 474);
+            this.button35.Name = "button35";
+            this.button35.Size = new System.Drawing.Size(75, 70);
+            this.button35.TabIndex = 65;
+            this.button35.Text = "Split";
+            this.button35.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button35.UseVisualStyleBackColor = false;
+            // 
+            // button33
+            // 
+            this.button33.BackColor = System.Drawing.Color.White;
+            this.button33.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button33.Image = ((System.Drawing.Image)(resources.GetObject("button33.Image")));
+            this.button33.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button33.Location = new System.Drawing.Point(903, 474);
+            this.button33.Name = "button33";
+            this.button33.Size = new System.Drawing.Size(75, 70);
+            this.button33.TabIndex = 64;
+            this.button33.Text = "Check in";
+            this.button33.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button33.UseVisualStyleBackColor = false;
+            // 
+            // button32
+            // 
+            this.button32.BackColor = System.Drawing.Color.White;
+            this.button32.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button32.Image = ((System.Drawing.Image)(resources.GetObject("button32.Image")));
+            this.button32.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button32.Location = new System.Drawing.Point(329, 474);
+            this.button32.Name = "button32";
+            this.button32.Size = new System.Drawing.Size(75, 70);
+            this.button32.TabIndex = 63;
+            this.button32.Text = "Print";
+            this.button32.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button32.UseVisualStyleBackColor = false;
+            // 
+            // button31
+            // 
+            this.button31.BackColor = System.Drawing.Color.White;
+            this.button31.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button31.Image = ((System.Drawing.Image)(resources.GetObject("button31.Image")));
+            this.button31.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button31.Location = new System.Drawing.Point(822, 474);
+            this.button31.Name = "button31";
+            this.button31.Size = new System.Drawing.Size(75, 70);
+            this.button31.TabIndex = 62;
+            this.button31.Text = "Discount";
+            this.button31.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button31.UseVisualStyleBackColor = false;
+            // 
+            // button30
+            // 
+            this.button30.BackColor = System.Drawing.Color.White;
+            this.button30.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button30.Image = ((System.Drawing.Image)(resources.GetObject("button30.Image")));
+            this.button30.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button30.Location = new System.Drawing.Point(741, 474);
+            this.button30.Name = "button30";
+            this.button30.Size = new System.Drawing.Size(75, 70);
+            this.button30.TabIndex = 61;
+            this.button30.Text = "Undo";
+            this.button30.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button30.UseVisualStyleBackColor = false;
+            // 
+            // button29
+            // 
+            this.button29.BackColor = System.Drawing.Color.White;
+            this.button29.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button29.Image = ((System.Drawing.Image)(resources.GetObject("button29.Image")));
+            this.button29.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button29.Location = new System.Drawing.Point(660, 474);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(75, 70);
+            this.button29.TabIndex = 60;
+            this.button29.Text = "Redo";
+            this.button29.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button29.UseVisualStyleBackColor = false;
+            // 
+            // button28
+            // 
+            this.button28.BackColor = System.Drawing.Color.White;
+            this.button28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button28.Image = ((System.Drawing.Image)(resources.GetObject("button28.Image")));
+            this.button28.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button28.Location = new System.Drawing.Point(248, 474);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(75, 70);
+            this.button28.TabIndex = 59;
+            this.button28.Text = "Delete";
+            this.button28.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button28.UseVisualStyleBackColor = false;
+            // 
+            // button27
+            // 
+            this.button27.BackColor = System.Drawing.Color.White;
+            this.button27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button27.Image = ((System.Drawing.Image)(resources.GetObject("button27.Image")));
+            this.button27.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button27.Location = new System.Drawing.Point(167, 474);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(75, 70);
+            this.button27.TabIndex = 58;
+            this.button27.Text = "Save";
+            this.button27.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button27.UseVisualStyleBackColor = false;
+            // 
+            // button26
+            // 
+            this.button26.BackColor = System.Drawing.Color.White;
+            this.button26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button26.Image = ((System.Drawing.Image)(resources.GetObject("button26.Image")));
+            this.button26.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button26.Location = new System.Drawing.Point(86, 474);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(75, 70);
+            this.button26.TabIndex = 57;
+            this.button26.Text = "Edit";
+            this.button26.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button26.UseVisualStyleBackColor = false;
+            // 
+            // button25
+            // 
+            this.button25.BackColor = System.Drawing.Color.White;
+            this.button25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button25.Image = ((System.Drawing.Image)(resources.GetObject("button25.Image")));
+            this.button25.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button25.Location = new System.Drawing.Point(5, 474);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(75, 70);
+            this.button25.TabIndex = 56;
+            this.button25.Text = "Add";
+            this.button25.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button25.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 4);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(1281, 359);
+            this.dataGridView2.TabIndex = 50;
             // 
             // button24
             // 
@@ -490,389 +717,13 @@
             this.button13.UseVisualStyleBackColor = false;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
-            // button34
-            // 
-            this.button34.BackColor = System.Drawing.Color.White;
-            this.button34.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button34.Image = ((System.Drawing.Image)(resources.GetObject("button34.Image")));
-            this.button34.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button34.Location = new System.Drawing.Point(973, 0);
-            this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(85, 67);
-            this.button34.TabIndex = 33;
-            this.button34.Text = "Catalogue";
-            this.button34.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button34.UseVisualStyleBackColor = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button40);
-            this.panel1.Controls.Add(this.button46);
-            this.panel1.Controls.Add(this.button48);
-            this.panel1.Controls.Add(this.button49);
-            this.panel1.Controls.Add(this.button50);
-            this.panel1.Controls.Add(this.button51);
-            this.panel1.Controls.Add(this.button52);
-            this.panel1.Controls.Add(this.button53);
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(3, 67);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1281, 571);
-            this.panel1.TabIndex = 34;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1281, 486);
-            this.dataGridView1.TabIndex = 50;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.button39);
-            this.panel2.Controls.Add(this.button38);
-            this.panel2.Controls.Add(this.button37);
-            this.panel2.Controls.Add(this.button36);
-            this.panel2.Controls.Add(this.button35);
-            this.panel2.Controls.Add(this.button33);
-            this.panel2.Controls.Add(this.button32);
-            this.panel2.Controls.Add(this.button31);
-            this.panel2.Controls.Add(this.button30);
-            this.panel2.Controls.Add(this.button29);
-            this.panel2.Controls.Add(this.button28);
-            this.panel2.Controls.Add(this.button27);
-            this.panel2.Controls.Add(this.button26);
-            this.panel2.Controls.Add(this.button25);
-            this.panel2.Controls.Add(this.dataGridView2);
-            this.panel2.Location = new System.Drawing.Point(3, 73);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1281, 572);
-            this.panel2.TabIndex = 34;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 4);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1281, 482);
-            this.dataGridView2.TabIndex = 50;
-            // 
-            // button39
-            // 
-            this.button39.BackColor = System.Drawing.Color.White;
-            this.button39.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button39.Image = ((System.Drawing.Image)(resources.GetObject("button39.Image")));
-            this.button39.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button39.Location = new System.Drawing.Point(1067, 492);
-            this.button39.Name = "button39";
-            this.button39.Size = new System.Drawing.Size(75, 70);
-            this.button39.TabIndex = 69;
-            this.button39.Text = "cancel";
-            this.button39.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button39.UseVisualStyleBackColor = false;
-            // 
-            // button38
-            // 
-            this.button38.BackColor = System.Drawing.Color.White;
-            this.button38.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button38.Image = ((System.Drawing.Image)(resources.GetObject("button38.Image")));
-            this.button38.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button38.Location = new System.Drawing.Point(986, 492);
-            this.button38.Name = "button38";
-            this.button38.Size = new System.Drawing.Size(75, 70);
-            this.button38.TabIndex = 68;
-            this.button38.Text = "Payment";
-            this.button38.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button38.UseVisualStyleBackColor = false;
-            // 
-            // button37
-            // 
-            this.button37.BackColor = System.Drawing.Color.White;
-            this.button37.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button37.Image = ((System.Drawing.Image)(resources.GetObject("button37.Image")));
-            this.button37.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button37.Location = new System.Drawing.Point(572, 492);
-            this.button37.Name = "button37";
-            this.button37.Size = new System.Drawing.Size(82, 70);
-            this.button37.TabIndex = 67;
-            this.button37.Text = "Exchange";
-            this.button37.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button37.UseVisualStyleBackColor = false;
-            // 
-            // button36
-            // 
-            this.button36.BackColor = System.Drawing.Color.White;
-            this.button36.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button36.Image = ((System.Drawing.Image)(resources.GetObject("button36.Image")));
-            this.button36.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button36.Location = new System.Drawing.Point(491, 492);
-            this.button36.Name = "button36";
-            this.button36.Size = new System.Drawing.Size(75, 70);
-            this.button36.TabIndex = 66;
-            this.button36.Text = "Combine";
-            this.button36.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button36.UseVisualStyleBackColor = false;
-            // 
-            // button35
-            // 
-            this.button35.BackColor = System.Drawing.Color.White;
-            this.button35.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button35.Image = ((System.Drawing.Image)(resources.GetObject("button35.Image")));
-            this.button35.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button35.Location = new System.Drawing.Point(410, 492);
-            this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(75, 70);
-            this.button35.TabIndex = 65;
-            this.button35.Text = "Split";
-            this.button35.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button35.UseVisualStyleBackColor = false;
-            // 
-            // button33
-            // 
-            this.button33.BackColor = System.Drawing.Color.White;
-            this.button33.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button33.Image = ((System.Drawing.Image)(resources.GetObject("button33.Image")));
-            this.button33.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button33.Location = new System.Drawing.Point(903, 492);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(75, 70);
-            this.button33.TabIndex = 64;
-            this.button33.Text = "Check in";
-            this.button33.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button33.UseVisualStyleBackColor = false;
-            // 
-            // button32
-            // 
-            this.button32.BackColor = System.Drawing.Color.White;
-            this.button32.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button32.Image = ((System.Drawing.Image)(resources.GetObject("button32.Image")));
-            this.button32.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button32.Location = new System.Drawing.Point(329, 492);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(75, 70);
-            this.button32.TabIndex = 63;
-            this.button32.Text = "Print";
-            this.button32.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button32.UseVisualStyleBackColor = false;
-            // 
-            // button31
-            // 
-            this.button31.BackColor = System.Drawing.Color.White;
-            this.button31.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button31.Image = ((System.Drawing.Image)(resources.GetObject("button31.Image")));
-            this.button31.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button31.Location = new System.Drawing.Point(822, 492);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(75, 70);
-            this.button31.TabIndex = 62;
-            this.button31.Text = "Discount";
-            this.button31.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button31.UseVisualStyleBackColor = false;
-            // 
-            // button30
-            // 
-            this.button30.BackColor = System.Drawing.Color.White;
-            this.button30.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button30.Image = ((System.Drawing.Image)(resources.GetObject("button30.Image")));
-            this.button30.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button30.Location = new System.Drawing.Point(741, 492);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(75, 70);
-            this.button30.TabIndex = 61;
-            this.button30.Text = "Undo";
-            this.button30.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button30.UseVisualStyleBackColor = false;
-            // 
-            // button29
-            // 
-            this.button29.BackColor = System.Drawing.Color.White;
-            this.button29.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button29.Image = ((System.Drawing.Image)(resources.GetObject("button29.Image")));
-            this.button29.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button29.Location = new System.Drawing.Point(660, 492);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(75, 70);
-            this.button29.TabIndex = 60;
-            this.button29.Text = "Redo";
-            this.button29.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button29.UseVisualStyleBackColor = false;
-            // 
-            // button28
-            // 
-            this.button28.BackColor = System.Drawing.Color.White;
-            this.button28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button28.Image = ((System.Drawing.Image)(resources.GetObject("button28.Image")));
-            this.button28.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button28.Location = new System.Drawing.Point(248, 492);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(75, 70);
-            this.button28.TabIndex = 59;
-            this.button28.Text = "Delete";
-            this.button28.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button28.UseVisualStyleBackColor = false;
-            // 
-            // button27
-            // 
-            this.button27.BackColor = System.Drawing.Color.White;
-            this.button27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button27.Image = ((System.Drawing.Image)(resources.GetObject("button27.Image")));
-            this.button27.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button27.Location = new System.Drawing.Point(167, 492);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(75, 70);
-            this.button27.TabIndex = 58;
-            this.button27.Text = "Save";
-            this.button27.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button27.UseVisualStyleBackColor = false;
-            // 
-            // button26
-            // 
-            this.button26.BackColor = System.Drawing.Color.White;
-            this.button26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button26.Image = ((System.Drawing.Image)(resources.GetObject("button26.Image")));
-            this.button26.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button26.Location = new System.Drawing.Point(86, 492);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(75, 70);
-            this.button26.TabIndex = 57;
-            this.button26.Text = "Edit";
-            this.button26.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button26.UseVisualStyleBackColor = false;
-            // 
-            // button25
-            // 
-            this.button25.BackColor = System.Drawing.Color.White;
-            this.button25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button25.Image = ((System.Drawing.Image)(resources.GetObject("button25.Image")));
-            this.button25.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button25.Location = new System.Drawing.Point(5, 492);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(75, 70);
-            this.button25.TabIndex = 56;
-            this.button25.Text = "Add";
-            this.button25.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button25.UseVisualStyleBackColor = false;
-            // 
-            // button40
-            // 
-            this.button40.BackColor = System.Drawing.Color.White;
-            this.button40.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button40.Image = ((System.Drawing.Image)(resources.GetObject("button40.Image")));
-            this.button40.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button40.Location = new System.Drawing.Point(569, 498);
-            this.button40.Name = "button40";
-            this.button40.Size = new System.Drawing.Size(75, 70);
-            this.button40.TabIndex = 69;
-            this.button40.Text = "cancel";
-            this.button40.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button40.UseVisualStyleBackColor = false;
-            // 
-            // button46
-            // 
-            this.button46.BackColor = System.Drawing.Color.White;
-            this.button46.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button46.Image = ((System.Drawing.Image)(resources.GetObject("button46.Image")));
-            this.button46.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button46.Location = new System.Drawing.Point(327, 498);
-            this.button46.Name = "button46";
-            this.button46.Size = new System.Drawing.Size(75, 70);
-            this.button46.TabIndex = 63;
-            this.button46.Text = "Print";
-            this.button46.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button46.UseVisualStyleBackColor = false;
-            // 
-            // button48
-            // 
-            this.button48.BackColor = System.Drawing.Color.White;
-            this.button48.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button48.Image = ((System.Drawing.Image)(resources.GetObject("button48.Image")));
-            this.button48.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button48.Location = new System.Drawing.Point(488, 498);
-            this.button48.Name = "button48";
-            this.button48.Size = new System.Drawing.Size(75, 70);
-            this.button48.TabIndex = 61;
-            this.button48.Text = "Undo";
-            this.button48.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button48.UseVisualStyleBackColor = false;
-            // 
-            // button49
-            // 
-            this.button49.BackColor = System.Drawing.Color.White;
-            this.button49.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button49.Image = ((System.Drawing.Image)(resources.GetObject("button49.Image")));
-            this.button49.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button49.Location = new System.Drawing.Point(408, 498);
-            this.button49.Name = "button49";
-            this.button49.Size = new System.Drawing.Size(75, 70);
-            this.button49.TabIndex = 60;
-            this.button49.Text = "Redo";
-            this.button49.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button49.UseVisualStyleBackColor = false;
-            // 
-            // button50
-            // 
-            this.button50.BackColor = System.Drawing.Color.White;
-            this.button50.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button50.Image = ((System.Drawing.Image)(resources.GetObject("button50.Image")));
-            this.button50.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button50.Location = new System.Drawing.Point(246, 498);
-            this.button50.Name = "button50";
-            this.button50.Size = new System.Drawing.Size(75, 70);
-            this.button50.TabIndex = 59;
-            this.button50.Text = "Delete";
-            this.button50.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button50.UseVisualStyleBackColor = false;
-            // 
-            // button51
-            // 
-            this.button51.BackColor = System.Drawing.Color.White;
-            this.button51.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button51.Image = ((System.Drawing.Image)(resources.GetObject("button51.Image")));
-            this.button51.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button51.Location = new System.Drawing.Point(165, 498);
-            this.button51.Name = "button51";
-            this.button51.Size = new System.Drawing.Size(75, 70);
-            this.button51.TabIndex = 58;
-            this.button51.Text = "Save";
-            this.button51.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button51.UseVisualStyleBackColor = false;
-            // 
-            // button52
-            // 
-            this.button52.BackColor = System.Drawing.Color.White;
-            this.button52.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button52.Image = ((System.Drawing.Image)(resources.GetObject("button52.Image")));
-            this.button52.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button52.Location = new System.Drawing.Point(84, 498);
-            this.button52.Name = "button52";
-            this.button52.Size = new System.Drawing.Size(75, 70);
-            this.button52.TabIndex = 57;
-            this.button52.Text = "Edit";
-            this.button52.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button52.UseVisualStyleBackColor = false;
-            // 
-            // button53
-            // 
-            this.button53.BackColor = System.Drawing.Color.White;
-            this.button53.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button53.Image = ((System.Drawing.Image)(resources.GetObject("button53.Image")));
-            this.button53.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button53.Location = new System.Drawing.Point(3, 498);
-            this.button53.Name = "button53";
-            this.button53.Size = new System.Drawing.Size(75, 70);
-            this.button53.TabIndex = 56;
-            this.button53.Text = "Add";
-            this.button53.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button53.UseVisualStyleBackColor = false;
-            // 
             // frmDashBoard
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1288, 668);
+            this.ClientSize = new System.Drawing.Size(1370, 678);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -884,8 +735,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
@@ -897,17 +746,17 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnUsers;
+        private System.Windows.Forms.Button btnInvoice;
+        private System.Windows.Forms.Button btnIngredients;
+        private System.Windows.Forms.Button btnSupplier;
+        private System.Windows.Forms.Button btnWage;
+        private System.Windows.Forms.Button btnShift;
+        private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.Button btnBrands;
+        private System.Windows.Forms.Button btnStaffs;
+        private System.Windows.Forms.Button btnSales;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button16;
@@ -915,25 +764,15 @@
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button btnClients;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button34;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnTable;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnCatalogue;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button button40;
-        private System.Windows.Forms.Button button46;
-        private System.Windows.Forms.Button button48;
-        private System.Windows.Forms.Button button49;
-        private System.Windows.Forms.Button button50;
-        private System.Windows.Forms.Button button51;
-        private System.Windows.Forms.Button button52;
-        private System.Windows.Forms.Button button53;
         private System.Windows.Forms.Button button39;
         private System.Windows.Forms.Button button38;
         private System.Windows.Forms.Button button37;

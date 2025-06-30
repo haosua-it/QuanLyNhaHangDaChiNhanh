@@ -21,14 +21,12 @@ namespace QuanLyNhaHangDaChiNhanh
 
         private void btnNhaHang_Click(object sender, EventArgs e)
         {
-            frmNhaHang f = new frmNhaHang();
-            f.ShowDialog();
+
         }
 
         private void btnHeThong_Click(object sender, EventArgs e)
         {
-            frmHeThong f = new frmHeThong();
-            f.ShowDialog();
+
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
@@ -41,7 +39,10 @@ namespace QuanLyNhaHangDaChiNhanh
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            frmStaffs f = new frmStaffs();
+            f.ShowDialog(); 
+            this.Show();
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -70,6 +71,11 @@ namespace QuanLyNhaHangDaChiNhanh
         }
 
         private void frmDashBoard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
         {
 
         }

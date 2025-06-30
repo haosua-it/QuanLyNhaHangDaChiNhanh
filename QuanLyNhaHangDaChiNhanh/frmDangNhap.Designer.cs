@@ -101,23 +101,20 @@
             this.chkHienMatKhau.TabIndex = 5;
             this.chkHienMatKhau.Text = "Hiển thị mật khẩu";
             this.chkHienMatKhau.UseVisualStyleBackColor = true;
-            this.chkHienMatKhau.CheckedChanged += new System.EventHandler(this.chkHienMatKhau_CheckedChanged);
             // 
             // txtMatKhau
             // 
-            this.txtMatKhau.Location = new System.Drawing.Point(192, 105);
+            this.txtMatKhau.Location = new System.Drawing.Point(189, 105);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(225, 26);
             this.txtMatKhau.TabIndex = 4;
-            this.txtMatKhau.TextChanged += new System.EventHandler(this.txtMatKhau_TextChanged);
             // 
             // txtTenDangNhap
             // 
-            this.txtTenDangNhap.Location = new System.Drawing.Point(192, 60);
+            this.txtTenDangNhap.Location = new System.Drawing.Point(189, 60);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.Size = new System.Drawing.Size(225, 26);
             this.txtTenDangNhap.TabIndex = 3;
-            this.txtTenDangNhap.TextChanged += new System.EventHandler(this.txtTenDangNhap_TextChanged);
             // 
             // label2
             // 
@@ -127,7 +124,6 @@
             this.label2.Size = new System.Drawing.Size(75, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Mật khẩu:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -137,7 +133,6 @@
             this.label1.Size = new System.Drawing.Size(115, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tên đăng nhập:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbDangNhap
             // 
@@ -148,7 +143,6 @@
             this.lbDangNhap.TabIndex = 0;
             this.lbDangNhap.Text = "Đăng nhập hệ thống:";
             this.lbDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbDangNhap.Click += new System.EventHandler(this.lbDangNhap_Click);
             // 
             // frmDangNhap
             // 
@@ -162,11 +156,11 @@
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập vào hệ thống";
+            this.Load += new System.EventHandler(this.frmDangNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
