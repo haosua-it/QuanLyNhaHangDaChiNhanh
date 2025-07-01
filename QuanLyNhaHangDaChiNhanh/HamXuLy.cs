@@ -49,30 +49,41 @@ namespace QuanLyNhaHangDaChiNhanh
         }
         public static void RunSQL(string sql)
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
-            cmd.CommandText = sql;
-            try
+            Connect(); // Đảm bảo kết nối được mở
+
+            using (SqlCommand cmd = new SqlCommand())
             {
-                cmd.ExecuteNonQuery();
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Thông báo");
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Thông báo");
-            }
-            cmd.Dispose();
-            cmd = null;
+
+            Disconnect(); 
         }
+
         // HÀM FILL DỮ LIỆU VÀO CB
         public static void FillCombo(string sql, ComboBox cbo, string tenCL, string maCL)
         {
+            Connect(); 
+
             SqlDataAdapter da = new SqlDataAdapter(sql, conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
+
             cbo.DataSource = dt;
             cbo.DisplayMember = tenCL;
             cbo.ValueMember = maCL;
+
+            Disconnect();
         }
+
         public static string GetFieldValue(string sql)
         {
             string ma = "";
@@ -87,29 +98,29 @@ namespace QuanLyNhaHangDaChiNhanh
             return ma;
         }
        public static int MaLonNhat(string bang, string cot)
-{
-    int maMax = 0;
-    Connect();
-    string sql = string.Format("SELECT TOP 1 {0} FROM {1} ORDER BY {0} DESC", cot, bang);
-    string ma = GetFieldValue(sql);  // Lấy mã lớn nhất (ví dụ: CV10)
+       {
+           int maMax = 0;
+           Connect();
+            string sql = string.Format("SELECT TOP 1 {0} FROM {1} ORDER BY {0} DESC", cot, bang);
+            string ma = GetFieldValue(sql);  // Lấy mã lớn nhất (ví dụ: CV10)
 
-    if (!string.IsNullOrEmpty(ma))
-    {
-        // Cắt bỏ phần chữ đầu, lấy phần số
-        string so = "";
-        for (int i = 0; i < ma.Length; i++)
-        {
-            if (char.IsDigit(ma[i]))
+            if (!string.IsNullOrEmpty(ma))
             {
-                so += ma[i];
-            }
-        }
-        int soNguyen = int.Parse(so);
-        maMax = soNguyen;
-    }
+                // Cắt bỏ phần chữ đầu, lấy phần số
+                string so = "";
+                for (int i = 0; i < ma.Length; i++)
+                {
+                    if (char.IsDigit(ma[i]))
+                    {
+                        so += ma[i];
+                    }
+                }
+                int soNguyen = int.Parse(so);
+                maMax = soNguyen;
+           }
 
-    return maMax;
-}
+           return maMax;
+       }
         // HÀM TẠO MÃ TỰ ĐỘNG
        public static string MaTuDong(string bang)
        {
@@ -280,6 +291,53 @@ namespace QuanLyNhaHangDaChiNhanh
             SqlDataAdapter da = new SqlDataAdapter(sql, conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            return dt;
+        }
+
+        //====================================================KHUYẾN MÃI============================================//
+        // HÀM SHOW KHUYẾN MÃI
+        public static DataTable ShowKhuyenMai()
+        {
+            Connect(); // Mở kết nối
+            DataTable dt = new DataTable();
+            string sql = "SELECT * FROM KHUYENMAI";
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lấy dữ liệu khuyến mãi: " + ex.Message);
+            }
+            finally
+            {
+                Disconnect();
+            }
+
+            return dt;
+        }
+        public static DataTable ShowKhuyenMaiPhanTrang(int page, int pageSize)
+        {
+            Connect();
+            int offset = (page - 1) * pageSize;
+            string sql = string.Format("SELECT * FROM KHUYENMAI ORDER BY MAKM OFFSET {0} ROWS FETCH NEXT {1} ROWS ONLY", offset, pageSize);
+            DataTable dt = new DataTable();
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi phân trang khuyến mãi: " + ex.Message);
+            }
+            finally
+            {
+                Disconnect();
+            }
+
             return dt;
         }
 

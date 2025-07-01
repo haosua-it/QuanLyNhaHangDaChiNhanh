@@ -54,6 +54,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblPage = new System.Windows.Forms.Label();
+            this.btnPrevPage = new System.Windows.Forms.Button();
+            this.btnNextPage = new System.Windows.Forms.Button();
             this.luoiNhanVien = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
@@ -65,9 +68,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnNextPage = new System.Windows.Forms.Button();
-            this.btnPrevPage = new System.Windows.Forms.Button();
-            this.lblPage = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.luoiNhanVien)).BeginInit();
@@ -316,6 +316,41 @@
             this.panel2.Size = new System.Drawing.Size(1346, 575);
             this.panel2.TabIndex = 1;
             // 
+            // lblPage
+            // 
+            this.lblPage.AutoSize = true;
+            this.lblPage.Location = new System.Drawing.Point(572, 391);
+            this.lblPage.Name = "lblPage";
+            this.lblPage.Size = new System.Drawing.Size(57, 17);
+            this.lblPage.TabIndex = 99;
+            this.lblPage.Text = "Trang 1";
+            // 
+            // btnPrevPage
+            // 
+            this.btnPrevPage.BackColor = System.Drawing.Color.White;
+            this.btnPrevPage.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevPage.Image")));
+            this.btnPrevPage.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPrevPage.Location = new System.Drawing.Point(476, 369);
+            this.btnPrevPage.Name = "btnPrevPage";
+            this.btnPrevPage.Size = new System.Drawing.Size(75, 55);
+            this.btnPrevPage.TabIndex = 98;
+            this.btnPrevPage.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPrevPage.UseVisualStyleBackColor = false;
+            this.btnPrevPage.Click += new System.EventHandler(this.btnPrevPage_Click);
+            // 
+            // btnNextPage
+            // 
+            this.btnNextPage.BackColor = System.Drawing.Color.White;
+            this.btnNextPage.Image = ((System.Drawing.Image)(resources.GetObject("btnNextPage.Image")));
+            this.btnNextPage.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNextPage.Location = new System.Drawing.Point(656, 369);
+            this.btnNextPage.Name = "btnNextPage";
+            this.btnNextPage.Size = new System.Drawing.Size(75, 56);
+            this.btnNextPage.TabIndex = 97;
+            this.btnNextPage.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNextPage.UseVisualStyleBackColor = false;
+            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
+            // 
             // luoiNhanVien
             // 
             this.luoiNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -475,35 +510,6 @@
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnNextPage
-            // 
-            this.btnNextPage.Location = new System.Drawing.Point(656, 437);
-            this.btnNextPage.Name = "btnNextPage";
-            this.btnNextPage.Size = new System.Drawing.Size(75, 23);
-            this.btnNextPage.TabIndex = 97;
-            this.btnNextPage.Text = "Next";
-            this.btnNextPage.UseVisualStyleBackColor = true;
-            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
-            // 
-            // btnPrevPage
-            // 
-            this.btnPrevPage.Location = new System.Drawing.Point(480, 437);
-            this.btnPrevPage.Name = "btnPrevPage";
-            this.btnPrevPage.Size = new System.Drawing.Size(75, 23);
-            this.btnPrevPage.TabIndex = 98;
-            this.btnPrevPage.Text = "Prev";
-            this.btnPrevPage.UseVisualStyleBackColor = true;
-            this.btnPrevPage.Click += new System.EventHandler(this.btnPrevPage_Click);
-            // 
-            // lblPage
-            // 
-            this.lblPage.AutoSize = true;
-            this.lblPage.Location = new System.Drawing.Point(572, 443);
-            this.lblPage.Name = "lblPage";
-            this.lblPage.Size = new System.Drawing.Size(57, 17);
-            this.lblPage.TabIndex = 99;
-            this.lblPage.Text = "Trang 1";
             // 
             // frmStaffs
             // 

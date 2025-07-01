@@ -81,6 +81,7 @@
       <DependentUpon>frmStaffs.cs</DependentUpon>
     </Compile>
     <Compile Include="HamXuLy.cs" />
+    <Compile Include="KhuyenMai.cs" />
     <Compile Include="NhanVien.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -70,6 +70,11 @@ namespace QuanLyNhaHangDaChiNhanh
             luoiNhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             luoiNhanVien.ReadOnly = true;
             luoiNhanVien.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            //định dạng ngày tháng năm
+            luoiNhanVien.Columns["NGAYSINH"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            luoiNhanVien.Columns["NGAYVAOLAM"].DefaultCellStyle.Format = "dd/MM/yyyy";
+
             lblPage.Text = string.Format("Trang {0}", currentPage);
 
         }
@@ -295,6 +300,7 @@ namespace QuanLyNhaHangDaChiNhanh
             }
         }
 
+        // CHỨC NĂNG NÚT IN
         private void btnPrint_Click(object sender, EventArgs e)
         {
 
