@@ -17,18 +17,19 @@ namespace QuanLyNhaHangDaChiNhanh
         public static void Connect()
         {
             conn = new SqlConnection();
-            conn.ConnectionString = @"Data Source = DESKTOP-TL47T6A\SQLEXPRESS; Initial Catalog = QLYNHAHANGDACHINHANH; Integrated Security= True";
+            conn.ConnectionString = @"Data Source=10.242.50.74;Initial Catalog=QLYNHAHANGDACHINHANH;User ID=Nguyen;Password=123";
             conn.Open();
         }
         public static void Disconnect()
         {
-            if (conn.State == ConnectionState.Open)
+            if (conn != null && conn.State == ConnectionState.Open)
             {
                 conn.Close();
                 conn.Dispose();
                 conn = null;
             }
         }
+
         public static Boolean TruyVan(string strSQL, DataTable dt)
         {
             bool kq = false;
@@ -62,6 +63,7 @@ namespace QuanLyNhaHangDaChiNhanh
             cmd.Dispose();
             cmd = null;
         }
+        // HÀM FILL DỮ LIỆU VÀO CB
         public static void FillCombo(string sql, ComboBox cbo, string tenCL, string maCL)
         {
             SqlDataAdapter da = new SqlDataAdapter(sql, conn);
@@ -108,7 +110,7 @@ namespace QuanLyNhaHangDaChiNhanh
 
     return maMax;
 }
-
+        // HÀM TẠO MÃ TỰ ĐỘNG
        public static string MaTuDong(string bang)
        {
            string maMoi = "";
@@ -144,6 +146,7 @@ namespace QuanLyNhaHangDaChiNhanh
 
            return maMoi;
        }
+
        public static int GetCount(string sql)
        {
            int count = 0;
@@ -151,6 +154,136 @@ namespace QuanLyNhaHangDaChiNhanh
            count = (int)cmd.ExecuteScalar();
            return count;
        }
+        //HÀM SHOW NHÂN VIÊN
+       public static DataTable ShowNhanVien()
+       {
+           Connect(); // Kết nối CSDL
+           DataTable dt = new DataTable();
+           string sql = "SELECT * FROM NHANVIEN";
+           try
+           {
+               SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+               da.Fill(dt);
+           }
+           catch (Exception ex)
+           {
+               MessageBox.Show("Lỗi khi lấy dữ liệu nhân viên: " + ex.Message);
+           }
+           finally
+           {
+               Disconnect();
+           }
+           return dt;
+       }
+        // HÀM SHOW NHÂN VIÊN THEO MÃ CHI NHÁNH
+        public static DataTable ShowNhanVienTheoChiNhanh(string MaCN)
+        {
+           Connect();
+           DataTable dt = new DataTable();
+           string sql = "SELECT * FROM NHANVIEN WHERE MACHINHANH = '" + MaCN + "'";
+
+           try
+           {
+               SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+               da.Fill(dt);
+           }
+           catch (Exception ex)
+           {
+               MessageBox.Show("Lỗi khi lấy nhân viên theo chi nhánh: " + ex.Message);
+           }
+           finally
+           {
+               Disconnect();
+           }
+
+           return dt;
+        }
+
+        //HÀM SHOW NHÂN VIÊN THEO TÊN
+        public static DataTable ShowNhanVienTheoTen(string keyword)
+        {
+            Connect();
+            DataTable dt = new DataTable();
+
+            // Dùng nối chuỗi, thêm dấu % thủ công
+            string sql = "SELECT * FROM NHANVIEN WHERE HOTEN LIKE N'%" + keyword + "%'";
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tìm kiếm nhân viên theo tên: " + ex.Message);
+            }
+            finally
+            {
+                Disconnect();
+            }
+
+            return dt;
+        }
+        //HÀM PHÂN TRANG
+        public static DataTable ShowNhanVienPhanTrang(int pageNumber, int pageSize)
+        {
+            Connect();
+            DataTable dt = new DataTable();
+            int offset = (pageNumber - 1) * pageSize;
+
+            string sql = string.Format("SELECT * FROM NHANVIEN ORDER BY HOTEN OFFSET {0} ROWS FETCH NEXT {1} ROWS ONLY", offset, pageSize);
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi phân trang: " + ex.Message);
+            }
+            finally
+            {
+                Disconnect();
+            }
+
+            return dt;
+        }
+
+
+        //tổng số trang
+        public static int GetTotalNhanVienCount()
+        {
+            Connect();
+            int count = 0;
+            string sql = "SELECT COUNT(*) FROM NHANVIEN";
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                count = (int)cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi đếm nhân viên: " + ex.Message);
+            }
+            finally
+            {
+                Disconnect();
+            }
+
+            return count;
+        }
+
+        public static DataTable GetDataToTable(string sql)
+        {
+            Connect(); // mở kết nối
+            SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+
+
 
     }
 }

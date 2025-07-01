@@ -74,7 +74,14 @@
     <Compile Include="frmSales.Designer.cs">
       <DependentUpon>frmSales.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStaffs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStaffs.Designer.cs">
+      <DependentUpon>frmStaffs.cs</DependentUpon>
+    </Compile>
     <Compile Include="HamXuLy.cs" />
+    <Compile Include="NhanVien.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmChucVu.resx">
@@ -91,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSales.resx">
       <DependentUpon>frmSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStaffs.resx">
+      <DependentUpon>frmStaffs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

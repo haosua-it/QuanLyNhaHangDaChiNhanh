@@ -1,6 +1,6 @@
 ﻿namespace QuanLyNhaHangDaChiNhanh
 {
-    partial class frmStaffs
+    partial class frmSales
     {
         /// <summary>
         /// Required designer variable.
@@ -28,24 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStaffs));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSales));
             this.pnlThongTinKhuyenMai = new System.Windows.Forms.Panel();
-            this.txtMaKhuyenMai = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtTenKhuyenMai = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtGiaTri = new System.Windows.Forms.TextBox();
-            this.dtpTuNgay = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dtpDenNgay = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dtpDenNgay = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dtpTuNgay = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtGiaTri = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtTenKhuyenMai = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtMaKhuyenMai = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.luoiKhuyenMai = new System.Windows.Forms.DataGridView();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.button39 = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnUndo = new System.Windows.Forms.Button();
@@ -54,8 +55,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.luoiKhuyenMai = new System.Windows.Forms.DataGridView();
             this.pnlThongTinKhuyenMai.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.luoiKhuyenMai)).BeginInit();
@@ -82,88 +82,21 @@
             this.pnlThongTinKhuyenMai.Size = new System.Drawing.Size(1357, 142);
             this.pnlThongTinKhuyenMai.TabIndex = 0;
             // 
-            // txtMaKhuyenMai
+            // label7
             // 
-            this.txtMaKhuyenMai.Location = new System.Drawing.Point(140, 16);
-            this.txtMaKhuyenMai.Name = "txtMaKhuyenMai";
-            this.txtMaKhuyenMai.ReadOnly = true;
-            this.txtMaKhuyenMai.Size = new System.Drawing.Size(143, 25);
-            this.txtMaKhuyenMai.TabIndex = 0;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(37, 99);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(66, 20);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Số lượng:";
             // 
-            // label1
+            // textBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Mã khuyến mãi:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Tên khuyến mãi:";
-            // 
-            // txtTenKhuyenMai
-            // 
-            this.txtTenKhuyenMai.Location = new System.Drawing.Point(140, 56);
-            this.txtTenKhuyenMai.Name = "txtTenKhuyenMai";
-            this.txtTenKhuyenMai.Size = new System.Drawing.Size(143, 25);
-            this.txtTenKhuyenMai.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(405, 58);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Loại khuyến mãi:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(508, 56);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(143, 28);
-            this.comboBox1.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(405, 17);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 20);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Giá trị:";
-            // 
-            // txtGiaTri
-            // 
-            this.txtGiaTri.Location = new System.Drawing.Point(508, 15);
-            this.txtGiaTri.Name = "txtGiaTri";
-            this.txtGiaTri.Size = new System.Drawing.Size(143, 25);
-            this.txtGiaTri.TabIndex = 6;
-            // 
-            // dtpTuNgay
-            // 
-            this.dtpTuNgay.Location = new System.Drawing.Point(955, 15);
-            this.dtpTuNgay.Name = "dtpTuNgay";
-            this.dtpTuNgay.Size = new System.Drawing.Size(288, 25);
-            this.dtpTuNgay.TabIndex = 8;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(863, 17);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 20);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Ngày bắt đầu:";
+            this.textBox1.Location = new System.Drawing.Point(140, 97);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(143, 25);
+            this.textBox1.TabIndex = 12;
             // 
             // label6
             // 
@@ -181,21 +114,88 @@
             this.dtpDenNgay.Size = new System.Drawing.Size(288, 25);
             this.dtpDenNgay.TabIndex = 10;
             // 
-            // label7
+            // label5
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(37, 99);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 20);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Số lượng:";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(863, 17);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(86, 20);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Ngày bắt đầu:";
             // 
-            // textBox1
+            // dtpTuNgay
             // 
-            this.textBox1.Location = new System.Drawing.Point(140, 97);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(143, 25);
-            this.textBox1.TabIndex = 12;
+            this.dtpTuNgay.Location = new System.Drawing.Point(955, 15);
+            this.dtpTuNgay.Name = "dtpTuNgay";
+            this.dtpTuNgay.Size = new System.Drawing.Size(288, 25);
+            this.dtpTuNgay.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(405, 17);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 20);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Giá trị:";
+            // 
+            // txtGiaTri
+            // 
+            this.txtGiaTri.Location = new System.Drawing.Point(508, 15);
+            this.txtGiaTri.Name = "txtGiaTri";
+            this.txtGiaTri.Size = new System.Drawing.Size(143, 25);
+            this.txtGiaTri.TabIndex = 6;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(508, 56);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(143, 28);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(405, 58);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 20);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Loại khuyến mãi:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(37, 58);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(102, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Tên khuyến mãi:";
+            // 
+            // txtTenKhuyenMai
+            // 
+            this.txtTenKhuyenMai.Location = new System.Drawing.Point(140, 56);
+            this.txtTenKhuyenMai.Name = "txtTenKhuyenMai";
+            this.txtTenKhuyenMai.Size = new System.Drawing.Size(143, 25);
+            this.txtTenKhuyenMai.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(37, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Mã khuyến mãi:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txtMaKhuyenMai
+            // 
+            this.txtMaKhuyenMai.Location = new System.Drawing.Point(140, 16);
+            this.txtMaKhuyenMai.Name = "txtMaKhuyenMai";
+            this.txtMaKhuyenMai.ReadOnly = true;
+            this.txtMaKhuyenMai.Size = new System.Drawing.Size(143, 25);
+            this.txtMaKhuyenMai.TabIndex = 0;
             // 
             // panel1
             // 
@@ -216,13 +216,34 @@
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // luoiKhuyenMai
+            // btnSearch
             // 
-            this.luoiKhuyenMai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.luoiKhuyenMai.Location = new System.Drawing.Point(11, 4);
-            this.luoiKhuyenMai.Name = "luoiKhuyenMai";
-            this.luoiKhuyenMai.Size = new System.Drawing.Size(1329, 510);
-            this.luoiKhuyenMai.TabIndex = 2;
+            this.btnSearch.BackColor = System.Drawing.Color.White;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSearch.Location = new System.Drawing.Point(661, 520);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 70);
+            this.btnSearch.TabIndex = 85;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.White;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnBack.Location = new System.Drawing.Point(741, 520);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 70);
+            this.btnBack.TabIndex = 84;
+            this.btnBack.Text = "Back";
+            this.btnBack.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.button1_Click);
             // 
             // button39
             // 
@@ -336,34 +357,13 @@
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAdd.UseVisualStyleBackColor = false;
             // 
-            // btnBack
+            // luoiKhuyenMai
             // 
-            this.btnBack.BackColor = System.Drawing.Color.White;
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBack.Location = new System.Drawing.Point(741, 520);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 70);
-            this.btnBack.TabIndex = 84;
-            this.btnBack.Text = "Back";
-            this.btnBack.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.White;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSearch.Location = new System.Drawing.Point(661, 520);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 70);
-            this.btnSearch.TabIndex = 85;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSearch.UseVisualStyleBackColor = false;
+            this.luoiKhuyenMai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.luoiKhuyenMai.Location = new System.Drawing.Point(11, 4);
+            this.luoiKhuyenMai.Name = "luoiKhuyenMai";
+            this.luoiKhuyenMai.Size = new System.Drawing.Size(1329, 510);
+            this.luoiKhuyenMai.TabIndex = 2;
             // 
             // frmSales
             // 

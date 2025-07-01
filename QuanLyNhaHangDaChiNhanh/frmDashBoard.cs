@@ -37,11 +37,11 @@ namespace QuanLyNhaHangDaChiNhanh
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // CHỨC NĂNG QUẢN LÝ KHUYẾN MÃI Ở ĐÂY
         {
             this.Hide();
-            frmStaffs f = new frmStaffs();
-            f.ShowDialog(); 
+            frmSales f = new frmSales();
+            f.ShowDialog();
             this.Show();
         }
 
@@ -55,8 +55,12 @@ namespace QuanLyNhaHangDaChiNhanh
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)  // CHỨC NĂNG QUẢN LÝ NHÂN VIÊN Ở ĐÂY
         {
+            this.Hide();
+            frmStaffs f = new frmStaffs();
+            f.ShowDialog();
+            this.Show();
 
         }
 
