@@ -173,6 +173,7 @@
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnClients
             // 
@@ -271,6 +272,7 @@
             this.btnMenu.Text = "Menu";
             this.btnMenu.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnMenu.UseVisualStyleBackColor = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // btnReport
             // 
@@ -356,10 +358,10 @@
             this.tabPage3.Controls.Add(this.button15);
             this.tabPage3.Controls.Add(this.button14);
             this.tabPage3.Controls.Add(this.button13);
-            this.tabPage3.Location = new System.Drawing.Point(4, 26);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1323, 624);
+            this.tabPage3.Size = new System.Drawing.Size(1323, 628);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nhà hàng";
             this.tabPage3.UseVisualStyleBackColor = true;

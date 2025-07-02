@@ -84,6 +84,24 @@ namespace QuanLyNhaHangDaChiNhanh
 
         }
 
+        private void btnMenu_Click(object sender, EventArgs e) // chức năng của Menu
+        {
+            this.Hide();
+            frmMenu f = new frmMenu();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e) // chức năng đăng xuất
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất và thoát ứng dụng?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit(); 
+            }
+        }
+
 
     }
 }

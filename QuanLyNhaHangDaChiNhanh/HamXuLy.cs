@@ -340,7 +340,20 @@ namespace QuanLyNhaHangDaChiNhanh
 
             return dt;
         }
+        //==================================================MÓN ÁN======================================================//
+        public static DataTable ShowMonAnPhanTrang(int page, int pageSize)
+        {
+            Connect();
+            int startRow = (page - 1) * pageSize + 1;
+            int endRow = page * pageSize;
 
+            string sql = string.Format(@"
+        SELECT * FROM ( SELECT ROW_NUMBER() OVER (ORDER BY MAMON ASC) AS RowNum, *FROM MONAN ) AS Temp WHERE RowNum BETWEEN {0} AND {1}", startRow, endRow);
+
+            DataTable dt = GetDataToTable(sql);
+            Disconnect();
+            return dt;
+        }
 
 
     }

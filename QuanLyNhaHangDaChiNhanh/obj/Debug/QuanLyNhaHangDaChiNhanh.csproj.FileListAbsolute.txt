@@ -11,3 +11,5 @@ D:\LTQL\QLBH\Project\QuanLyNhaHangDaChiNhanhVer2\QuanLyNhaHangDaChiNhanh\bin\Deb
 D:\LTQL\QLBH\Project\QuanLyNhaHangDaChiNhanhVer2\QuanLyNhaHangDaChiNhanh\bin\Debug\QuanLyNhaHangDaChiNhanh.pdb
 D:\LTQL\QLBH\Project\QuanLyNhaHangDaChiNhanhVer2\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.exe
 D:\LTQL\QLBH\Project\QuanLyNhaHangDaChiNhanhVer2\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.pdb
+D:\LTQL\QLBH\Project\QuanLyNhaHangDaChiNhanhVer2\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.csprojResolveAssemblyReference.cache
+D:\LTQL\QLBH\Project\QuanLyNhaHangDaChiNhanhVer2\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.frmMenu.resources
