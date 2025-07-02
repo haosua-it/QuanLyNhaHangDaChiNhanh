@@ -92,7 +92,7 @@ namespace QuanLyNhaHangDaChiNhanh
             this.Show();
         }
 
-        private void btnLogout_Click(object sender, EventArgs e) // chức năng đăng xuất
+        private void btnLogout_Click(object sender, EventArgs e) 
         {
             DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất và thoát ứng dụng?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -100,6 +100,14 @@ namespace QuanLyNhaHangDaChiNhanh
             {
                 Application.Exit(); 
             }
+        }
+
+        private void btnSupplier_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmSupplier f = new frmSupplier();
+            f.ShowDialog();
+            this.Show();
         }
 
 
