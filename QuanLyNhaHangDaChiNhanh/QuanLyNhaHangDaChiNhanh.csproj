@@ -92,11 +92,19 @@
     <Compile Include="frmStaffs.Designer.cs">
       <DependentUpon>frmStaffs.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="frmSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSupplier.Designer.cs">
       <DependentUpon>frmSupplier.cs</DependentUpon>
+=======
+    <Compile Include="frmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsers.Designer.cs">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+>>>>>>> 410f932 (Phân quyền và người dùng, có nhân viên và khuyến mãi)
     </Compile>
     <Compile Include="HamXuLy.cs" />
     <Compile Include="KhuyenMai.cs" />
@@ -130,8 +138,13 @@
     <EmbeddedResource Include="frmStaffs.resx">
       <DependentUpon>frmStaffs.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="frmSupplier.resx">
       <DependentUpon>frmSupplier.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="frmUsers.resx">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+>>>>>>> 410f932 (Phân quyền và người dùng, có nhân viên và khuyến mãi)
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

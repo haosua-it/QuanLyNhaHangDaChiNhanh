@@ -63,6 +63,7 @@
             this.button27 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
+HEAD
             this.button24 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
@@ -72,6 +73,18 @@
             this.button15 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
+
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.btnSearchNhaHang = new System.Windows.Forms.Button();
+            this.btnClientsNhaHang = new System.Windows.Forms.Button();
+            this.btnMenuNhaHang = new System.Windows.Forms.Button();
+            this.btnIngredientsNhaHang = new System.Windows.Forms.Button();
+            this.btnStaffsNhaHang = new System.Windows.Forms.Button();
+            this.btnReportNhaHang = new System.Windows.Forms.Button();
+            this.btnTableNhaHang = new System.Windows.Forms.Button();
+            this.btnLogoutNhaHang = new System.Windows.Forms.Button();
+            this.btnInvoiceNhaHang = new System.Windows.Forms.Button();
+e5af3210849be789872193e1481774845a6cc961
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -107,10 +120,10 @@
             this.tabPage1.Controls.Add(this.btnStaffs);
             this.tabPage1.Controls.Add(this.btnSales);
             this.tabPage1.Controls.Add(this.btnUsers);
-            this.tabPage1.Location = new System.Drawing.Point(4, 26);
+            this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1323, 624);
+            this.tabPage1.Size = new System.Drawing.Size(1323, 619);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hệ thống";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -345,10 +358,12 @@
             this.btnUsers.Text = "Users";
             this.btnUsers.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnUsers.UseVisualStyleBackColor = false;
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.panel2);
+HEAD
             this.tabPage3.Controls.Add(this.button24);
             this.tabPage3.Controls.Add(this.button22);
             this.tabPage3.Controls.Add(this.button19);
@@ -361,7 +376,26 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 26);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+ HEAD
             this.tabPage3.Size = new System.Drawing.Size(1323, 624);
+
+            this.tabPage3.Size = new System.Drawing.Size(1323, 628);
+
+            this.tabPage3.Controls.Add(this.btnSearchNhaHang);
+            this.tabPage3.Controls.Add(this.btnClientsNhaHang);
+            this.tabPage3.Controls.Add(this.btnMenuNhaHang);
+            this.tabPage3.Controls.Add(this.btnIngredientsNhaHang);
+            this.tabPage3.Controls.Add(this.btnStaffsNhaHang);
+            this.tabPage3.Controls.Add(this.btnReportNhaHang);
+            this.tabPage3.Controls.Add(this.btnTableNhaHang);
+            this.tabPage3.Controls.Add(this.btnLogoutNhaHang);
+            this.tabPage3.Controls.Add(this.btnInvoiceNhaHang);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1323, 625);
+ 410f932 (Phân quyền và người dùng, có nhân viên và khuyến mãi)
+ e5af3210849be789872193e1481774845a6cc961
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nhà hàng";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -583,6 +617,7 @@
             this.button25.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button25.UseVisualStyleBackColor = false;
             // 
+HEAD
             // button24
             // 
             this.button24.BackColor = System.Drawing.Color.White;
@@ -710,6 +745,142 @@
             this.button13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button13.UseVisualStyleBackColor = false;
             this.button13.Click += new System.EventHandler(this.button13_Click);
+
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 4);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(1281, 359);
+            this.dataGridView2.TabIndex = 50;
+            // 
+            // btnSearchNhaHang
+            // 
+            this.btnSearchNhaHang.BackColor = System.Drawing.Color.White;
+            this.btnSearchNhaHang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearchNhaHang.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchNhaHang.Image")));
+            this.btnSearchNhaHang.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSearchNhaHang.Location = new System.Drawing.Point(579, 1);
+            this.btnSearchNhaHang.Name = "btnSearchNhaHang";
+            this.btnSearchNhaHang.Size = new System.Drawing.Size(75, 66);
+            this.btnSearchNhaHang.TabIndex = 33;
+            this.btnSearchNhaHang.Text = "Search";
+            this.btnSearchNhaHang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSearchNhaHang.UseVisualStyleBackColor = false;
+            // 
+            // btnClientsNhaHang
+            // 
+            this.btnClientsNhaHang.BackColor = System.Drawing.Color.White;
+            this.btnClientsNhaHang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClientsNhaHang.Image = ((System.Drawing.Image)(resources.GetObject("btnClientsNhaHang.Image")));
+            this.btnClientsNhaHang.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnClientsNhaHang.Location = new System.Drawing.Point(498, 1);
+            this.btnClientsNhaHang.Name = "btnClientsNhaHang";
+            this.btnClientsNhaHang.Size = new System.Drawing.Size(75, 66);
+            this.btnClientsNhaHang.TabIndex = 32;
+            this.btnClientsNhaHang.Text = "Clients";
+            this.btnClientsNhaHang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnClientsNhaHang.UseVisualStyleBackColor = false;
+            // 
+            // btnMenuNhaHang
+            // 
+            this.btnMenuNhaHang.BackColor = System.Drawing.Color.White;
+            this.btnMenuNhaHang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMenuNhaHang.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuNhaHang.Image")));
+            this.btnMenuNhaHang.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMenuNhaHang.Location = new System.Drawing.Point(417, 1);
+            this.btnMenuNhaHang.Name = "btnMenuNhaHang";
+            this.btnMenuNhaHang.Size = new System.Drawing.Size(75, 66);
+            this.btnMenuNhaHang.TabIndex = 31;
+            this.btnMenuNhaHang.Text = "Menu";
+            this.btnMenuNhaHang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMenuNhaHang.UseVisualStyleBackColor = false;
+            // 
+            // btnIngredientsNhaHang
+            // 
+            this.btnIngredientsNhaHang.BackColor = System.Drawing.Color.White;
+            this.btnIngredientsNhaHang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnIngredientsNhaHang.Image = ((System.Drawing.Image)(resources.GetObject("btnIngredientsNhaHang.Image")));
+            this.btnIngredientsNhaHang.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnIngredientsNhaHang.Location = new System.Drawing.Point(323, 1);
+            this.btnIngredientsNhaHang.Name = "btnIngredientsNhaHang";
+            this.btnIngredientsNhaHang.Size = new System.Drawing.Size(88, 66);
+            this.btnIngredientsNhaHang.TabIndex = 30;
+            this.btnIngredientsNhaHang.Text = "Ingredients";
+            this.btnIngredientsNhaHang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnIngredientsNhaHang.UseVisualStyleBackColor = false;
+            // 
+            // btnStaffsNhaHang
+            // 
+            this.btnStaffsNhaHang.BackColor = System.Drawing.Color.White;
+            this.btnStaffsNhaHang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnStaffsNhaHang.Image = ((System.Drawing.Image)(resources.GetObject("btnStaffsNhaHang.Image")));
+            this.btnStaffsNhaHang.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnStaffsNhaHang.Location = new System.Drawing.Point(242, 1);
+            this.btnStaffsNhaHang.Name = "btnStaffsNhaHang";
+            this.btnStaffsNhaHang.Size = new System.Drawing.Size(75, 66);
+            this.btnStaffsNhaHang.TabIndex = 29;
+            this.btnStaffsNhaHang.Text = "Staffs";
+            this.btnStaffsNhaHang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnStaffsNhaHang.UseVisualStyleBackColor = false;
+            // 
+            // btnReportNhaHang
+            // 
+            this.btnReportNhaHang.BackColor = System.Drawing.Color.White;
+            this.btnReportNhaHang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReportNhaHang.Image = ((System.Drawing.Image)(resources.GetObject("btnReportNhaHang.Image")));
+            this.btnReportNhaHang.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnReportNhaHang.Location = new System.Drawing.Point(161, 1);
+            this.btnReportNhaHang.Name = "btnReportNhaHang";
+            this.btnReportNhaHang.Size = new System.Drawing.Size(75, 66);
+            this.btnReportNhaHang.TabIndex = 28;
+            this.btnReportNhaHang.Text = "Report";
+            this.btnReportNhaHang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReportNhaHang.UseVisualStyleBackColor = false;
+            // 
+            // btnTableNhaHang
+            // 
+            this.btnTableNhaHang.BackColor = System.Drawing.Color.White;
+            this.btnTableNhaHang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTableNhaHang.Image = ((System.Drawing.Image)(resources.GetObject("btnTableNhaHang.Image")));
+            this.btnTableNhaHang.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnTableNhaHang.Location = new System.Drawing.Point(80, 1);
+            this.btnTableNhaHang.Name = "btnTableNhaHang";
+            this.btnTableNhaHang.Size = new System.Drawing.Size(75, 66);
+            this.btnTableNhaHang.TabIndex = 27;
+            this.btnTableNhaHang.Text = "Table";
+            this.btnTableNhaHang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnTableNhaHang.UseVisualStyleBackColor = false;
+            // 
+            // btnLogoutNhaHang
+            // 
+            this.btnLogoutNhaHang.BackColor = System.Drawing.Color.White;
+            this.btnLogoutNhaHang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogoutNhaHang.Image = ((System.Drawing.Image)(resources.GetObject("btnLogoutNhaHang.Image")));
+            this.btnLogoutNhaHang.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnLogoutNhaHang.Location = new System.Drawing.Point(660, 1);
+            this.btnLogoutNhaHang.Name = "btnLogoutNhaHang";
+            this.btnLogoutNhaHang.Size = new System.Drawing.Size(75, 66);
+            this.btnLogoutNhaHang.TabIndex = 26;
+            this.btnLogoutNhaHang.Text = "Logout";
+            this.btnLogoutNhaHang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnLogoutNhaHang.UseVisualStyleBackColor = false;
+            // 
+            // btnInvoiceNhaHang
+            // 
+            this.btnInvoiceNhaHang.BackColor = System.Drawing.Color.White;
+            this.btnInvoiceNhaHang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInvoiceNhaHang.Image = ((System.Drawing.Image)(resources.GetObject("btnInvoiceNhaHang.Image")));
+            this.btnInvoiceNhaHang.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnInvoiceNhaHang.Location = new System.Drawing.Point(-1, 1);
+            this.btnInvoiceNhaHang.Name = "btnInvoiceNhaHang";
+            this.btnInvoiceNhaHang.Size = new System.Drawing.Size(75, 66);
+            this.btnInvoiceNhaHang.TabIndex = 25;
+            this.btnInvoiceNhaHang.Text = "Invoice";
+            this.btnInvoiceNhaHang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnInvoiceNhaHang.UseVisualStyleBackColor = false;
+            this.btnInvoiceNhaHang.Click += new System.EventHandler(this.button13_Click);
+>>>>>>> e5af3210849be789872193e1481774845a6cc961
             // 
             // frmDashBoard
             // 
@@ -750,16 +921,16 @@
         private System.Windows.Forms.Button btnBrands;
         private System.Windows.Forms.Button btnStaffs;
         private System.Windows.Forms.Button btnSales;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button btnLogoutNhaHang;
+        private System.Windows.Forms.Button btnInvoiceNhaHang;
+        private System.Windows.Forms.Button btnReportNhaHang;
+        private System.Windows.Forms.Button btnTableNhaHang;
+        private System.Windows.Forms.Button btnMenuNhaHang;
+        private System.Windows.Forms.Button btnIngredientsNhaHang;
+        private System.Windows.Forms.Button btnStaffsNhaHang;
         private System.Windows.Forms.Button btnClients;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Button btnClientsNhaHang;
+        private System.Windows.Forms.Button btnSearchNhaHang;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnTable;
         private System.Windows.Forms.Button btnLogout;

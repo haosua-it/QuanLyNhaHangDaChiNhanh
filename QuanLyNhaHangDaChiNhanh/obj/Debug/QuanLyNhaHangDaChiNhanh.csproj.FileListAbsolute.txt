@@ -11,7 +11,28 @@ D:\LTQL\QLBH\Project\QuanLyNhaHangDaChiNhanhVer2\QuanLyNhaHangDaChiNhanh\bin\Deb
 D:\LTQL\QLBH\Project\QuanLyNhaHangDaChiNhanhVer2\QuanLyNhaHangDaChiNhanh\bin\Debug\QuanLyNhaHangDaChiNhanh.pdb
 D:\LTQL\QLBH\Project\QuanLyNhaHangDaChiNhanhVer2\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.exe
 D:\LTQL\QLBH\Project\QuanLyNhaHangDaChiNhanhVer2\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.pdb
+<<<<<<< HEAD
 D:\LTQL\QLBH\Project\QuanLyNhaHangDaChiNhanhVer2\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.csprojResolveAssemblyReference.cache
 D:\LTQL\QLBH\Project\QuanLyNhaHangDaChiNhanhVer2\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.frmMenu.resources
 D:\LTQL\QLBH\Project\QuanLyNhaHangDaChiNhanhVer2\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.frmSupplier.resources
+<<<<<<< HEAD
 D:\LTQL\QLBH\Project\QuanLyNhaHangDaChiNhanhVer2\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.frmNguyenVatLieu.resources
+=======
+=======
+C:\Users\LoveLy\Downloads\QuanLyNhaHangDaChiNhanh\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.pdb
+C:\Users\LoveLy\Downloads\QuanLyNhaHangDaChiNhanh\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.frmChucVu.resources
+C:\Users\LoveLy\Downloads\QuanLyNhaHangDaChiNhanh\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.frmDangKy.resources
+C:\Users\LoveLy\Downloads\QuanLyNhaHangDaChiNhanh\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.frmDangNhap.resources
+C:\Users\LoveLy\Downloads\QuanLyNhaHangDaChiNhanh\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.frmDashBoard.resources
+C:\Users\LoveLy\Downloads\QuanLyNhaHangDaChiNhanh\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.frmSales.resources
+C:\Users\LoveLy\Downloads\QuanLyNhaHangDaChiNhanh\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.frmStaffs.resources
+C:\Users\LoveLy\Downloads\QuanLyNhaHangDaChiNhanh\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.Properties.Resources.resources
+C:\Users\LoveLy\Downloads\QuanLyNhaHangDaChiNhanh\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.csproj.GenerateResource.Cache
+C:\Users\LoveLy\Downloads\QuanLyNhaHangDaChiNhanh\QuanLyNhaHangDaChiNhanh\bin\Debug\QuanLyNhaHangDaChiNhanh.exe.config
+C:\Users\LoveLy\Downloads\QuanLyNhaHangDaChiNhanh\QuanLyNhaHangDaChiNhanh\bin\Debug\QuanLyNhaHangDaChiNhanh.exe
+C:\Users\LoveLy\Downloads\QuanLyNhaHangDaChiNhanh\QuanLyNhaHangDaChiNhanh\bin\Debug\QuanLyNhaHangDaChiNhanh.pdb
+C:\Users\LoveLy\Downloads\QuanLyNhaHangDaChiNhanh\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.csprojResolveAssemblyReference.cache
+C:\Users\LoveLy\Downloads\QuanLyNhaHangDaChiNhanh\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.exe
+C:\Users\LoveLy\Downloads\QuanLyNhaHangDaChiNhanh\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.frmUsers.resources
+>>>>>>> 410f932 (Phân quyền và người dùng, có nhân viên và khuyến mãi)
+>>>>>>> e5af3210849be789872193e1481774845a6cc961

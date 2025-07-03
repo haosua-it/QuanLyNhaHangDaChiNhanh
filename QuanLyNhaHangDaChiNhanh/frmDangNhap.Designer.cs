@@ -97,23 +97,24 @@
             this.chkHienMatKhau.AutoSize = true;
             this.chkHienMatKhau.Location = new System.Drawing.Point(192, 156);
             this.chkHienMatKhau.Name = "chkHienMatKhau";
-            this.chkHienMatKhau.Size = new System.Drawing.Size(146, 22);
+            this.chkHienMatKhau.Size = new System.Drawing.Size(182, 27);
             this.chkHienMatKhau.TabIndex = 5;
             this.chkHienMatKhau.Text = "Hiển thị mật khẩu";
             this.chkHienMatKhau.UseVisualStyleBackColor = true;
+            this.chkHienMatKhau.CheckedChanged += new System.EventHandler(this.chkHienMatKhau_CheckedChanged);
             // 
             // txtMatKhau
             // 
             this.txtMatKhau.Location = new System.Drawing.Point(189, 105);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(225, 26);
+            this.txtMatKhau.Size = new System.Drawing.Size(225, 30);
             this.txtMatKhau.TabIndex = 4;
             // 
             // txtTenDangNhap
             // 
             this.txtTenDangNhap.Location = new System.Drawing.Point(189, 60);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(225, 26);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(225, 30);
             this.txtTenDangNhap.TabIndex = 3;
             // 
             // label2
@@ -121,7 +122,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(62, 108);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 18);
+            this.label2.Size = new System.Drawing.Size(97, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "Mật khẩu:";
             // 
@@ -130,7 +131,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(62, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 18);
+            this.label1.Size = new System.Drawing.Size(146, 23);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tên đăng nhập:";
             // 
@@ -139,14 +140,14 @@
             this.lbDangNhap.AutoSize = true;
             this.lbDangNhap.Location = new System.Drawing.Point(189, 28);
             this.lbDangNhap.Name = "lbDangNhap";
-            this.lbDangNhap.Size = new System.Drawing.Size(151, 18);
+            this.lbDangNhap.Size = new System.Drawing.Size(191, 23);
             this.lbDangNhap.TabIndex = 0;
             this.lbDangNhap.Text = "Đăng nhập hệ thống:";
             this.lbDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmDangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;

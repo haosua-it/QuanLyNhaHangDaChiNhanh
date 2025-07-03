@@ -73,10 +73,10 @@ namespace QuanLyNhaHangDaChiNhanh
                 return false;
             }
 
-            // Kiểm tra độ dài mật khẩu (ít nhất 8 ký tự)
-            if (txtMatKhau.Text.Length < 8)
+            // Kiểm tra độ dài mật khẩu (ít nhất 6 ký tự)
+            if (txtMatKhau.Text.Length < 6)
             {
-                MessageBox.Show("Mật khẩu phải có ít nhất 8 ký tự!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Mật khẩu phải có ít nhất 6 ký tự!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMatKhau.Focus();
                 return false;
             }
