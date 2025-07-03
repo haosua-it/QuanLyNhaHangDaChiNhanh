@@ -237,7 +237,6 @@ namespace QuanLyNhaHangDaChiNhanh
 
         }
 
-<<<<<<< HEAD
         private void btnMenu_Click(object sender, EventArgs e) // chức năng của Menu
         {
             this.Hide();
@@ -262,31 +261,15 @@ namespace QuanLyNhaHangDaChiNhanh
             frmSupplier f = new frmSupplier();
             f.ShowDialog();
             this.Show();
-=======
+        }
         private void btnUsers_Click(object sender, EventArgs e)
         {
             frmUsers frm = new frmUsers();
             frm.Show();
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            this.Close();
->>>>>>> 410f932 (Phân quyền và người dùng, có nhân viên và khuyến mãi)
-        }
 
-        private void button19_Click(object sender, EventArgs e)
-        {
-            
-        }
 
-        private void btnIngredients_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmNguyenVatLieu f = new frmNguyenVatLieu();
-            f.ShowDialog();
-            this.Show();
-        }
 
         private void button19_Click(object sender, EventArgs e)
         {

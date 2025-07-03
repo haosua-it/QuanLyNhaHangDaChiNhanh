@@ -953,6 +953,16 @@
         private System.Windows.Forms.Button button27;
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Button button25;
+        private System.Windows.Forms.Button button13;
+private System.Windows.Forms.Button button14;
+private System.Windows.Forms.Button button15;
+private System.Windows.Forms.Button button16;
+private System.Windows.Forms.Button button17;
+private System.Windows.Forms.Button button18;
+private System.Windows.Forms.Button button19;
+private System.Windows.Forms.Button button22;
+private System.Windows.Forms.Button button24;
+private System.Windows.Forms.DataGridView dataGridView2;
 
 
     }
