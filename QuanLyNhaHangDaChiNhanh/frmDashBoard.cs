@@ -288,6 +288,19 @@ namespace QuanLyNhaHangDaChiNhanh
             this.Show();
         }
 
+        private void button19_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnIngredients_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmNguyenVatLieu f = new frmNguyenVatLieu();
+            f.ShowDialog();
+            this.Show();
+        }
+
 
     }
 }

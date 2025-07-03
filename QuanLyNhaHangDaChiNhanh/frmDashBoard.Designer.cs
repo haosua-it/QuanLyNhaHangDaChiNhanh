@@ -63,7 +63,9 @@
             this.button27 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
-HEAD
+
+
+ 
             this.button24 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
@@ -84,7 +86,7 @@ HEAD
             this.btnTableNhaHang = new System.Windows.Forms.Button();
             this.btnLogoutNhaHang = new System.Windows.Forms.Button();
             this.btnInvoiceNhaHang = new System.Windows.Forms.Button();
-e5af3210849be789872193e1481774845a6cc961
+
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -363,7 +365,7 @@ e5af3210849be789872193e1481774845a6cc961
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.panel2);
-HEAD
+
             this.tabPage3.Controls.Add(this.button24);
             this.tabPage3.Controls.Add(this.button22);
             this.tabPage3.Controls.Add(this.button19);
@@ -376,7 +378,7 @@ HEAD
             this.tabPage3.Location = new System.Drawing.Point(4, 26);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
- HEAD
+
             this.tabPage3.Size = new System.Drawing.Size(1323, 624);
 
             this.tabPage3.Size = new System.Drawing.Size(1323, 628);
@@ -394,8 +396,9 @@ HEAD
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(1323, 625);
- 410f932 (Phân quyền và người dùng, có nhân viên và khuyến mãi)
- e5af3210849be789872193e1481774845a6cc961
+
+            this.tabPage3.Size = new System.Drawing.Size(1323, 624);
+
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nhà hàng";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -617,7 +620,7 @@ HEAD
             this.button25.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button25.UseVisualStyleBackColor = false;
             // 
-HEAD
+
             // button24
             // 
             this.button24.BackColor = System.Drawing.Color.White;
@@ -880,7 +883,7 @@ HEAD
             this.btnInvoiceNhaHang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnInvoiceNhaHang.UseVisualStyleBackColor = false;
             this.btnInvoiceNhaHang.Click += new System.EventHandler(this.button13_Click);
->>>>>>> e5af3210849be789872193e1481774845a6cc961
+
             // 
             // frmDashBoard
             // 
