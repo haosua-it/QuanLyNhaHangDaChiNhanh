@@ -14,3 +14,4 @@ D:\LTQL\QLBH\Project\QuanLyNhaHangDaChiNhanhVer2\QuanLyNhaHangDaChiNhanh\obj\Deb
 D:\LTQL\QLBH\Project\QuanLyNhaHangDaChiNhanhVer2\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.csprojResolveAssemblyReference.cache
 D:\LTQL\QLBH\Project\QuanLyNhaHangDaChiNhanhVer2\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.frmMenu.resources
 D:\LTQL\QLBH\Project\QuanLyNhaHangDaChiNhanhVer2\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.frmSupplier.resources
+D:\LTQL\QLBH\Project\QuanLyNhaHangDaChiNhanhVer2\QuanLyNhaHangDaChiNhanh\obj\Debug\QuanLyNhaHangDaChiNhanh.frmNguyenVatLieu.resources

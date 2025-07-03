@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSales));
             this.txtSoLuong = new System.Windows.Forms.Panel();
+            this.cbTrangThai = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtDieuKien = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dtpNgayKetThuc = new System.Windows.Forms.DateTimePicker();
@@ -58,10 +62,6 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.luoiKhuyenMai = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtDieuKien = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbTrangThai = new System.Windows.Forms.ComboBox();
             this.txtSoLuong.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.luoiKhuyenMai)).BeginInit();
@@ -90,6 +90,39 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(1357, 195);
             this.txtSoLuong.TabIndex = 0;
+            // 
+            // cbTrangThai
+            // 
+            this.cbTrangThai.FormattingEnabled = true;
+            this.cbTrangThai.Location = new System.Drawing.Point(571, 146);
+            this.cbTrangThai.Name = "cbTrangThai";
+            this.cbTrangThai.Size = new System.Drawing.Size(295, 28);
+            this.cbTrangThai.TabIndex = 19;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(467, 149);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 20);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Trạng thái:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(37, 149);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(66, 20);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Điều kiện:";
+            // 
+            // txtDieuKien
+            // 
+            this.txtDieuKien.Location = new System.Drawing.Point(140, 147);
+            this.txtDieuKien.Name = "txtDieuKien";
+            this.txtDieuKien.Size = new System.Drawing.Size(271, 25);
+            this.txtDieuKien.TabIndex = 15;
             // 
             // label8
             // 
@@ -219,7 +252,7 @@
             this.panel1.Controls.Add(this.luoiKhuyenMai);
             this.panel1.Location = new System.Drawing.Point(1, 201);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1357, 536);
+            this.panel1.Size = new System.Drawing.Size(1373, 575);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -413,45 +446,12 @@
             this.luoiKhuyenMai.TabIndex = 2;
             this.luoiKhuyenMai.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.luoiKhuyenMai_CellContentClick);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(37, 149);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 20);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Điều kiện:";
-            // 
-            // txtDieuKien
-            // 
-            this.txtDieuKien.Location = new System.Drawing.Point(140, 147);
-            this.txtDieuKien.Name = "txtDieuKien";
-            this.txtDieuKien.Size = new System.Drawing.Size(271, 25);
-            this.txtDieuKien.TabIndex = 15;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(467, 149);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 20);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Trạng thái:";
-            // 
-            // cbTrangThai
-            // 
-            this.cbTrangThai.FormattingEnabled = true;
-            this.cbTrangThai.Location = new System.Drawing.Point(571, 146);
-            this.cbTrangThai.Name = "cbTrangThai";
-            this.cbTrangThai.Size = new System.Drawing.Size(295, 28);
-            this.cbTrangThai.TabIndex = 19;
-            // 
             // frmSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtSoLuong);
             this.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

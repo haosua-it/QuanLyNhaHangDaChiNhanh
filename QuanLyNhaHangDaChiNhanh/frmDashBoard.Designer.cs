@@ -63,7 +63,6 @@
             this.button27 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button24 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
@@ -77,7 +76,6 @@
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -216,6 +214,7 @@
             this.btnIngredients.Text = "Ingredients";
             this.btnIngredients.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnIngredients.UseVisualStyleBackColor = false;
+            this.btnIngredients.Click += new System.EventHandler(this.btnIngredients_Click);
             // 
             // btnSupplier
             // 
@@ -359,10 +358,10 @@
             this.tabPage3.Controls.Add(this.button15);
             this.tabPage3.Controls.Add(this.button14);
             this.tabPage3.Controls.Add(this.button13);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 26);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1323, 628);
+            this.tabPage3.Size = new System.Drawing.Size(1323, 624);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nhà hàng";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -383,7 +382,6 @@
             this.panel2.Controls.Add(this.button27);
             this.panel2.Controls.Add(this.button26);
             this.panel2.Controls.Add(this.button25);
-            this.panel2.Controls.Add(this.dataGridView2);
             this.panel2.Location = new System.Drawing.Point(3, 73);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1281, 572);
@@ -585,14 +583,6 @@
             this.button25.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button25.UseVisualStyleBackColor = false;
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 4);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1281, 359);
-            this.dataGridView2.TabIndex = 50;
-            // 
             // button24
             // 
             this.button24.BackColor = System.Drawing.Color.White;
@@ -634,6 +624,7 @@
             this.button19.Text = "Menu";
             this.button19.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button19.UseVisualStyleBackColor = false;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // button18
             // 
@@ -739,7 +730,6 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -775,7 +765,6 @@
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnCatalogue;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button button39;
         private System.Windows.Forms.Button button38;
         private System.Windows.Forms.Button button37;

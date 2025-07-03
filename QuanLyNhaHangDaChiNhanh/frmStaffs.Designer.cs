@@ -313,7 +313,7 @@
             this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Location = new System.Drawing.Point(12, 171);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1346, 575);
+            this.panel2.Size = new System.Drawing.Size(1362, 605);
             this.panel2.TabIndex = 1;
             // 
             // lblPage
@@ -516,7 +516,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
