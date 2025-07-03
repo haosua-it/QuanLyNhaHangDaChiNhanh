@@ -16,7 +16,160 @@ namespace QuanLyNhaHangDaChiNhanh
         {
             InitializeComponent();
         }
+        public Button NguoiDung
+        {
+            get { return btnUsers; }
+            set { btnUsers = value; }
+        }
+        public Button GiamGia
+        {
+            get { return btnSales; }
+            set { btnSales = value; }
+        }
+        public Button NhanVien
+        {
+            get { return btnStaffs; }
+            set { btnStaffs = value; }
+        }
+        public Button ChiNhanh
+        {
+            get { return btnBrands; }
+            set { btnBrands = value; }
+        }
+        public Button BaoCao
+        {
+            get { return btnReport; }
+            set { btnReport = value; }
+        }
+        public Button ThucDon
+        {
+            get { return btnMenu; }
+            set { btnMenu = value; }
+        }
+        public Button DanhMucMonAn
+        {
+            get { return btnCatalogue; }
+            set { btnCatalogue = value; }
+        }
+        public Button NhaCungCap
+        {
+            get { return btnSupplier; }
+            set { btnSupplier = value; }
+        }
+        public Button NguyenLieu
+        {
+            get { return btnIngredients; }
+            set { btnIngredients = value; }
+        }
 
+        public Button TimKiem
+        {
+            get { return btnSearch; }
+            set { btnSearch = value; }
+        }
+        public Button CaLam
+        {
+            get { return btnShift; }
+            set { btnShift = value; }
+        }
+        public Button KhachHang
+        {
+            get { return btnClients; }
+            set { btnClients = value; }
+        }
+        public Button Luong
+        {
+            get { return btnWage; }
+            set { btnWage = value; }
+        }
+        public Button BanAn
+        {
+            get { return btnTable; }
+            set { btnTable = value; }
+        }
+        public Button HoaDon
+        {
+            get { return btnInvoice; }
+            set { btnInvoice = value; }
+        }
+        public Button DangXuat
+        {
+            get { return btnLogout; }
+            set { btnLogout = value; }
+        }
+        public Button HoaDonNhaHang
+        {
+            get { return btnInvoiceNhaHang; }
+            set { btnInvoiceNhaHang = value; }
+        }
+        public Button BanAnNhaHang
+        {
+            get { return btnTableNhaHang; }
+            set { btnTableNhaHang = value; }
+        }
+        public Button BaoCaoNhaHang
+        {
+            get { return btnReportNhaHang; }
+            set { btnReportNhaHang = value; }
+        }
+        public Button NhanVienNhaHang
+        {
+            get { return btnStaffsNhaHang; }
+            set { btnStaffsNhaHang = value; }
+        }
+        public Button NguyenLieuNhaHang
+        {
+            get { return btnIngredientsNhaHang; }
+            set { btnIngredientsNhaHang = value; }
+        }
+        public Button ThucDonNhaHang
+        {
+            get { return btnMenuNhaHang; }
+            set { btnMenuNhaHang = value; }
+        }
+        public Button KhachHangNhaHang
+        {
+            get { return btnClientsNhaHang; }
+            set { btnClientsNhaHang = value; }
+        }
+        public Button TimKiemNhaHang
+        {
+            get { return btnSearchNhaHang; }
+            set { btnSearchNhaHang = value; }
+        }
+        public Button DangXuatNhaHang
+        {
+            get { return btnLogoutNhaHang; }
+            set { btnLogoutNhaHang = value; }
+        }
+        public void SetAllButtonsEnabled(bool enable)
+        {
+            btnUsers.Enabled = enable;
+            btnSales.Enabled = enable;
+            btnStaffs.Enabled = enable;
+            btnBrands.Enabled = enable;
+            btnReport.Enabled = enable;
+            btnMenu.Enabled = enable;
+            btnCatalogue.Enabled = enable;
+            btnSupplier.Enabled = enable;
+            btnIngredients.Enabled = enable;
+            btnSearch.Enabled = enable;
+            btnShift.Enabled = enable;
+            btnClients.Enabled = enable;
+            btnWage.Enabled = enable;
+            btnTable.Enabled = enable;
+            btnInvoice.Enabled = enable;
+            btnLogout.Enabled = enable;
+            btnInvoiceNhaHang.Enabled = enable;
+            btnTableNhaHang.Enabled = enable;
+            btnReportNhaHang.Enabled = enable;
+            btnStaffsNhaHang.Enabled = enable;
+            btnIngredientsNhaHang.Enabled = enable;
+            btnMenuNhaHang.Enabled = enable;
+            btnClientsNhaHang.Enabled = enable;
+            btnSearchNhaHang.Enabled = enable;
+            btnLogoutNhaHang.Enabled = enable;
+        }
 
 
         private void btnNhaHang_Click(object sender, EventArgs e)
@@ -84,6 +237,7 @@ namespace QuanLyNhaHangDaChiNhanh
 
         }
 
+<<<<<<< HEAD
         private void btnMenu_Click(object sender, EventArgs e) // chức năng của Menu
         {
             this.Hide();
@@ -108,6 +262,17 @@ namespace QuanLyNhaHangDaChiNhanh
             frmSupplier f = new frmSupplier();
             f.ShowDialog();
             this.Show();
+=======
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            frmUsers frm = new frmUsers();
+            frm.Show();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+>>>>>>> 410f932 (Phân quyền và người dùng, có nhân viên và khuyến mãi)
         }
 
 
