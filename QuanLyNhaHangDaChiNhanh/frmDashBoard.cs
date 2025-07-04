@@ -289,6 +289,12 @@ namespace QuanLyNhaHangDaChiNhanh
 
         }
 
+        private void btnClients_Click(object sender, EventArgs e)
+        {
+            FrmBan f = new FrmBan();
+            f.ShowDialog();
+        }
+
 
     }
 }

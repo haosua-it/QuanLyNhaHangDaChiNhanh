@@ -354,7 +354,51 @@ namespace QuanLyNhaHangDaChiNhanh
             Disconnect();
             return dt;
         }
+        //===============================================BÀN ĂN============================================================//
+        public static DataTable ShowBanAn()
+        {
+            Connect(); // Kết nối CSDL
+            DataTable dt = new DataTable();
+            string sql = "SELECT * FROM BANAN";
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lấy dữ liệu bàn ăn: " + ex.Message);
+            }
+            finally
+            {
+                Disconnect();
+            }
+            return dt;
+        }
+        //====Phân Trang====
 
+        public static DataTable ShowBanAnPhanTrang(int pageNumber, int pageSize)
+        {
+            Connect();
+            DataTable dt = new DataTable();
+            int offset = (pageNumber - 1) * pageSize;
 
+            string sql = string.Format("SELECT * FROM BANAN ORDER BY MABAN OFFSET {0} ROWS FETCH NEXT {1} ROWS ONLY", offset, pageSize);
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi phân trang: " + ex.Message);
+            }
+            finally
+            {
+                Disconnect();
+            }
+
+            return dt;
+        }
     }
 }
