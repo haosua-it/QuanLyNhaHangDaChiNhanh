@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace QuanLyNhaHangDaChiNhanh
 {
@@ -28,6 +29,7 @@ namespace QuanLyNhaHangDaChiNhanh
         {
             HamXuLy.Connect();
             HamXuLy.FillCombo("SELECT * FROM DANHMUCMON", cbDanhMuc, "TENDANHMUC", "MADANHMUC");
+            HamXuLy.FillCombo("SELECT * FROM CHINHANH", cbChiNhanh, "TENCHINHANH", "MACHINHANH");
             LoadMonAnPhanTrang();
             EnableForm(false);
         }
@@ -84,9 +86,11 @@ namespace QuanLyNhaHangDaChiNhanh
                 Gia = gia,
                 HinhAnh = txtHinhAnh.Text,
                 GhiChu = txtGhiChu.Text,
-                MaDanhMuc = cbDanhMuc.SelectedValue != null ? cbDanhMuc.SelectedValue.ToString() : ""
+                MaDanhMuc = cbDanhMuc.SelectedValue != null ? cbDanhMuc.SelectedValue.ToString() : "",
+                MaChiNhanh = cbChiNhanh.SelectedValue != null ? cbChiNhanh.SelectedValue.ToString() : ""
             };
         }
+
 
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -120,17 +124,17 @@ namespace QuanLyNhaHangDaChiNhanh
 
             if (isAdding)
             {
-                sql = string.Format("INSERT INTO MONAN (TENMON, GIA, HINHANH, GHICHU, MADANHMUC) " +
-                                    "VALUES (N'{0}', {1}, N'{2}', N'{3}', '{4}')",
-                                    mon.TenMon, mon.Gia, mon.HinhAnh, mon.GhiChu, mon.MaDanhMuc);
+                sql = string.Format("INSERT INTO MONAN (TENMON, GIA, HINHANH, GHICHU, MADANHMUC, MACHINHANH) " +
+                                    "VALUES (N'{0}', {1}, N'{2}', N'{3}', '{4}', '{5}')",
+                                    mon.TenMon, mon.Gia, mon.HinhAnh, mon.GhiChu, mon.MaDanhMuc, mon.MaChiNhanh);
                 HamXuLy.RunSQL(sql);
                 MessageBox.Show("Đã thêm món ăn!");
             }
             else if (isEditing)
             {
-                sql = string.Format("UPDATE MONAN SET TENMON = N'{0}', GIA = {1}, HINHANH = N'{2}', GHICHU = N'{3}', MADANHMUC = '{4}' " +
-                                    "WHERE MAMON = '{5}'",
-                                    mon.TenMon, mon.Gia, mon.HinhAnh, mon.GhiChu, mon.MaDanhMuc, mon.MaMon);
+                sql = string.Format("UPDATE MONAN SET TENMON = N'{0}', GIA = {1}, HINHANH = N'{2}', GHICHU = N'{3}', " +
+                                    "MADANHMUC = '{4}', MACHINHANH = '{5}' WHERE MAMON = '{6}'",
+                                    mon.TenMon, mon.Gia, mon.HinhAnh, mon.GhiChu, mon.MaDanhMuc, mon.MaChiNhanh, mon.MaMon);
                 HamXuLy.RunSQL(sql);
                 MessageBox.Show("Đã cập nhật món ăn!");
             }
@@ -140,6 +144,7 @@ namespace QuanLyNhaHangDaChiNhanh
             EnableForm(false);
             ClearForm();
         }
+
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -243,7 +248,26 @@ namespace QuanLyNhaHangDaChiNhanh
                 txtHinhAnh.Text = row.Cells["HINHANH"].Value.ToString();
                 txtGhiChu.Text = row.Cells["GHICHU"].Value.ToString();
                 cbDanhMuc.SelectedValue = row.Cells["MADANHMUC"].Value.ToString();
+
+                if (row.Cells["MACHINHANH"] != null)
+                    cbChiNhanh.SelectedValue = row.Cells["MACHINHANH"].Value.ToString();
+
+                // Load hình ảnh từ thư mục (tránh lỗi file lock)
+                string imagePath = Application.StartupPath + @"\HinhAnhMonAn\" + txtHinhAnh.Text;
+                if (File.Exists(imagePath))
+                {
+                    using (Image img = Image.FromFile(imagePath))
+                    {
+                        picHinhAnh.Image = new Bitmap(img);
+                    }
+                    picHinhAnh.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                else
+                {
+                    picHinhAnh.Image = null;
+                }
             }
+            
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -253,6 +277,54 @@ namespace QuanLyNhaHangDaChiNhanh
             f.FormClosed += (s, args) => this.Close();
             f.Show(); 
         }
+
+        private void btnChonAnh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Chọn hình ảnh món ăn";
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+
+                try
+                {
+                    using (Image img = Image.FromFile(filePath))
+                    {
+                        picHinhAnh.Image = new Bitmap(img);
+                    }
+                    picHinhAnh.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                catch (OutOfMemoryException)
+                {
+                    MessageBox.Show("Không thể mở hình ảnh. File không đúng định dạng hoặc bị hỏng!", "Lỗi ảnh", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi mở ảnh: " + ex.Message);
+                }
+
+
+                // Lưu tên file ảnh vào textbox
+                txtHinhAnh.Text = Path.GetFileName(filePath);
+
+                // Tạo thư mục ảnh nếu chưa có
+                string destinationFolder = Application.StartupPath + @"\HinhAnhMonAn\";
+                if (!Directory.Exists(destinationFolder))
+                {
+                    Directory.CreateDirectory(destinationFolder);
+                }
+
+                // Copy ảnh vào thư mục dự án nếu chưa tồn tại
+                string destFile = Path.Combine(destinationFolder, txtHinhAnh.Text);
+                if (!File.Exists(destFile))
+                {
+                    File.Copy(filePath, destFile);
+                }
+            }
+        }
+
 
 
 

@@ -14,6 +14,8 @@ namespace QuanLyNhaHangDaChiNhanh
         public string HinhAnh { get; set; }
         public string GhiChu { get; set; }
         public string MaDanhMuc { get; set; }
+        public string MaChiNhanh { get; set; }
+
     }
 
 }
