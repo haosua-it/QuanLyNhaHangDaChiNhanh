@@ -81,8 +81,11 @@ namespace QuanLyNhaHangDaChiNhanh
                     string iduser = dtlg.Rows[0]["MANGUOIDUNG"].ToString().Trim();
                     if (nhomquyen == "CV001")
                     {
-                        frm.Show();
+                        //frm.Show();
                         frm.SetAllButtonsEnabled(true);
+                        this.Hide();
+                        frm.ShowDialog();
+                        this.Close();
                     }
                     else
                     {
@@ -206,6 +209,10 @@ namespace QuanLyNhaHangDaChiNhanh
                             }
 
                         }
+                        // Ẩn form đăng nhập và hiển thị Dashboard sau khi đăng nhập thành công
+                        this.Hide();
+                        frm.ShowDialog();
+                        this.Close();
                     }
                 }
                 else if (HamXuLy.TruyVan(sql2, dtlg))

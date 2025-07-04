@@ -36,44 +36,39 @@ namespace QuanLyNhaHangDaChiNhanh
             try
             {
                 HamXuLy.Connect();
-
                 int startRow = (currentPage - 1) * pageSize + 1;
                 int endRow = currentPage * pageSize;
 
                 string sql = string.Format(@"
-            SELECT * FROM (
-                SELECT *, ROW_NUMBER() OVER (ORDER BY MANCC) AS RowNum
-                FROM NHACUNGCAP
-            ) AS Sub
-            WHERE RowNum BETWEEN {0} AND {1}", startRow, endRow);
+                    SELECT * FROM (
+                        SELECT *, ROW_NUMBER() OVER (ORDER BY MANCC) AS RowNum
+                        FROM NHACUNGCAP
+                    ) AS Sub
+                    WHERE RowNum BETWEEN {0} AND {1}", startRow, endRow);
 
                 DataTable dt = HamXuLy.GetDataToTable(sql);
+                luoiNCC.DataSource = dt;
 
                 if (dt.Rows.Count == 0)
                 {
                     MessageBox.Show("Không có dữ liệu để hiển thị!");
                 }
 
-                luoiNCC.DataSource = dt;
-
-                // Gán tên cột rõ ràng
+                // Đặt tên cột
                 luoiNCC.Columns["MANCC"].HeaderText = "Mã NCC";
                 luoiNCC.Columns["TENNCC"].HeaderText = "Tên nhà cung cấp";
                 luoiNCC.Columns["DIACHI"].HeaderText = "Địa chỉ";
                 luoiNCC.Columns["SODIENTHOAI"].HeaderText = "Số điện thoại";
                 luoiNCC.Columns["EMAIL"].HeaderText = "Email";
 
-                // Ẩn cột RowNum
                 if (luoiNCC.Columns.Contains("RowNum"))
-                {
                     luoiNCC.Columns["RowNum"].Visible = false;
-                }
 
                 luoiNCC.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 luoiNCC.ReadOnly = true;
                 luoiNCC.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-                lblPage.Text = "Trang " + currentPage.ToString();
+                lblPage.Text = "Trang " + currentPage;
             }
             catch (Exception ex)
             {
@@ -84,9 +79,6 @@ namespace QuanLyNhaHangDaChiNhanh
                 HamXuLy.Disconnect();
             }
         }
-
-
-
 
         private void luoiNCC_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -131,7 +123,6 @@ namespace QuanLyNhaHangDaChiNhanh
             btnUndo.Enabled = true;
             btnRedo.Enabled = true;
         }
-
         private NhaCungCap GetCurrentNCCFromForm()
         {
             return new NhaCungCap
@@ -222,7 +213,6 @@ namespace QuanLyNhaHangDaChiNhanh
                 HamXuLy.Disconnect();
             }
         }
-
         private void btnPrint_Click(object sender, EventArgs e)
         {
 

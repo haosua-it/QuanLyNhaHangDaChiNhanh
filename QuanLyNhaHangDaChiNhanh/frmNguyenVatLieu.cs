@@ -12,18 +12,19 @@ namespace QuanLyNhaHangDaChiNhanh
 {
     public partial class frmNguyenVatLieu : Form
     {
-        public frmNguyenVatLieu()
-        {
-            InitializeComponent();
-        }
         private Stack<NguyenVatLieu> undoStack = new Stack<NguyenVatLieu>();
         private Stack<NguyenVatLieu> redoStack = new Stack<NguyenVatLieu>();
 
         private int currentPage = 1;
         private int pageSize = 10;
+
         private bool isAdding = false;
         private bool isEditing = false;
 
+        public frmNguyenVatLieu()
+        {
+            InitializeComponent();
+        }
 
         private void LuoiNVL_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -63,22 +64,19 @@ namespace QuanLyNhaHangDaChiNhanh
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            isAdding = true;
-            isEditing = false;
-            EnableForm(true);
-            ClearForm();
+            isAdding = true; isEditing = false;
+            ClearForm(); EnableForm(true);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (luoiNVL.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Vui lòng chọn nguyên liệu để sửa!");
+                MessageBox.Show("Chọn nguyên liệu để sửa.");
                 return;
             }
 
-            isAdding = false;
-            isEditing = true;
+            isAdding = false; isEditing = true;
             EnableForm(true);
         }
 
@@ -86,14 +84,15 @@ namespace QuanLyNhaHangDaChiNhanh
         {
             if (luoiNVL.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Chọn nguyên liệu cần xóa!");
+                MessageBox.Show("Chọn nguyên liệu để xóa.");
                 return;
             }
 
             string maNL = luoiNVL.SelectedRows[0].Cells["MANGUYENLIEU"].Value.ToString();
-            if (MessageBox.Show("Xác nhận xóa?", "Xóa", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            string sql = string.Format("DELETE FROM KHO_NGUYENLIEU WHERE MANGUYENLIEU = '{0}' AND MACHINHANH = '{1}'; DELETE FROM NGUYENLIEU WHERE MANGUYENLIEU = '{0}'", maNL, cbMaChiNhanh.SelectedValue);
+
+            if (MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                string sql = "DELETE FROM NGUYENLIEU WHERE MANGUYENLIEU = '{maNL}'";
                 HamXuLy.RunSQL(sql);
                 LoadNguyenLieuPhanTrang();
             }
@@ -101,31 +100,33 @@ namespace QuanLyNhaHangDaChiNhanh
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            NguyenVatLieu nvl = GetCurrentNguyenLieuFromForm();
+            NguyenVatLieu nvl = GetCurrentNguyenLieuForm();
             undoStack.Push(nvl);
             redoStack.Clear();
 
             string sql = "";
-
             if (isAdding)
             {
-                sql = string.Format("INSERT INTO NGUYENLIEU (TENNGUYENLIEU, DONVITINH, DONGIANHAP, SOLUONGTON, SOLUONGTOITHIEU, NGAYNHAPGANNHAT, GHICHU, MANCC) " +
-                                    "VALUES (N'{0}', N'{1}', {2}, {3}, {4}, GETDATE(), N'{5}', {6})",
-                                    nvl.TenNguyenLieu, nvl.DonViTinh, nvl.DonGiaNhap, nvl.SoLuongTon, nvl.SoLuongToiThieu, nvl.GhiChu, nvl.MaNCC);
-                HamXuLy.RunSQL(sql);
-                MessageBox.Show("Đã thêm nguyên liệu!");
+                sql = string.Format(@"INSERT INTO NGUYENLIEU (TENNGUYENLIEU, DONVITINH, DONGIANHAP, GHICHU, MANCC) 
+                                      VALUES (N'{0}', N'{1}', {2}, N'{3}', '{4}');
+                                      INSERT INTO KHO_NGUYENLIEU (MANGUYENLIEU, MACHINHANH, SOLUONGTON, SOLUONGTOITHIEU, NGAYNHAPGANNHAT) 
+                                      SELECT MAX(MANGUYENLIEU), '{5}', {6}, {7}, GETDATE();",
+                                      nvl.TenNguyenLieu, nvl.DonViTinh, nvl.DonGiaNhap, nvl.GhiChu, nvl.MaNCC,
+                                      cbMaChiNhanh.SelectedValue, nvl.SoLuongTon, nvl.SoLuongToiThieu);
+                MessageBox.Show("Đã thêm nguyên liệu.");
             }
             else if (isEditing)
             {
-                sql = string.Format("UPDATE NGUYENLIEU SET TENNGUYENLIEU = N'{0}', DONVITINH = N'{1}', DONGIANHAP = {2}, " +
-                                    "SOLUONGTON = {3}, SOLUONGTOITHIEU = {4}, GHICHU = N'{5}', MANCC = {6} " +
-                                    "WHERE MANGUYENLIEU = '{7}'",
-                                    nvl.TenNguyenLieu, nvl.DonViTinh, nvl.DonGiaNhap, nvl.SoLuongTon, nvl.SoLuongToiThieu, nvl.GhiChu, nvl.MaNCC, nvl.MaNguyenLieu);
-                HamXuLy.RunSQL(sql);
-                MessageBox.Show("Đã cập nhật nguyên liệu!");
+                sql = string.Format(@"UPDATE NGUYENLIEU SET TENNGUYENLIEU = N'{0}', DONVITINH = N'{1}', DONGIANHAP = {2}, GHICHU = N'{3}', MANCC = '{4}' 
+                                      WHERE MANGUYENLIEU = '{5}';
+                                      UPDATE KHO_NGUYENLIEU SET SOLUONGTON = {6}, SOLUONGTOITHIEU = {7} 
+                                      WHERE MANGUYENLIEU = '{5}' AND MACHINHANH = '{8}';",
+                                      nvl.TenNguyenLieu, nvl.DonViTinh, nvl.DonGiaNhap, nvl.GhiChu, nvl.MaNCC, nvl.MaNguyenLieu,
+                                      nvl.SoLuongTon, nvl.SoLuongToiThieu, cbMaChiNhanh.SelectedValue);
+                MessageBox.Show("Đã cập nhật nguyên liệu.");
             }
-            else return;
 
+            HamXuLy.RunSQL(sql);
             LoadNguyenLieuPhanTrang();
             EnableForm(false);
             ClearForm();
@@ -141,7 +142,7 @@ namespace QuanLyNhaHangDaChiNhanh
             if (redoStack.Count > 0)
             {
                 NguyenVatLieu nvl = redoStack.Pop();
-                undoStack.Push(GetCurrentNguyenLieuFromForm());
+                undoStack.Push(GetCurrentNguyenLieuForm());
 
                 txtMaNVL.Text = nvl.MaNguyenLieu;
                 txtTenNVL.Text = nvl.TenNguyenLieu;
@@ -162,7 +163,7 @@ namespace QuanLyNhaHangDaChiNhanh
             if (undoStack.Count > 0)
             {
                 NguyenVatLieu nvl = undoStack.Pop();
-                redoStack.Push(GetCurrentNguyenLieuFromForm());
+                redoStack.Push(GetCurrentNguyenLieuForm());
 
                 txtMaNVL.Text = nvl.MaNguyenLieu;
                 txtTenNVL.Text = nvl.TenNguyenLieu;
@@ -214,20 +215,11 @@ namespace QuanLyNhaHangDaChiNhanh
 
         private void frmNguyenVatLieu_Load(object sender, EventArgs e)
         {
-            HamXuLy.Connect();
-
             HamXuLy.FillCombo("SELECT MACHINHANH, TENCHINHANH FROM CHINHANH", cbMaChiNhanh, "TENCHINHANH", "MACHINHANH");
-
-            if (cbMaChiNhanh.Items.Count > 0)
-            {
-                cbMaChiNhanh.SelectedIndex = 0;
-            }
-
             HamXuLy.FillCombo("SELECT MANCC, TENNCC FROM NHACUNGCAP", cbMaNCC, "TENNCC", "MANCC");
 
-            // 🟢 Bây giờ cbMaChiNhanh đã có giá trị, mới được gọi
+            if (cbMaChiNhanh.Items.Count > 0) cbMaChiNhanh.SelectedIndex = 0;
             LoadNguyenLieuPhanTrang();
-
             EnableForm(false);
         }
         private DataTable ShowNguyenLieuPhanTrang(int page, int pageSize, string maChiNhanh)
@@ -252,27 +244,48 @@ namespace QuanLyNhaHangDaChiNhanh
 
             return HamXuLy.GetDataToTable(sql);
         }
-
-
         private void LoadNguyenLieuPhanTrang()
         {
-            if (cbMaChiNhanh.SelectedValue == null)
+            string maCN = "";
+            if (cbMaChiNhanh.SelectedValue != null)
+            {
+                maCN = cbMaChiNhanh.SelectedValue.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn chi nhánh!");
                 return;
+            }
 
-            string maChiNhanh = cbMaChiNhanh.SelectedValue.ToString();
-            DataTable dt = ShowNguyenLieuPhanTrang(currentPage, pageSize, maChiNhanh);
+            int start = (currentPage - 1) * pageSize + 1;
+            int end = currentPage * pageSize;
 
+            string sql = string.Format(@"
+                SELECT * FROM (
+                    SELECT ROW_NUMBER() OVER (ORDER BY NL.MANGUYENLIEU) AS RowNum,
+                           NL.MANGUYENLIEU, NL.TENNGUYENLIEU, NL.DONVITINH, NL.DONGIANHAP,
+                           KNL.SOLUONGTON, KNL.SOLUONGTOITHIEU, KNL.NGAYNHAPGANNHAT,
+                           NL.GHICHU, NL.MANCC
+                    FROM NGUYENLIEU NL
+                    JOIN KHO_NGUYENLIEU KNL ON NL.MANGUYENLIEU = KNL.MANGUYENLIEU
+                    WHERE KNL.MACHINHANH = '{0}'
+                ) AS Temp
+                WHERE RowNum BETWEEN {1} AND {2}", maCN, start, end);
+
+            DataTable dt = HamXuLy.GetDataToTable(sql);
             luoiNVL.DataSource = dt;
 
+            if (dt.Columns.Contains("RowNum")) luoiNVL.Columns["RowNum"].Visible = false;
+
             luoiNVL.Columns["MANGUYENLIEU"].HeaderText = "Mã NL";
-            luoiNVL.Columns["TENNGUYENLIEU"].HeaderText = "Tên NL";
-            luoiNVL.Columns["DONVITINH"].HeaderText = "ĐVT";
-            luoiNVL.Columns["DONGIANHAP"].HeaderText = "Đơn giá";
-            luoiNVL.Columns["SOLUONGTON"].HeaderText = "Tồn kho";
-            luoiNVL.Columns["SOLUONGTOITHIEU"].HeaderText = "Tối thiểu";
-            luoiNVL.Columns["NGAYNHAPGANNHAT"].HeaderText = "Ngày nhập gần nhất";
+            luoiNVL.Columns["TENNGUYENLIEU"].HeaderText = "Tên nguyên liệu";
+            luoiNVL.Columns["DONVITINH"].HeaderText = "Đơn vị";
+            luoiNVL.Columns["DONGIANHAP"].HeaderText = "Giá nhập";
+            luoiNVL.Columns["SOLUONGTON"].HeaderText = "SL tồn";
+            luoiNVL.Columns["SOLUONGTOITHIEU"].HeaderText = "SL tối thiểu";
+            luoiNVL.Columns["NGAYNHAPGANNHAT"].HeaderText = "Ngày nhập";
             luoiNVL.Columns["GHICHU"].HeaderText = "Ghi chú";
-            luoiNVL.Columns["MANCC"].HeaderText = "Nhà cung cấp";
+            luoiNVL.Columns["MANCC"].HeaderText = "Mã NCC";
 
             luoiNVL.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             luoiNVL.ReadOnly = true;
@@ -307,7 +320,7 @@ namespace QuanLyNhaHangDaChiNhanh
             cbMaNCC.SelectedIndex = 0;
         }
 
-        private NguyenVatLieu GetCurrentNguyenLieuFromForm()
+        private NguyenVatLieu GetCurrentNguyenLieuForm()
         {
             decimal gia = 0;
             float ton = 0, toiThieu = 0;

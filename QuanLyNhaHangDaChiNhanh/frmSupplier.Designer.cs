@@ -81,43 +81,43 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(886, 55);
+            this.txtEmail.Location = new System.Drawing.Point(1023, 55);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(246, 25);
             this.txtEmail.TabIndex = 16;
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(490, 88);
+            this.txtSDT.Location = new System.Drawing.Point(578, 88);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(244, 25);
+            this.txtSDT.Size = new System.Drawing.Size(302, 25);
             this.txtSDT.TabIndex = 15;
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(490, 55);
+            this.txtDiaChi.Location = new System.Drawing.Point(578, 55);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(244, 25);
+            this.txtDiaChi.Size = new System.Drawing.Size(302, 25);
             this.txtDiaChi.TabIndex = 14;
             // 
             // txtTenNCC
             // 
             this.txtTenNCC.Location = new System.Drawing.Point(146, 87);
             this.txtTenNCC.Name = "txtTenNCC";
-            this.txtTenNCC.Size = new System.Drawing.Size(195, 25);
+            this.txtTenNCC.Size = new System.Drawing.Size(297, 25);
             this.txtTenNCC.TabIndex = 13;
             // 
             // txtMaNCC
             // 
             this.txtMaNCC.Location = new System.Drawing.Point(146, 56);
             this.txtMaNCC.Name = "txtMaNCC";
-            this.txtMaNCC.Size = new System.Drawing.Size(195, 25);
+            this.txtMaNCC.Size = new System.Drawing.Size(297, 25);
             this.txtMaNCC.TabIndex = 12;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(805, 61);
+            this.label8.Location = new System.Drawing.Point(942, 61);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(49, 17);
             this.label8.TabIndex = 4;
@@ -126,7 +126,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(407, 93);
+            this.label7.Location = new System.Drawing.Point(495, 93);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(40, 17);
             this.label7.TabIndex = 5;
@@ -135,7 +135,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(407, 60);
+            this.label6.Location = new System.Drawing.Point(495, 60);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 17);
             this.label6.TabIndex = 4;
@@ -186,15 +186,15 @@
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Controls.Add(this.btnEdit);
             this.panel2.Controls.Add(this.btnAdd);
-            this.panel2.Location = new System.Drawing.Point(12, 143);
+            this.panel2.Location = new System.Drawing.Point(12, 146);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1362, 633);
+            this.panel2.Size = new System.Drawing.Size(1362, 630);
             this.panel2.TabIndex = 3;
             // 
             // lblPage
             // 
             this.lblPage.AutoSize = true;
-            this.lblPage.Location = new System.Drawing.Point(593, 477);
+            this.lblPage.Location = new System.Drawing.Point(589, 474);
             this.lblPage.Name = "lblPage";
             this.lblPage.Size = new System.Drawing.Size(57, 17);
             this.lblPage.TabIndex = 99;
@@ -205,7 +205,7 @@
             this.btnPrevPage.BackColor = System.Drawing.Color.White;
             this.btnPrevPage.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevPage.Image")));
             this.btnPrevPage.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPrevPage.Location = new System.Drawing.Point(502, 456);
+            this.btnPrevPage.Location = new System.Drawing.Point(498, 453);
             this.btnPrevPage.Name = "btnPrevPage";
             this.btnPrevPage.Size = new System.Drawing.Size(75, 55);
             this.btnPrevPage.TabIndex = 98;
@@ -218,7 +218,7 @@
             this.btnNextPage.BackColor = System.Drawing.Color.White;
             this.btnNextPage.Image = ((System.Drawing.Image)(resources.GetObject("btnNextPage.Image")));
             this.btnNextPage.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNextPage.Location = new System.Drawing.Point(664, 456);
+            this.btnNextPage.Location = new System.Drawing.Point(660, 453);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(75, 55);
             this.btnNextPage.TabIndex = 97;
@@ -229,7 +229,7 @@
             // luoiNCC
             // 
             this.luoiNCC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.luoiNCC.Location = new System.Drawing.Point(3, 3);
+            this.luoiNCC.Location = new System.Drawing.Point(12, 13);
             this.luoiNCC.Name = "luoiNCC";
             this.luoiNCC.Size = new System.Drawing.Size(1337, 350);
             this.luoiNCC.TabIndex = 96;
@@ -241,7 +241,7 @@
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSearch.Location = new System.Drawing.Point(664, 549);
+            this.btnSearch.Location = new System.Drawing.Point(660, 546);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 70);
             this.btnSearch.TabIndex = 95;
@@ -256,7 +256,7 @@
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBack.Location = new System.Drawing.Point(744, 549);
+            this.btnBack.Location = new System.Drawing.Point(740, 546);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 70);
             this.btnBack.TabIndex = 94;
@@ -271,7 +271,7 @@
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancel.Location = new System.Drawing.Point(583, 549);
+            this.btnCancel.Location = new System.Drawing.Point(579, 546);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 70);
             this.btnCancel.TabIndex = 93;
@@ -286,7 +286,7 @@
             this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
             this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPrint.Location = new System.Drawing.Point(340, 549);
+            this.btnPrint.Location = new System.Drawing.Point(336, 546);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(75, 70);
             this.btnPrint.TabIndex = 92;
@@ -301,7 +301,7 @@
             this.btnUndo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUndo.Image = ((System.Drawing.Image)(resources.GetObject("btnUndo.Image")));
             this.btnUndo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnUndo.Location = new System.Drawing.Point(502, 549);
+            this.btnUndo.Location = new System.Drawing.Point(498, 546);
             this.btnUndo.Name = "btnUndo";
             this.btnUndo.Size = new System.Drawing.Size(75, 70);
             this.btnUndo.TabIndex = 91;
@@ -316,7 +316,7 @@
             this.btnRedo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRedo.Image = ((System.Drawing.Image)(resources.GetObject("btnRedo.Image")));
             this.btnRedo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRedo.Location = new System.Drawing.Point(421, 549);
+            this.btnRedo.Location = new System.Drawing.Point(417, 546);
             this.btnRedo.Name = "btnRedo";
             this.btnRedo.Size = new System.Drawing.Size(75, 70);
             this.btnRedo.TabIndex = 90;
@@ -331,7 +331,7 @@
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDelete.Location = new System.Drawing.Point(259, 549);
+            this.btnDelete.Location = new System.Drawing.Point(255, 546);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 70);
             this.btnDelete.TabIndex = 89;
@@ -347,7 +347,7 @@
             this.btnSave.Enabled = false;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSave.Location = new System.Drawing.Point(178, 549);
+            this.btnSave.Location = new System.Drawing.Point(174, 546);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 70);
             this.btnSave.TabIndex = 88;
@@ -362,7 +362,7 @@
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEdit.Location = new System.Drawing.Point(97, 549);
+            this.btnEdit.Location = new System.Drawing.Point(93, 546);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 70);
             this.btnEdit.TabIndex = 87;
@@ -377,7 +377,7 @@
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAdd.Location = new System.Drawing.Point(16, 549);
+            this.btnAdd.Location = new System.Drawing.Point(12, 546);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 70);
             this.btnAdd.TabIndex = 86;
@@ -391,7 +391,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.ClientSize = new System.Drawing.Size(1370, 788);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));

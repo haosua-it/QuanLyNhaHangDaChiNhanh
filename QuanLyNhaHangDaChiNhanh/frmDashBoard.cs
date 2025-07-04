@@ -284,6 +284,11 @@ namespace QuanLyNhaHangDaChiNhanh
             this.Show();
         }
 
+        private void btnShift_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }
