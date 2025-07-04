@@ -48,21 +48,6 @@
             this.btnSales = new System.Windows.Forms.Button();
             this.btnUsers = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button39 = new System.Windows.Forms.Button();
-            this.button38 = new System.Windows.Forms.Button();
-            this.button37 = new System.Windows.Forms.Button();
-            this.button36 = new System.Windows.Forms.Button();
-            this.button35 = new System.Windows.Forms.Button();
-            this.button33 = new System.Windows.Forms.Button();
-            this.button32 = new System.Windows.Forms.Button();
-            this.button31 = new System.Windows.Forms.Button();
-            this.button30 = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
             this.btnSearchNhaHang = new System.Windows.Forms.Button();
             this.btnClientsNhaHang = new System.Windows.Forms.Button();
             this.btnMenuNhaHang = new System.Windows.Forms.Button();
@@ -76,7 +61,6 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,7 +71,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1362, 737);
+            this.tabControl1.Size = new System.Drawing.Size(1353, 764);
             this.tabControl1.TabIndex = 11;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -112,7 +96,11 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+<<<<<<< HEAD
             this.tabPage1.Size = new System.Drawing.Size(1354, 702);
+=======
+            this.tabPage1.Size = new System.Drawing.Size(1345, 734);
+>>>>>>> ba46426d38191e7e9d5fa02366becfe979e76c03
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hệ thống";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -353,7 +341,6 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.panel2);
             this.tabPage3.Controls.Add(this.btnSearchNhaHang);
             this.tabPage3.Controls.Add(this.btnClientsNhaHang);
             this.tabPage3.Controls.Add(this.btnMenuNhaHang);
@@ -366,227 +353,14 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+<<<<<<< HEAD
             this.tabPage3.Size = new System.Drawing.Size(1354, 708);
+=======
+            this.tabPage3.Size = new System.Drawing.Size(1345, 734);
+>>>>>>> ba46426d38191e7e9d5fa02366becfe979e76c03
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nhà hàng";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.button39);
-            this.panel2.Controls.Add(this.button38);
-            this.panel2.Controls.Add(this.button37);
-            this.panel2.Controls.Add(this.button36);
-            this.panel2.Controls.Add(this.button35);
-            this.panel2.Controls.Add(this.button33);
-            this.panel2.Controls.Add(this.button32);
-            this.panel2.Controls.Add(this.button31);
-            this.panel2.Controls.Add(this.button30);
-            this.panel2.Controls.Add(this.button29);
-            this.panel2.Controls.Add(this.button28);
-            this.panel2.Controls.Add(this.button27);
-            this.panel2.Controls.Add(this.button26);
-            this.panel2.Controls.Add(this.button25);
-            this.panel2.Location = new System.Drawing.Point(3, 73);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1345, 638);
-            this.panel2.TabIndex = 34;
-            // 
-            // button39
-            // 
-            this.button39.BackColor = System.Drawing.Color.White;
-            this.button39.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button39.Image = ((System.Drawing.Image)(resources.GetObject("button39.Image")));
-            this.button39.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button39.Location = new System.Drawing.Point(1069, 558);
-            this.button39.Name = "button39";
-            this.button39.Size = new System.Drawing.Size(75, 70);
-            this.button39.TabIndex = 69;
-            this.button39.Text = "cancel";
-            this.button39.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button39.UseVisualStyleBackColor = false;
-            // 
-            // button38
-            // 
-            this.button38.BackColor = System.Drawing.Color.White;
-            this.button38.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button38.Image = ((System.Drawing.Image)(resources.GetObject("button38.Image")));
-            this.button38.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button38.Location = new System.Drawing.Point(988, 558);
-            this.button38.Name = "button38";
-            this.button38.Size = new System.Drawing.Size(75, 70);
-            this.button38.TabIndex = 68;
-            this.button38.Text = "Payment";
-            this.button38.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button38.UseVisualStyleBackColor = false;
-            // 
-            // button37
-            // 
-            this.button37.BackColor = System.Drawing.Color.White;
-            this.button37.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button37.Image = ((System.Drawing.Image)(resources.GetObject("button37.Image")));
-            this.button37.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button37.Location = new System.Drawing.Point(574, 558);
-            this.button37.Name = "button37";
-            this.button37.Size = new System.Drawing.Size(82, 70);
-            this.button37.TabIndex = 67;
-            this.button37.Text = "Exchange";
-            this.button37.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button37.UseVisualStyleBackColor = false;
-            // 
-            // button36
-            // 
-            this.button36.BackColor = System.Drawing.Color.White;
-            this.button36.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button36.Image = ((System.Drawing.Image)(resources.GetObject("button36.Image")));
-            this.button36.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button36.Location = new System.Drawing.Point(493, 558);
-            this.button36.Name = "button36";
-            this.button36.Size = new System.Drawing.Size(75, 70);
-            this.button36.TabIndex = 66;
-            this.button36.Text = "Combine";
-            this.button36.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button36.UseVisualStyleBackColor = false;
-            // 
-            // button35
-            // 
-            this.button35.BackColor = System.Drawing.Color.White;
-            this.button35.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button35.Image = ((System.Drawing.Image)(resources.GetObject("button35.Image")));
-            this.button35.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button35.Location = new System.Drawing.Point(412, 558);
-            this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(75, 70);
-            this.button35.TabIndex = 65;
-            this.button35.Text = "Split";
-            this.button35.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button35.UseVisualStyleBackColor = false;
-            // 
-            // button33
-            // 
-            this.button33.BackColor = System.Drawing.Color.White;
-            this.button33.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button33.Image = ((System.Drawing.Image)(resources.GetObject("button33.Image")));
-            this.button33.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button33.Location = new System.Drawing.Point(905, 558);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(75, 70);
-            this.button33.TabIndex = 64;
-            this.button33.Text = "Check in";
-            this.button33.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button33.UseVisualStyleBackColor = false;
-            // 
-            // button32
-            // 
-            this.button32.BackColor = System.Drawing.Color.White;
-            this.button32.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button32.Image = ((System.Drawing.Image)(resources.GetObject("button32.Image")));
-            this.button32.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button32.Location = new System.Drawing.Point(331, 558);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(75, 70);
-            this.button32.TabIndex = 63;
-            this.button32.Text = "Print";
-            this.button32.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button32.UseVisualStyleBackColor = false;
-            // 
-            // button31
-            // 
-            this.button31.BackColor = System.Drawing.Color.White;
-            this.button31.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button31.Image = ((System.Drawing.Image)(resources.GetObject("button31.Image")));
-            this.button31.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button31.Location = new System.Drawing.Point(824, 558);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(75, 70);
-            this.button31.TabIndex = 62;
-            this.button31.Text = "Discount";
-            this.button31.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button31.UseVisualStyleBackColor = false;
-            // 
-            // button30
-            // 
-            this.button30.BackColor = System.Drawing.Color.White;
-            this.button30.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button30.Image = ((System.Drawing.Image)(resources.GetObject("button30.Image")));
-            this.button30.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button30.Location = new System.Drawing.Point(743, 558);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(75, 70);
-            this.button30.TabIndex = 61;
-            this.button30.Text = "Undo";
-            this.button30.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button30.UseVisualStyleBackColor = false;
-            // 
-            // button29
-            // 
-            this.button29.BackColor = System.Drawing.Color.White;
-            this.button29.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button29.Image = ((System.Drawing.Image)(resources.GetObject("button29.Image")));
-            this.button29.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button29.Location = new System.Drawing.Point(662, 558);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(75, 70);
-            this.button29.TabIndex = 60;
-            this.button29.Text = "Redo";
-            this.button29.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button29.UseVisualStyleBackColor = false;
-            // 
-            // button28
-            // 
-            this.button28.BackColor = System.Drawing.Color.White;
-            this.button28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button28.Image = ((System.Drawing.Image)(resources.GetObject("button28.Image")));
-            this.button28.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button28.Location = new System.Drawing.Point(250, 558);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(75, 70);
-            this.button28.TabIndex = 59;
-            this.button28.Text = "Delete";
-            this.button28.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button28.UseVisualStyleBackColor = false;
-            // 
-            // button27
-            // 
-            this.button27.BackColor = System.Drawing.Color.White;
-            this.button27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button27.Image = ((System.Drawing.Image)(resources.GetObject("button27.Image")));
-            this.button27.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button27.Location = new System.Drawing.Point(169, 558);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(75, 70);
-            this.button27.TabIndex = 58;
-            this.button27.Text = "Save";
-            this.button27.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button27.UseVisualStyleBackColor = false;
-            // 
-            // button26
-            // 
-            this.button26.BackColor = System.Drawing.Color.White;
-            this.button26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button26.Image = ((System.Drawing.Image)(resources.GetObject("button26.Image")));
-            this.button26.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button26.Location = new System.Drawing.Point(88, 558);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(75, 70);
-            this.button26.TabIndex = 57;
-            this.button26.Text = "Edit";
-            this.button26.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button26.UseVisualStyleBackColor = false;
-            // 
-            // button25
-            // 
-            this.button25.BackColor = System.Drawing.Color.White;
-            this.button25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button25.Image = ((System.Drawing.Image)(resources.GetObject("button25.Image")));
-            this.button25.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button25.Location = new System.Drawing.Point(7, 558);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(75, 70);
-            this.button25.TabIndex = 56;
-            this.button25.Text = "Add";
-            this.button25.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button25.UseVisualStyleBackColor = false;
             // 
             // btnSearchNhaHang
             // 
@@ -629,6 +403,7 @@
             this.btnMenuNhaHang.Text = "Menu";
             this.btnMenuNhaHang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnMenuNhaHang.UseVisualStyleBackColor = false;
+            this.btnMenuNhaHang.Click += new System.EventHandler(this.btnMenuNhaHang_Click);
             // 
             // btnIngredientsNhaHang
             // 
@@ -657,6 +432,7 @@
             this.btnStaffsNhaHang.Text = "Staffs";
             this.btnStaffsNhaHang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnStaffsNhaHang.UseVisualStyleBackColor = false;
+            this.btnStaffsNhaHang.Click += new System.EventHandler(this.btnStaffsNhaHang_Click);
             // 
             // btnReportNhaHang
             // 
@@ -728,8 +504,9 @@
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1386, 761);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -741,7 +518,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
@@ -777,21 +553,6 @@
         private System.Windows.Forms.Button btnTable;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnCatalogue;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button39;
-        private System.Windows.Forms.Button button38;
-        private System.Windows.Forms.Button button37;
-        private System.Windows.Forms.Button button36;
-        private System.Windows.Forms.Button button35;
-        private System.Windows.Forms.Button button33;
-        private System.Windows.Forms.Button button32;
-        private System.Windows.Forms.Button button31;
-        private System.Windows.Forms.Button button30;
-        private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.Button button28;
-        private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Button button25;
 private System.Windows.Forms.DataGridView dataGridView2;
 
 

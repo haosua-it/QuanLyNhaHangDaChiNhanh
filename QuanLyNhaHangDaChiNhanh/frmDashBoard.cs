@@ -198,8 +198,12 @@ namespace QuanLyNhaHangDaChiNhanh
             this.Show();
         }
 
-        private void button13_Click(object sender, EventArgs e)
+        private void button13_Click(object sender, EventArgs e) // CHỨC NĂNG QUẢN LÝ HÓA ĐƠN Ở TAB NHÀ HÀNG
         {
+            this.Hide();
+            frmInvoice f = new frmInvoice();
+            f.ShowDialog();
+            this.Show();
 
         }
 
@@ -289,10 +293,24 @@ namespace QuanLyNhaHangDaChiNhanh
 
         }
 
+<<<<<<< HEAD
         private void btnClients_Click(object sender, EventArgs e)
         {
             FrmBan f = new FrmBan();
             f.ShowDialog();
+=======
+        private void btnStaffsNhaHang_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMenuNhaHang_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMenuOnTabNhaHang f = new frmMenuOnTabNhaHang();
+            f.ShowDialog();
+            this.Show();
+>>>>>>> ba46426d38191e7e9d5fa02366becfe979e76c03
         }
 
 
