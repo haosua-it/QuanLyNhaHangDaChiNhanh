@@ -293,12 +293,11 @@ namespace QuanLyNhaHangDaChiNhanh
 
         }
 
-<<<<<<< HEAD
         private void btnClients_Click(object sender, EventArgs e)
         {
             FrmBan f = new FrmBan();
             f.ShowDialog();
-=======
+	}
         private void btnStaffsNhaHang_Click(object sender, EventArgs e)
         {
 
@@ -310,7 +309,12 @@ namespace QuanLyNhaHangDaChiNhanh
             frmMenuOnTabNhaHang f = new frmMenuOnTabNhaHang();
             f.ShowDialog();
             this.Show();
->>>>>>> ba46426d38191e7e9d5fa02366becfe979e76c03
+        }
+
+        private void btnTable_Click(object sender, EventArgs e)
+        {
+            FrmBan frm = new FrmBan();
+            frm.ShowDialog();
         }
 
 

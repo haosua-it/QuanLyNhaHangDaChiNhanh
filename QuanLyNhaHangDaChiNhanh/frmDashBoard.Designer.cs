@@ -96,11 +96,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-<<<<<<< HEAD
-            this.tabPage1.Size = new System.Drawing.Size(1354, 702);
-=======
-            this.tabPage1.Size = new System.Drawing.Size(1345, 734);
->>>>>>> ba46426d38191e7e9d5fa02366becfe979e76c03
+            this.tabPage1.Size = new System.Drawing.Size(1345, 729);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hệ thống";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -147,6 +143,7 @@
             this.btnTable.Text = "Table";
             this.btnTable.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTable.UseVisualStyleBackColor = false;
+            this.btnTable.Click += new System.EventHandler(this.btnTable_Click);
             // 
             // btnLogout
             // 
@@ -353,11 +350,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-<<<<<<< HEAD
-            this.tabPage3.Size = new System.Drawing.Size(1354, 708);
-=======
-            this.tabPage3.Size = new System.Drawing.Size(1345, 734);
->>>>>>> ba46426d38191e7e9d5fa02366becfe979e76c03
+            this.tabPage3.Size = new System.Drawing.Size(1345, 735);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nhà hàng";
             this.tabPage3.UseVisualStyleBackColor = true;
