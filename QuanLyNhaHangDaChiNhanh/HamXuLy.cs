@@ -463,6 +463,31 @@ namespace QuanLyNhaHangDaChiNhanh
             }
             return result;
         }
-
+        public static void RunSqlWithParams(string sql, Dictionary<string, object> parameters)
+        {
+            Connect();
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    if (parameters != null)
+                    {
+                        foreach (var param in parameters)
+                        {
+                            cmd.Parameters.AddWithValue(param.Key, param.Value);
+                        }
+                    }
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi SQL: " + ex.Message);
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
     }
 }

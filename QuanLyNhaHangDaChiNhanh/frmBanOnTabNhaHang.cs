@@ -188,11 +188,17 @@ namespace QuanLyNhaHangDaChiNhanh
                     return;
                 }
 
+                // Cập nhật trạng thái bàn sang "Có khách"
+                string sqlUpdateBan = "UPDATE BANAN SET TRANGTHAI = N'Có khách' WHERE MABAN = @maban";
+                Dictionary<string, object> paramUpdateBan = new Dictionary<string, object>();
+                paramUpdateBan.Add("@maban", selectedMaBan);
+                HamXuLy.RunSqlWithParams(sqlUpdateBan, paramUpdateBan);
 
                 frmGoiMon goiMonForm = new frmGoiMon(maHD);
                 goiMonForm.ShowDialog();
 
                 LoadBanTheoKhu();
+
             }
             else
             {
