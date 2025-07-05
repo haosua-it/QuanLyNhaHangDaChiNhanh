@@ -132,7 +132,6 @@ namespace QuanLyNhaHangDaChiNhanh
             string selectedMaBan = parts[0];
             string trangThaiBan = parts[1];
 
-            // Làm sạch chuỗi trạng thái
             string tt = trangThaiBan.Trim().ToLower().Replace("\r", "").Replace("\n", "").Replace(" ", "");
 
             if (tt == "trống")
@@ -141,37 +140,54 @@ namespace QuanLyNhaHangDaChiNhanh
                                                       "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.No) return;
 
-                // Lấy ID thật của nhân viên từ MANV
-                string sqlGetID = "SELECT MANHANVIEN FROM NHANVIEN WHERE MANHANVIEN = @manv";
-                var paramGetID = new Dictionary<string, object>();
-                paramGetID.Add("@manv", Session.MaNhanVien);
+                // Lấy MANHANVIEN từ NGUOIDUNG theo mã người dùng
+                string sqlGetID = "SELECT MANHANVIEN FROM NGUOIDUNG WHERE MANGUOIDUNG = @manguoidung";
+                Dictionary<string, object> paramGetID = new Dictionary<string, object>();
+                paramGetID.Add("@manguoidung", Session.MaNhanVien); // ví dụ: "ND001"
 
                 string idNhanVien = HamXuLy.GetFieldValue(sqlGetID, paramGetID);
 
                 if (string.IsNullOrEmpty(idNhanVien))
                 {
-                    MessageBox.Show("Không tìm thấy ID nhân viên với mã: " + Session.MaNhanVien);
+                    MessageBox.Show("Không tìm thấy mã nhân viên cho người dùng: " + Session.MaNhanVien);
                     return;
                 }
 
                 int idNV;
                 if (!int.TryParse(idNhanVien, out idNV))
                 {
-                    MessageBox.Show("ID nhân viên không hợp lệ!");
+                    MessageBox.Show("Mã nhân viên không hợp lệ! Chuỗi: " + idNhanVien);
                     return;
                 }
 
+                // Tạo hóa đơn mới
                 string sqlInsert = @"
-            INSERT INTO HOADON (MACHINHANH, NGAYLAP, MANHANVIEN, MABAN, TRANGTHAI)
-            VALUES (@machinhanh, GETDATE(), @manv, @maban, N'Chưa thanh toán');
-            SELECT SCOPE_IDENTITY();";
+                INSERT INTO HOADON (MACHINHANH, NGAYLAP, MANV, MABAN, TRANGTHAI)
+                VALUES (@machinhanh, GETDATE(), @manv, @maban, N'Chưa thanh toán');
+                SELECT SCOPE_IDENTITY();";
 
-                var parameters = new Dictionary<string, object>();
+
+
+                Dictionary<string, object> parameters = new Dictionary<string, object>();
                 parameters.Add("@machinhanh", Session.MaChiNhanh);
                 parameters.Add("@manv", idNV);
                 parameters.Add("@maban", selectedMaBan);
 
-                int maHD = Convert.ToInt32(HamXuLy.GetFieldValue(sqlInsert, parameters));
+                object resultObj = HamXuLy.ExecuteScalar(sqlInsert, parameters);
+
+                if (resultObj == null || resultObj == DBNull.Value)
+                {
+                    MessageBox.Show("Không thể tạo hóa đơn. Chuỗi trả về: null");
+                    return;
+                }
+
+                int maHD;
+                if (!int.TryParse(resultObj.ToString(), out maHD))
+                {
+                    MessageBox.Show("Không thể tạo hóa đơn. Chuỗi trả về: " + resultObj.ToString());
+                    return;
+                }
+
 
                 frmGoiMon goiMonForm = new frmGoiMon(maHD);
                 goiMonForm.ShowDialog();
@@ -180,9 +196,9 @@ namespace QuanLyNhaHangDaChiNhanh
             }
             else
             {
-                // Bàn đã có khách: mở hóa đơn đang hoạt động
+                // Bàn đã có khách
                 string sqlCheck = "SELECT TOP 1 MAHD FROM HOADON WHERE MABAN = @maban AND TRANGTHAI = N'Chưa thanh toán'";
-                var paramCheck = new Dictionary<string, object>();
+                Dictionary<string, object> paramCheck = new Dictionary<string, object>();
                 paramCheck.Add("@maban", selectedMaBan);
 
                 DataTable dtCheck = HamXuLy.GetDataToTable(sqlCheck, paramCheck);
@@ -200,10 +216,6 @@ namespace QuanLyNhaHangDaChiNhanh
                 }
             }
         }
-
-
-
-
 
         private void frmBanOnTabNhaHang_Load(object sender, EventArgs e)
         {

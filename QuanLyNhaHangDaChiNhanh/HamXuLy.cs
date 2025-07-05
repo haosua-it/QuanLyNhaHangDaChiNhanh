@@ -440,5 +440,29 @@ namespace QuanLyNhaHangDaChiNhanh
 
             return dt;
         }
+        public static object ExecuteScalar(string sql, Dictionary<string, object> parameters = null)
+        {
+            object result = null;
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    if (parameters != null)
+                    {
+                        foreach (var param in parameters)
+                        {
+                            cmd.Parameters.AddWithValue(param.Key, param.Value);
+                        }
+                    }
+                    result = cmd.ExecuteScalar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi thực thi SQL: " + ex.Message, "Lỗi truy vấn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return result;
+        }
+
     }
 }
