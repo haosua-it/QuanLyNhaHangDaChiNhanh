@@ -27,6 +27,23 @@ namespace QuanLyNhaHangDaChiNhanh
         }
         private void frmGoiMon_Load(object sender, EventArgs e)
         {
+            lblThoiGian.Text = DateTime.Now.ToString("HH:mm:ss dd/MM/yyyy");
+            timer = new Timer();
+            timer.Interval = 1000; // 1 giây
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+        private Timer timer;
+
+
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            lblThoiGian.Text = DateTime.Now.ToString("HH:mm:ss dd/MM/yyyy");
+        }
+
+        private void lblThoiGian_Click(object sender, EventArgs e)
+        {
 
         }
     }
