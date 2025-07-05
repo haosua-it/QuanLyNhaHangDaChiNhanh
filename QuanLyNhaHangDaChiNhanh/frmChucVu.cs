@@ -22,7 +22,7 @@ namespace QuanLyNhaHangDaChiNhanh
             txtMaCV.Text = HamXuLy.MaTuDong("CHUCVU");
             Show();
         }
-        private void Show()
+        private void ShowChucVuForm()
         {
             HamXuLy.Connect();
             DataTable dt = new DataTable();

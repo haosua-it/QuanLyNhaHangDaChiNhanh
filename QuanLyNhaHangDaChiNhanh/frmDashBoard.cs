@@ -300,21 +300,40 @@ namespace QuanLyNhaHangDaChiNhanh
 	}
         private void btnStaffsNhaHang_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            frmStaffsOnTabNhaHang f = new frmStaffsOnTabNhaHang();
+            f.ShowDialog();
+            this.Show();
 
         }
 
         private void btnMenuNhaHang_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmMenuOnTabNhaHang f = new frmMenuOnTabNhaHang();
-            f.ShowDialog();
-            this.Show();
+
         }
 
         private void btnTable_Click(object sender, EventArgs e)
         {
             FrmBan frm = new FrmBan();
             frm.ShowDialog();
+        }
+
+        private void btnLogoutNhaHang_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất và thoát ứng dụng?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnTableNhaHang_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmBanOnTabNhaHang f = new frmBanOnTabNhaHang();
+            f.ShowDialog();
+            this.Show();
         }
 
 

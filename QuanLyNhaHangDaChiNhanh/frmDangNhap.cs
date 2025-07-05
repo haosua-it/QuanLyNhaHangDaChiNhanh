@@ -79,6 +79,13 @@ namespace QuanLyNhaHangDaChiNhanh
 
                     string nhomquyen = dtlg.Rows[0]["MACHUCVU"].ToString().Trim();
                     string iduser = dtlg.Rows[0]["MANGUOIDUNG"].ToString().Trim();
+                    // GÁN GIÁ TRỊ SESSION TOÀN CỤC
+                    Session.MaNhanVien = dtlg.Rows[0]["MANGUOIDUNG"].ToString().Trim();
+                    Session.TenDangNhap = dtlg.Rows[0]["TENNGUOIDUNG"].ToString().Trim();
+                    Session.MaChiNhanh = dtlg.Rows[0]["MACHINHANH"].ToString().Trim();
+                    Session.Quyen = dtlg.Rows[0]["MACHUCVU"].ToString().Trim();
+                    MessageBox.Show("Chi nhánh đang đăng nhập: " + Session.MaChiNhanh);
+
                     if (nhomquyen == "CV001")
                     {
                         //frm.Show();
@@ -211,8 +218,8 @@ namespace QuanLyNhaHangDaChiNhanh
                         }
                         // Ẩn form đăng nhập và hiển thị Dashboard sau khi đăng nhập thành công
                         this.Hide();
-                        frm.ShowDialog();
-                        this.Close();
+                        //frm.ShowDialog();
+                        //this.Close();
                     }
                 }
                 else if (HamXuLy.TruyVan(sql2, dtlg))

@@ -51,6 +51,12 @@
     <Compile Include="FrmBan.Designer.cs">
       <DependentUpon>FrmBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBanOnTabNhaHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBanOnTabNhaHang.Designer.cs">
+      <DependentUpon>frmBanOnTabNhaHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChucVu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,12 @@
     <Compile Include="frmDashBoard.Designer.cs">
       <DependentUpon>frmDashBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGoiMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGoiMon.Designer.cs">
+      <DependentUpon>frmGoiMon.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,12 +98,6 @@
     </Compile>
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMenuOnTabNhaHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMenuOnTabNhaHang.Designer.cs">
-      <DependentUpon>frmMenuOnTabNhaHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNguyenVatLieu.cs">
       <SubType>Form</SubType>
@@ -110,6 +116,12 @@
     </Compile>
     <Compile Include="frmStaffs.Designer.cs">
       <DependentUpon>frmStaffs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStaffsOnTabNhaHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStaffsOnTabNhaHang.Designer.cs">
+      <DependentUpon>frmStaffsOnTabNhaHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSupplier.cs">
       <SubType>Form</SubType>
@@ -131,8 +143,12 @@
     <Compile Include="NhanVien.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session.cs" />
     <EmbeddedResource Include="FrmBan.resx">
       <DependentUpon>FrmBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBanOnTabNhaHang.resx">
+      <DependentUpon>frmBanOnTabNhaHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChucVu.resx">
       <DependentUpon>frmChucVu.cs</DependentUpon>
@@ -146,14 +162,14 @@
     <EmbeddedResource Include="frmDashBoard.resx">
       <DependentUpon>frmDashBoard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGoiMon.resx">
+      <DependentUpon>frmGoiMon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInvoice.resx">
       <DependentUpon>frmInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMenuOnTabNhaHang.resx">
-      <DependentUpon>frmMenuOnTabNhaHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNguyenVatLieu.resx">
       <DependentUpon>frmNguyenVatLieu.cs</DependentUpon>
@@ -163,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmStaffs.resx">
       <DependentUpon>frmStaffs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStaffsOnTabNhaHang.resx">
+      <DependentUpon>frmStaffsOnTabNhaHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSupplier.resx">
       <DependentUpon>frmSupplier.cs</DependentUpon>

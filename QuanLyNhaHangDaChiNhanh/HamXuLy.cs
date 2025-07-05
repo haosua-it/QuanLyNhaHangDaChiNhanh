@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 
 namespace QuanLyNhaHangDaChiNhanh
 {
+
     class HamXuLy
     {
         public static SqlConnection conn;
@@ -84,19 +85,53 @@ namespace QuanLyNhaHangDaChiNhanh
             Disconnect();
         }
 
-        public static string GetFieldValue(string sql)
+        public static string GetFieldValue(string sql, Dictionary<string, object> parameters = null)
         {
             string ma = "";
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            SqlDataReader reader;
-            reader = cmd.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                ma = reader.GetValue(0).ToString();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    if (parameters != null)
+                    {
+                        foreach (var param in parameters)
+                        {
+                            cmd.Parameters.AddWithValue(param.Key, param.Value);
+                        }
+                    }
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            ma = reader.GetValue(0).ToString();
+                        }
+                    }
+                }
             }
-            reader.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi SQL: " + ex.Message, "Lỗi truy vấn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             return ma;
         }
+        public static DataTable GetDataToTable(string sql, Dictionary<string, object> parameters = null)
+        {
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            if (parameters != null)
+            {
+                foreach (var p in parameters)
+                    cmd.Parameters.AddWithValue(p.Key, p.Value);
+            }
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
+        }
+
+
        public static int MaLonNhat(string bang, string cot)
        {
            int maMax = 0;
@@ -292,6 +327,11 @@ namespace QuanLyNhaHangDaChiNhanh
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
+        }
+        public static object ExecuteScalar(string sql)
+        {
+            SqlCommand cmd = new SqlCommand(sql, conn); // con là SqlConnection
+            return cmd.ExecuteScalar();
         }
 
         //====================================================KHUYẾN MÃI============================================//

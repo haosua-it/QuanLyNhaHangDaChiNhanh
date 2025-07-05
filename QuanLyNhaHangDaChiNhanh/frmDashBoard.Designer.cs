@@ -93,10 +93,10 @@
             this.tabPage1.Controls.Add(this.btnStaffs);
             this.tabPage1.Controls.Add(this.btnSales);
             this.tabPage1.Controls.Add(this.btnUsers);
-            this.tabPage1.Location = new System.Drawing.Point(4, 31);
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1345, 729);
+            this.tabPage1.Size = new System.Drawing.Size(1345, 734);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hệ thống";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -347,10 +347,10 @@
             this.tabPage3.Controls.Add(this.btnTableNhaHang);
             this.tabPage3.Controls.Add(this.btnLogoutNhaHang);
             this.tabPage3.Controls.Add(this.btnInvoiceNhaHang);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Location = new System.Drawing.Point(4, 26);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1345, 735);
+            this.tabPage3.Size = new System.Drawing.Size(1345, 734);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nhà hàng";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -363,7 +363,7 @@
             this.btnSearchNhaHang.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSearchNhaHang.Location = new System.Drawing.Point(579, 1);
             this.btnSearchNhaHang.Name = "btnSearchNhaHang";
-            this.btnSearchNhaHang.Size = new System.Drawing.Size(75, 66);
+            this.btnSearchNhaHang.Size = new System.Drawing.Size(79, 72);
             this.btnSearchNhaHang.TabIndex = 33;
             this.btnSearchNhaHang.Text = "Search";
             this.btnSearchNhaHang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -377,7 +377,7 @@
             this.btnClientsNhaHang.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnClientsNhaHang.Location = new System.Drawing.Point(498, 1);
             this.btnClientsNhaHang.Name = "btnClientsNhaHang";
-            this.btnClientsNhaHang.Size = new System.Drawing.Size(75, 66);
+            this.btnClientsNhaHang.Size = new System.Drawing.Size(79, 72);
             this.btnClientsNhaHang.TabIndex = 32;
             this.btnClientsNhaHang.Text = "Clients";
             this.btnClientsNhaHang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -391,7 +391,7 @@
             this.btnMenuNhaHang.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnMenuNhaHang.Location = new System.Drawing.Point(417, 1);
             this.btnMenuNhaHang.Name = "btnMenuNhaHang";
-            this.btnMenuNhaHang.Size = new System.Drawing.Size(75, 66);
+            this.btnMenuNhaHang.Size = new System.Drawing.Size(79, 72);
             this.btnMenuNhaHang.TabIndex = 31;
             this.btnMenuNhaHang.Text = "Menu";
             this.btnMenuNhaHang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -406,7 +406,7 @@
             this.btnIngredientsNhaHang.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnIngredientsNhaHang.Location = new System.Drawing.Point(323, 1);
             this.btnIngredientsNhaHang.Name = "btnIngredientsNhaHang";
-            this.btnIngredientsNhaHang.Size = new System.Drawing.Size(88, 66);
+            this.btnIngredientsNhaHang.Size = new System.Drawing.Size(92, 72);
             this.btnIngredientsNhaHang.TabIndex = 30;
             this.btnIngredientsNhaHang.Text = "Ingredients";
             this.btnIngredientsNhaHang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -420,7 +420,7 @@
             this.btnStaffsNhaHang.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStaffsNhaHang.Location = new System.Drawing.Point(242, 1);
             this.btnStaffsNhaHang.Name = "btnStaffsNhaHang";
-            this.btnStaffsNhaHang.Size = new System.Drawing.Size(75, 66);
+            this.btnStaffsNhaHang.Size = new System.Drawing.Size(79, 72);
             this.btnStaffsNhaHang.TabIndex = 29;
             this.btnStaffsNhaHang.Text = "Staffs";
             this.btnStaffsNhaHang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -435,7 +435,7 @@
             this.btnReportNhaHang.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnReportNhaHang.Location = new System.Drawing.Point(161, 1);
             this.btnReportNhaHang.Name = "btnReportNhaHang";
-            this.btnReportNhaHang.Size = new System.Drawing.Size(75, 66);
+            this.btnReportNhaHang.Size = new System.Drawing.Size(79, 72);
             this.btnReportNhaHang.TabIndex = 28;
             this.btnReportNhaHang.Text = "Report";
             this.btnReportNhaHang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -449,11 +449,12 @@
             this.btnTableNhaHang.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnTableNhaHang.Location = new System.Drawing.Point(80, 1);
             this.btnTableNhaHang.Name = "btnTableNhaHang";
-            this.btnTableNhaHang.Size = new System.Drawing.Size(75, 66);
+            this.btnTableNhaHang.Size = new System.Drawing.Size(79, 72);
             this.btnTableNhaHang.TabIndex = 27;
             this.btnTableNhaHang.Text = "Table";
             this.btnTableNhaHang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTableNhaHang.UseVisualStyleBackColor = false;
+            this.btnTableNhaHang.Click += new System.EventHandler(this.btnTableNhaHang_Click);
             // 
             // btnLogoutNhaHang
             // 
@@ -463,11 +464,12 @@
             this.btnLogoutNhaHang.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnLogoutNhaHang.Location = new System.Drawing.Point(660, 1);
             this.btnLogoutNhaHang.Name = "btnLogoutNhaHang";
-            this.btnLogoutNhaHang.Size = new System.Drawing.Size(75, 66);
+            this.btnLogoutNhaHang.Size = new System.Drawing.Size(79, 72);
             this.btnLogoutNhaHang.TabIndex = 26;
             this.btnLogoutNhaHang.Text = "Logout";
             this.btnLogoutNhaHang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLogoutNhaHang.UseVisualStyleBackColor = false;
+            this.btnLogoutNhaHang.Click += new System.EventHandler(this.btnLogoutNhaHang_Click);
             // 
             // btnInvoiceNhaHang
             // 
@@ -477,7 +479,7 @@
             this.btnInvoiceNhaHang.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnInvoiceNhaHang.Location = new System.Drawing.Point(-1, 1);
             this.btnInvoiceNhaHang.Name = "btnInvoiceNhaHang";
-            this.btnInvoiceNhaHang.Size = new System.Drawing.Size(75, 66);
+            this.btnInvoiceNhaHang.Size = new System.Drawing.Size(79, 72);
             this.btnInvoiceNhaHang.TabIndex = 25;
             this.btnInvoiceNhaHang.Text = "Invoice";
             this.btnInvoiceNhaHang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
