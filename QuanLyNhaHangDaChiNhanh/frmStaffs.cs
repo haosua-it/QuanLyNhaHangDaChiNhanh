@@ -410,9 +410,7 @@ namespace QuanLyNhaHangDaChiNhanh
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmDashBoard f = new frmDashBoard(); 
-            f.Show(); 
+            this.Close();
         }
 
         private void btnNextPage_Click(object sender, EventArgs e)

@@ -272,10 +272,7 @@ namespace QuanLyNhaHangDaChiNhanh
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmDashBoard f = new frmDashBoard();
-            f.FormClosed += (s, args) => this.Close();
-            f.Show(); 
+            this.Close();
         }
 
         private void btnChonAnh_Click(object sender, EventArgs e)

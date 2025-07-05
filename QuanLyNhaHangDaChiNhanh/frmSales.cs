@@ -34,10 +34,8 @@ namespace QuanLyNhaHangDaChiNhanh
 
         private void button1_Click(object sender, EventArgs e) // NÚT BACK Ở ĐÂY
         {
-            this.Hide();
-            frmDashBoard f = new frmDashBoard();
-            f.FormClosed += (s, args) => this.Close();
-            f.Show(); 
+            this.Close();
+
         }   
 
         private void panel1_Paint(object sender, PaintEventArgs e)
