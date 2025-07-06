@@ -171,6 +171,9 @@ namespace QuanLyNhaHangDaChiNhanh
                case "NGUOIDUNG":
                    cot = "MANGUOIDUNG";
                    break;
+               case "CALAMVIEC":
+                   cot = "MACA";
+                   break;
                // Thêm các bảng khác nếu có
                default:
                    MessageBox.Show("Không xác định được cột mã cho bảng: " + bang);
@@ -189,7 +192,10 @@ namespace QuanLyNhaHangDaChiNhanh
            {
                maMoi = "ND" + soMoi.ToString("D3");  // Tạo dạng CV01, CV02...
            }
-
+           if (bang == "CALAMVIEC")
+           {
+               maMoi = "CA" + soMoi.ToString("D3");  // Tạo dạng CV01, CV02...
+           }
            return maMoi;
        }
 

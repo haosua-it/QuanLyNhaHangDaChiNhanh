@@ -57,6 +57,12 @@
     <Compile Include="frmBanOnTabNhaHang.Designer.cs">
       <DependentUpon>frmBanOnTabNhaHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChonLoaiLuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChonLoaiLuong.Designer.cs">
+      <DependentUpon>frmChonLoaiLuong.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChucVu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,24 @@
     <Compile Include="frmSupplier.Designer.cs">
       <DependentUpon>frmSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShift.Designer.cs">
+      <DependentUpon>frmShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLuongFull.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLuongFull.Designer.cs">
+      <DependentUpon>frmLuongFull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLuongPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLuongPart.Designer.cs">
+      <DependentUpon>frmLuongPart.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBanOnTabNhaHang.resx">
       <DependentUpon>frmBanOnTabNhaHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChonLoaiLuong.resx">
+      <DependentUpon>frmChonLoaiLuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChucVu.resx">
       <DependentUpon>frmChucVu.cs</DependentUpon>
@@ -185,6 +212,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSupplier.resx">
       <DependentUpon>frmSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShift.resx">
+      <DependentUpon>frmShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLuongFull.resx">
+      <DependentUpon>frmLuongFull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLuongPart.resx">
+      <DependentUpon>frmLuongPart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsers.resx">
       <DependentUpon>frmUsers.cs</DependentUpon>

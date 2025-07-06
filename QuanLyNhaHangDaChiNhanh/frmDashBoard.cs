@@ -290,7 +290,8 @@ namespace QuanLyNhaHangDaChiNhanh
 
         private void btnShift_Click(object sender, EventArgs e)
         {
-
+            frmShift frm = new frmShift();
+            frm.Show();
         }
 
         private void btnClients_Click(object sender, EventArgs e)
@@ -334,6 +335,12 @@ namespace QuanLyNhaHangDaChiNhanh
             frmBanOnTabNhaHang f = new frmBanOnTabNhaHang();
             f.ShowDialog();
             this.Show();
+        }
+
+        private void btnWage_Click(object sender, EventArgs e)
+        {
+            frmChonLoaiLuong frm = new frmChonLoaiLuong();
+            frm.Show();
         }
 
 
