@@ -57,6 +57,12 @@
     <Compile Include="frmBanOnTabNhaHang.Designer.cs">
       <DependentUpon>frmBanOnTabNhaHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChonKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChonKhachHang.Designer.cs">
+      <DependentUpon>frmChonKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChucVu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,12 @@
     </Compile>
     <Compile Include="frmGoiMon.Designer.cs">
       <DependentUpon>frmGoiMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInHoaDon.Designer.cs">
+      <DependentUpon>frmInHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInvoice.cs">
       <SubType>Form</SubType>
@@ -150,6 +162,9 @@
     <EmbeddedResource Include="frmBanOnTabNhaHang.resx">
       <DependentUpon>frmBanOnTabNhaHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChonKhachHang.resx">
+      <DependentUpon>frmChonKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChucVu.resx">
       <DependentUpon>frmChucVu.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGoiMon.resx">
       <DependentUpon>frmGoiMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInHoaDon.resx">
+      <DependentUpon>frmInHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInvoice.resx">
       <DependentUpon>frmInvoice.cs</DependentUpon>

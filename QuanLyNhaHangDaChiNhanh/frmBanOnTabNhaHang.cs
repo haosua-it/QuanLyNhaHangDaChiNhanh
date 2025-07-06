@@ -12,6 +12,11 @@ namespace QuanLyNhaHangDaChiNhanh
 {
     public partial class frmBanOnTabNhaHang : Form
     {
+        //private int maHoaDon;
+
+        private string selectedMaBan = null;
+        private string selectedTenBan = null;
+        private string selectedTrangThai = null;
         public frmBanOnTabNhaHang()
         {
             InitializeComponent();
@@ -59,6 +64,8 @@ namespace QuanLyNhaHangDaChiNhanh
         {
 
         }
+        
+        //===================================
         private void LoadBanTheoKhu()
         {
             if (cbKhu.SelectedValue == null || string.IsNullOrEmpty(Session.MaChiNhanh))
@@ -86,8 +93,9 @@ namespace QuanLyNhaHangDaChiNhanh
                     ImageAlign = ContentAlignment.TopCenter,
                     Font = new Font("Segoe UI", 9, FontStyle.Bold),
                     Text = tenBan + "\n(" + trangThai + ")",
-                    Tag = maBan + "|" + trangThai
+                    Tag = maBan + "|" + trangThai + "|" + tenBan 
                 };
+
 
                 try
                 {
@@ -123,50 +131,156 @@ namespace QuanLyNhaHangDaChiNhanh
             if (btn == null) return;
 
             string[] parts = btn.Tag.ToString().Split('|');
-            if (parts.Length < 2)
+            if (parts.Length < 3)
             {
                 MessageBox.Show("Dữ liệu Tag không đúng định dạng!");
                 return;
             }
 
-            string selectedMaBan = parts[0];
-            string trangThaiBan = parts[1];
+            selectedMaBan = parts[0];
+            selectedTrangThai = parts[1].Trim().ToLower();
+            selectedTenBan = parts[2];
 
-            string tt = trangThaiBan.Trim().ToLower().Replace("\r", "").Replace("\n", "").Replace(" ", "");
+            // (Tuỳ bạn) Có thể tô đậm nút đã chọn hoặc đổi màu
+            // hoặc hiển thị ra label: lblBanDangChon.Text = selectedTenBan;
+        }
 
-            if (tt == "trống")
+        private void frmBanOnTabNhaHang_Load(object sender, EventArgs e)
+        {
+            LoadBanTheoChiNhanh();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnThemKhach_Click(object sender, EventArgs e)
+        {
+            /*if (string.IsNullOrEmpty(selectedMaBan))
             {
-                DialogResult result = MessageBox.Show("Bàn đang trống. Bạn có chắc chắn muốn vào và tạo hóa đơn mới không?",
-                                                      "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.No) return;
+                MessageBox.Show("Vui lòng chọn bàn trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-                // Lấy MANHANVIEN từ NGUOIDUNG theo mã người dùng
-                string sqlGetID = "SELECT MANHANVIEN FROM NGUOIDUNG WHERE MANGUOIDUNG = @manguoidung";
-                Dictionary<string, object> paramGetID = new Dictionary<string, object>();
-                paramGetID.Add("@manguoidung", Session.MaNhanVien); // ví dụ: "ND001"
+            if (!string.IsNullOrEmpty(lblTenKhachHang.Text))
+            {
+                DialogResult confirm = MessageBox.Show("Hóa đơn đã có khách hàng.\nBạn có muốn thay đổi không?",
+                                                       "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirm == DialogResult.No)
+                    return;
+            }
 
-                string idNhanVien = HamXuLy.GetFieldValue(sqlGetID, paramGetID);
+            frmChonKhachHang formChon = new frmChonKhachHang();
 
-                if (string.IsNullOrEmpty(idNhanVien))
+            if (formChon.ShowDialog() == DialogResult.OK)
+            {
+                string tenKH = formChon.TenKhachHangDuocChon;
+
+                if (string.IsNullOrEmpty(tenKH))
                 {
-                    MessageBox.Show("Không tìm thấy mã nhân viên cho người dùng: " + Session.MaNhanVien);
+                    MessageBox.Show("Vui lòng chọn khách hàng hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                int idNV;
-                if (!int.TryParse(idNhanVien, out idNV))
+                // Lấy lại MAHD từ DB đúng với trạng thái "Chưa thanh toán"
+                string sqlGetHD = "SELECT TOP 1 MAHD FROM HOADON WHERE MABAN = @maban AND TRANGTHAI = N'Chưa thanh toán'";
+                Dictionary<string, object> paramGetHD = new Dictionary<string, object>();
+                paramGetHD.Add("@maban", selectedMaBan);
+
+                object objMaHD = HamXuLy.GetFieldValue(sqlGetHD, paramGetHD);
+                int maHD;
+                if (objMaHD == null || !int.TryParse(objMaHD.ToString(), out maHD))
                 {
-                    MessageBox.Show("Mã nhân viên không hợp lệ! Chuỗi: " + idNhanVien);
+                    MessageBox.Show("Không tìm thấy hóa đơn chưa thanh toán!", "Thông báo");
+                    return;
+                }
+
+                // Chỉ cập nhật TENKHACHHANG
+                string sqlUpdate = "UPDATE HOADON SET TENKHACHHANG = @tenkh WHERE MAHD = @mahd";
+                Dictionary<string, object> param = new Dictionary<string, object>
+        {
+            { "@tenkh", tenKH },
+            { "@mahd", maHD }
+        };
+
+                HamXuLy.RunSqlWithParams(sqlUpdate, param);
+                lblTenKhachHang.Text = tenKH;
+
+                MessageBox.Show("Đã thêm tên khách hàng vào hóa đơn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }*/
+        }
+
+
+
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(selectedMaBan))
+            {
+                MessageBox.Show("Vui lòng chọn bàn để in hóa đơn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Tìm hóa đơn chưa thanh toán
+            string sql = "SELECT TOP 1 MAHD FROM HOADON WHERE MABAN = @maban AND TRANGTHAI = N'Chưa thanh toán'";
+            Dictionary<string, object> param = new Dictionary<string, object>();
+            param.Add("@maban", selectedMaBan);
+
+            object result = HamXuLy.GetFieldValue(sql, param);
+
+            int maHD;
+            if (result == null || !int.TryParse(result.ToString(), out maHD))
+            {
+                MessageBox.Show("Mã bàn: " + selectedMaBan + "\nTrạng thái: " + selectedTrangThai + "\nTên bàn: " + selectedTenBan);
+                return;
+            }
+
+            // Gọi form in hóa đơn
+            frmInHoaDon frm = new frmInHoaDon(maHD);
+            frm.ShowDialog();
+        }
+
+        private void btnVao_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(selectedMaBan))
+            {
+                MessageBox.Show("Vui lòng chọn bàn trước!", "Thông báo");
+                return;
+            }
+
+            int maHD = -1;
+
+            if (selectedTrangThai.ToLower() == "trống")
+            {
+                DialogResult result = MessageBox.Show("Bàn đang trống. Tạo hóa đơn mới?", "Xác nhận", MessageBoxButtons.YesNo);
+                if (result == DialogResult.No) return;
+
+                // Lấy mã nhân viên hiện tại
+                string sqlGetID = "SELECT MANHANVIEN FROM NGUOIDUNG WHERE MANGUOIDUNG = @manguoidung";
+                Dictionary<string, object> paramGetID = new Dictionary<string, object>();
+                paramGetID.Add("@manguoidung", Session.MaNhanVien);
+
+                string idNhanVien = HamXuLy.GetFieldValue(sqlGetID, paramGetID);
+                int idNV = -1;
+
+                if (string.IsNullOrEmpty(idNhanVien) || !int.TryParse(idNhanVien, out idNV))
+                {
+                    MessageBox.Show("Không thể lấy mã nhân viên!");
                     return;
                 }
 
                 // Tạo hóa đơn mới
                 string sqlInsert = @"
-                INSERT INTO HOADON (MACHINHANH, NGAYLAP, MANV, MABAN, TRANGTHAI)
-                VALUES (@machinhanh, GETDATE(), @manv, @maban, N'Chưa thanh toán');
-                SELECT SCOPE_IDENTITY();";
-
-
+            INSERT INTO HOADON (MACHINHANH, NGAYLAP, MANV, MABAN, TRANGTHAI)
+            VALUES (@machinhanh, GETDATE(), @manv, @maban, N'Chưa thanh toán');
+            SELECT SCOPE_IDENTITY();";
 
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
                 parameters.Add("@machinhanh", Session.MaChiNhanh);
@@ -175,57 +289,130 @@ namespace QuanLyNhaHangDaChiNhanh
 
                 object resultObj = HamXuLy.ExecuteScalar(sqlInsert, parameters);
 
-                if (resultObj == null || resultObj == DBNull.Value)
+                if (resultObj == null || !int.TryParse(resultObj.ToString(), out maHD))
                 {
-                    MessageBox.Show("Không thể tạo hóa đơn. Chuỗi trả về: null");
+                    MessageBox.Show("Không thể tạo hóa đơn.");
                     return;
                 }
 
-                int maHD;
-                if (!int.TryParse(resultObj.ToString(), out maHD))
-                {
-                    MessageBox.Show("Không thể tạo hóa đơn. Chuỗi trả về: " + resultObj.ToString());
-                    return;
-                }
-
-                // Cập nhật trạng thái bàn sang "Có khách"
-                string sqlUpdateBan = "UPDATE BANAN SET TRANGTHAI = N'Có khách' WHERE MABAN = @maban";
-                Dictionary<string, object> paramUpdateBan = new Dictionary<string, object>();
-                paramUpdateBan.Add("@maban", selectedMaBan);
-                HamXuLy.RunSqlWithParams(sqlUpdateBan, paramUpdateBan);
-
-                frmGoiMon goiMonForm = new frmGoiMon(maHD);
-                goiMonForm.ShowDialog();
-
-                LoadBanTheoKhu();
-
+                // Cập nhật trạng thái bàn
+                string sqlUpdate = "UPDATE BANAN SET TRANGTHAI = N'Có khách' WHERE MABAN = @maban";
+                Dictionary<string, object> paramUpdate = new Dictionary<string, object>();
+                paramUpdate.Add("@maban", selectedMaBan);
+                HamXuLy.RunSqlWithParams(sqlUpdate, paramUpdate);
             }
             else
             {
-                // Bàn đã có khách
+                // Nếu bàn không trống → kiểm tra hóa đơn đang nợ
                 string sqlCheck = "SELECT TOP 1 MAHD FROM HOADON WHERE MABAN = @maban AND TRANGTHAI = N'Chưa thanh toán'";
                 Dictionary<string, object> paramCheck = new Dictionary<string, object>();
                 paramCheck.Add("@maban", selectedMaBan);
 
-                DataTable dtCheck = HamXuLy.GetDataToTable(sqlCheck, paramCheck);
-
-                if (dtCheck.Rows.Count > 0)
+                object resultCheck = HamXuLy.GetFieldValue(sqlCheck, paramCheck);
+                if (resultCheck != null && int.TryParse(resultCheck.ToString(), out maHD))
                 {
-                    int maHD = Convert.ToInt32(dtCheck.Rows[0]["MAHD"]);
-                    frmGoiMon goiMonForm = new frmGoiMon(maHD);
-                    goiMonForm.ShowDialog();
-                    LoadBanTheoKhu();
+                    // OK, tìm được hóa đơn
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy hóa đơn chưa thanh toán cho bàn này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Không tìm thấy hóa đơn chưa thanh toán.");
+                    return;
                 }
             }
+
+            // Chuyển sang form gọi món
+            this.Hide();
+            frmGoiMon goiMon = new frmGoiMon(maHD, selectedTenBan);
+            goiMon.ShowDialog();
+            this.Show();
+            LoadBanTheoKhu();
         }
 
-        private void frmBanOnTabNhaHang_Load(object sender, EventArgs e)
+
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            LoadBanTheoChiNhanh();
+            if (string.IsNullOrEmpty(selectedMaBan))
+            {
+                MessageBox.Show("Vui lòng chọn bàn!", "Thông báo");
+                return;
+            }
+
+            string sql = "UPDATE BANAN SET TRANGTHAI = N'Đã in hóa đơn' WHERE MABAN = @maban";
+            Dictionary<string, object> param = new Dictionary<string, object>();
+            param.Add("@maban", selectedMaBan);
+
+            HamXuLy.RunSqlWithParams(sql, param);
+            MessageBox.Show("Bàn đã được đánh dấu là đã in hóa đơn!", "Thông báo");
+            LoadBanTheoKhu();
+        }
+
+        private void btnKetThucBan_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(selectedMaBan))
+            {
+                MessageBox.Show("Vui lòng chọn bàn!", "Thông báo");
+                return;
+            }
+
+            // Cập nhật trạng thái bàn về 'Trống'
+            string sql = "UPDATE BANAN SET TRANGTHAI = N'Trống' WHERE MABAN = @maban";
+            Dictionary<string, object> param = new Dictionary<string, object>();
+            param.Add("@maban", selectedMaBan);
+
+            HamXuLy.RunSqlWithParams(sql, param);
+            MessageBox.Show("Bàn đã kết thúc và trở về trạng thái trống.", "Thông báo");
+            LoadBanTheoKhu();
+        }
+
+        private void btnThe_Click(object sender, EventArgs e)
+        {
+            CapNhatHinhThucThanhToan("Thẻ");
+        }
+
+        private void btnChuyenKhoan_Click(object sender, EventArgs e)
+        {
+            CapNhatHinhThucThanhToan("Chuyển khoản");
+        }
+
+        private void btnTienMat_Click(object sender, EventArgs e)
+        {
+            CapNhatHinhThucThanhToan("Tiền mặt");
+        }
+        private void CapNhatHinhThucThanhToan(string hinhThuc)
+        {
+            if (string.IsNullOrEmpty(selectedMaBan))
+            {
+                MessageBox.Show("Vui lòng chọn bàn!", "Thông báo");
+                return;
+            }
+
+            // Lấy mã hóa đơn chưa thanh toán của bàn
+            string sqlGetHD = "SELECT TOP 1 MAHD FROM HOADON WHERE MABAN = @maban AND TRANGTHAI = N'Nợ'";
+            Dictionary<string, object> paramGetHD = new Dictionary<string, object>();
+            paramGetHD.Add("@maban", selectedMaBan);
+
+            object objMaHD = HamXuLy.GetFieldValue(sqlGetHD, paramGetHD);
+            int maHD;
+            if (objMaHD == null || !int.TryParse(objMaHD.ToString(), out maHD))
+            {
+                MessageBox.Show("Không tìm thấy hóa đơn chưa thanh toán!", "Thông báo");
+                return;
+            }
+
+            // Cập nhật hình thức thanh toán + trạng thái hóa đơn
+            string sql = @"
+        UPDATE HOADON 
+        SET HINHTHUCTHANHTOAN = @httt, TRANGTHAI = N'Đã thanh toán'
+        WHERE MAHD = @mahd";
+
+            Dictionary<string, object> param = new Dictionary<string, object>();
+            param.Add("@httt", hinhThuc);
+            param.Add("@mahd", maHD);
+
+            HamXuLy.RunSqlWithParams(sql, param);
+
+            MessageBox.Show("Đã cập nhật hình thức thanh toán: " + hinhThuc + "\nvà đánh dấu hóa đơn là đã thanh toán.", "Thông báo");
         }
 
 
