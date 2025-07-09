@@ -296,9 +296,11 @@ namespace QuanLyNhaHangDaChiNhanh
 
         private void btnClients_Click(object sender, EventArgs e)
         {
-            FrmBan f = new FrmBan();
-            f.ShowDialog();
-	}
+            this.Hide();
+            frmClients frm = new frmClients();
+            frm.ShowDialog();
+            this.Show();
+    	}
         private void btnStaffsNhaHang_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -315,8 +317,10 @@ namespace QuanLyNhaHangDaChiNhanh
 
         private void btnTable_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FrmBan frm = new FrmBan();
             frm.ShowDialog();
+            this.Show();
         }
 
         private void btnLogoutNhaHang_Click(object sender, EventArgs e)

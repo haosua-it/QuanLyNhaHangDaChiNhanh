@@ -437,7 +437,7 @@ namespace QuanLyNhaHangDaChiNhanh
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi phân trang: " + ex.Message);
+                MessageBox.Show("Lỗi phân trang bàn ăn: " + ex.Message);
             }
             finally
             {
@@ -494,6 +494,50 @@ namespace QuanLyNhaHangDaChiNhanh
             {
                 Disconnect();
             }
+        }
+        //============================KHACHHANG==================================
+        public static DataTable ShowKhachHangPhanTrang(int page, int pageSize)
+        {
+            Connect();
+            int offset = (page - 1) * pageSize;
+            string sql = string.Format("SELECT * FROM KHACHHANG ORDER BY MAKH OFFSET {0} ROWS FETCH NEXT {1} ROWS ONLY", offset, pageSize);
+            DataTable dt = new DataTable();
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi phân trang khách hàng: " + ex.Message);
+            }
+            finally
+            {
+                Disconnect();
+            }
+
+            return dt;
+        }
+        public static DataTable ShowKhachHang()
+        {
+            Connect(); // Kết nối CSDL
+            DataTable dt = new DataTable();
+            string sql = "SELECT * FROM KHACHHANG";
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lấy dữ liệu khách hàng: " + ex.Message);
+            }
+            finally
+            {
+                Disconnect();
+            }
+            return dt;
         }
     }
 }
