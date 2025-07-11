@@ -35,14 +35,9 @@
             this.flpMonAn = new System.Windows.Forms.FlowLayoutPanel();
             this.cbDanhMuc = new System.Windows.Forms.ComboBox();
             this.dgvChiTietHoaDon = new System.Windows.Forms.DataGridView();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnThanhToan = new System.Windows.Forms.Button();
-            this.btnGiamGia = new System.Windows.Forms.Button();
-            this.btnThemKhach = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHoaDon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,21 +94,7 @@
             this.dgvChiTietHoaDon.Name = "dgvChiTietHoaDon";
             this.dgvChiTietHoaDon.Size = new System.Drawing.Size(484, 512);
             this.dgvChiTietHoaDon.TabIndex = 5;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.White;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSearch.Location = new System.Drawing.Point(259, 667);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 70);
-            this.btnSearch.TabIndex = 105;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.dgvChiTietHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHoaDon_CellContentClick);
             // 
             // btnBack
             // 
@@ -130,35 +111,6 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // btnPrint
-            // 
-            this.btnPrint.BackColor = System.Drawing.Color.White;
-            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPrint.Location = new System.Drawing.Point(178, 667);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(75, 70);
-            this.btnPrint.TabIndex = 102;
-            this.btnPrint.Text = "In Hóa đơn";
-            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPrint.UseVisualStyleBackColor = false;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.White;
-            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDelete.Location = new System.Drawing.Point(97, 667);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 70);
-            this.btnDelete.TabIndex = 99;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDelete.UseVisualStyleBackColor = false;
-            // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.White;
@@ -174,50 +126,20 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnThanhToan
+            // btnDelete
             // 
-            this.btnThanhToan.BackColor = System.Drawing.Color.White;
-            this.btnThanhToan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnThanhToan.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.Image")));
-            this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnThanhToan.Location = new System.Drawing.Point(340, 667);
-            this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(75, 70);
-            this.btnThanhToan.TabIndex = 106;
-            this.btnThanhToan.Text = "Thanh toán";
-            this.btnThanhToan.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnThanhToan.UseVisualStyleBackColor = false;
-            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
-            // 
-            // btnGiamGia
-            // 
-            this.btnGiamGia.BackColor = System.Drawing.Color.White;
-            this.btnGiamGia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGiamGia.Image = ((System.Drawing.Image)(resources.GetObject("btnGiamGia.Image")));
-            this.btnGiamGia.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGiamGia.Location = new System.Drawing.Point(421, 667);
-            this.btnGiamGia.Name = "btnGiamGia";
-            this.btnGiamGia.Size = new System.Drawing.Size(75, 70);
-            this.btnGiamGia.TabIndex = 107;
-            this.btnGiamGia.Text = "Giảm giá";
-            this.btnGiamGia.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnGiamGia.UseVisualStyleBackColor = false;
-            this.btnGiamGia.Click += new System.EventHandler(this.btnGiamGia_Click);
-            // 
-            // btnThemKhach
-            // 
-            this.btnThemKhach.BackColor = System.Drawing.Color.White;
-            this.btnThemKhach.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnThemKhach.Image = ((System.Drawing.Image)(resources.GetObject("btnThemKhach.Image")));
-            this.btnThemKhach.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnThemKhach.Location = new System.Drawing.Point(502, 667);
-            this.btnThemKhach.Name = "btnThemKhach";
-            this.btnThemKhach.Size = new System.Drawing.Size(75, 70);
-            this.btnThemKhach.TabIndex = 108;
-            this.btnThemKhach.Text = "Thêm Khách ";
-            this.btnThemKhach.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnThemKhach.UseVisualStyleBackColor = false;
-            this.btnThemKhach.Click += new System.EventHandler(this.btnThemKhach_Click);
+            this.btnDelete.BackColor = System.Drawing.Color.White;
+            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDelete.Location = new System.Drawing.Point(97, 667);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 70);
+            this.btnDelete.TabIndex = 99;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // frmGoiMon
             // 
@@ -225,12 +147,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1370, 749);
-            this.Controls.Add(this.btnThemKhach);
-            this.Controls.Add(this.btnGiamGia);
-            this.Controls.Add(this.btnThanhToan);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dgvChiTietHoaDon);
@@ -260,13 +177,8 @@
         private System.Windows.Forms.FlowLayoutPanel flpMonAn;
         private System.Windows.Forms.ComboBox cbDanhMuc;
         private System.Windows.Forms.DataGridView dgvChiTietHoaDon;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnThanhToan;
-        private System.Windows.Forms.Button btnGiamGia;
-        private System.Windows.Forms.Button btnThemKhach;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

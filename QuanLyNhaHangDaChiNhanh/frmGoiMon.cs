@@ -13,6 +13,18 @@ namespace QuanLyNhaHangDaChiNhanh
 {
     public partial class frmGoiMon: Form
     {
+        private PictureBox pictureBoxMonAn;
+
+        private void InitializePictureBox()
+        {
+            pictureBoxMonAn = new PictureBox();
+            pictureBoxMonAn.Size = new Size(120, 120);
+            pictureBoxMonAn.Location = new Point(600, 100); // chỉnh tuỳ ý
+            pictureBoxMonAn.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxMonAn.BorderStyle = BorderStyle.FixedSingle;
+            this.Controls.Add(pictureBoxMonAn);
+        }
+
         private string tenBan = "";
         private int maHoaDon;
         public frmGoiMon(int maHoaDon, string tenBan)
@@ -36,6 +48,13 @@ namespace QuanLyNhaHangDaChiNhanh
             InitChiTietHoaDon();
             LoadDanhMucMonAn();
             LoadChiTietHoaDonTuDatabase();
+            InitializePictureBox();
+
+            if (cbDanhMuc.SelectedValue != null && !(cbDanhMuc.SelectedValue is DataRowView))
+            {
+                LoadMonAnTheoDanhMuc(cbDanhMuc.SelectedValue.ToString());
+            }
+
         }
         private Timer timer;
 
@@ -52,60 +71,89 @@ namespace QuanLyNhaHangDaChiNhanh
         {
             lblTenBan.Text =  tenBan;
         }
+        private bool isLoadingDanhMuc = false;
+        private bool isDanhMucLoaded = false;
         private void LoadDanhMucMonAn()
         {
+            isLoadingDanhMuc = true;
+
+            cbDanhMuc.SelectedIndexChanged -= cbDanhMuc_SelectedIndexChanged; // Gỡ sự kiện tạm thời
+
             string sql = "SELECT MADANHMUC, TENDANHMUC FROM DANHMUCMON";
             DataTable dt = HamXuLy.GetDataToTable(sql);
 
             cbDanhMuc.DataSource = dt;
             cbDanhMuc.DisplayMember = "TENDANHMUC";
             cbDanhMuc.ValueMember = "MADANHMUC";
-        }
 
+            cbDanhMuc.SelectedIndexChanged += cbDanhMuc_SelectedIndexChanged; // Gắn lại sự kiện
 
-        private void cbDanhMuc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbDanhMuc.SelectedValue != null)
+            isLoadingDanhMuc = false;
+            isDanhMucLoaded = true;
+
+            if (cbDanhMuc.SelectedValue != null && !(cbDanhMuc.SelectedValue is DataRowView))
             {
-                string maLoai = cbDanhMuc.SelectedValue.ToString();
-                LoadMonAnTheoDanhMuc(maLoai); // đúng tên hàm
+                string maDanhMuc = cbDanhMuc.SelectedValue.ToString();
+                LoadMonAnTheoDanhMuc(maDanhMuc);
             }
         }
 
-
-        private void LoadMonAnTheoDanhMuc(string maLoai)
+        private void cbDanhMuc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string sql = "SELECT MAMON, TENMON, HINHANH FROM MONAN WHERE MADANHMUC = @maloai";
+            if (!isDanhMucLoaded || isLoadingDanhMuc || cbDanhMuc.SelectedValue == null || cbDanhMuc.SelectedValue is DataRowView)
+                return;
+
+            string maDanhMuc = cbDanhMuc.SelectedValue.ToString();
+            LoadMonAnTheoDanhMuc(maDanhMuc);
+        }
+
+
+
+        private void LoadMonAnTheoDanhMuc(string maDanhMuc)
+        {
+            string sql = "SELECT DISTINCT MAMON, TENMON, HINHANH FROM MONAN WHERE MADANHMUC = @madm";
             Dictionary<string, object> param = new Dictionary<string, object>();
-            param.Add("@maloai", maLoai);
+            param.Add("@madm", maDanhMuc);
             DataTable dt = HamXuLy.GetDataToTable(sql, param);
 
             flpMonAn.Controls.Clear();
 
+            HashSet<string> addedMonAn = new HashSet<string>();
+
             foreach (DataRow row in dt.Rows)
             {
-                string tenMon = row["TENMON"].ToString();
-                string hinhAnhPath = row["HINHANH"].ToString();
                 string maMon = row["MAMON"].ToString();
+                if (addedMonAn.Contains(maMon)) continue; // tránh trùng món
+
+                addedMonAn.Add(maMon);
+
+                string tenMon = row["TENMON"].ToString();
+                string hinhAnh = row["HINHANH"].ToString();
+
+                if (!string.IsNullOrEmpty(hinhAnh) && !Path.IsPathRooted(hinhAnh))
+                {
+                    hinhAnh = Path.Combine(@"D:\\LTQL\\QLBH\\Project\\QuanLyNhaHangDaChiNhanhVer2\\QuanLyNhaHangDaChiNhanh\\img", hinhAnh);
+                }
 
                 Button btn = new Button();
-                btn.Text = tenMon;
-                btn.Tag = maMon;
-                btn.Width = 100;
-                btn.Height = 100;
+                btn.Size = new Size(100, 100);
                 btn.TextAlign = ContentAlignment.BottomCenter;
-                btn.Font = new Font("Segoe UI", 9);
                 btn.ImageAlign = ContentAlignment.TopCenter;
+                btn.Tag = maMon;
+                btn.Text = tenMon;
 
-                try
+                if (!string.IsNullOrEmpty(hinhAnh) && File.Exists(hinhAnh))
                 {
-                    if (!string.IsNullOrEmpty(hinhAnhPath) && File.Exists(hinhAnhPath))
-                        btn.Image = Image.FromFile(hinhAnhPath);
+                    try
+                    {
+                        Image original = Image.FromFile(hinhAnh);
+                        Image resized = new Bitmap(original, new Size(48, 48));
+                        btn.Image = resized;
+                    }
+                    catch { }
                 }
-                catch { }
 
                 btn.Click += BtnMonAn_Click;
-
                 flpMonAn.Controls.Add(btn);
             }
         }
@@ -127,7 +175,6 @@ namespace QuanLyNhaHangDaChiNhanh
             dgvChiTietHoaDon.DataSource = chiTietHoaDon;
         }
 
-
         private void BtnMonAn_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
@@ -135,20 +182,19 @@ namespace QuanLyNhaHangDaChiNhanh
 
             string maMon = btn.Tag.ToString();
 
+            // Tăng số lượng nếu món đã có
             foreach (DataGridViewRow row in dgvChiTietHoaDon.Rows)
             {
-                if (row.Cells["MAMON"] != null && row.Cells["MAMON"].Value != null && row.Cells["MAMON"].Value.ToString() == maMon)
+                if (row.Cells["MAMON"].Value != null && row.Cells["MAMON"].Value.ToString() == maMon)
                 {
-                    if (row.Cells["SOLUONG"] != null)
-                    {
-                        int soLuong = Convert.ToInt32(row.Cells["SOLUONG"].Value);
-                        row.Cells["SOLUONG"].Value = soLuong + 1;
-                    }
+                    int soLuong = Convert.ToInt32(row.Cells["SOLUONG"].Value);
+                    row.Cells["SOLUONG"].Value = soLuong + 1;
                     return;
                 }
+
             }
 
-            string sql = "SELECT TENMON, GIA FROM MONAN WHERE MAMON = @mamon";
+            string sql = "SELECT TENMON, GIA, HINHANH FROM MONAN WHERE MAMON = @mamon";
             Dictionary<string, object> param = new Dictionary<string, object>();
             param.Add("@mamon", maMon);
             DataTable dt = HamXuLy.GetDataToTable(sql, param);
@@ -157,6 +203,31 @@ namespace QuanLyNhaHangDaChiNhanh
             {
                 string tenMon = dt.Rows[0]["TENMON"].ToString();
                 decimal donGia = Convert.ToDecimal(dt.Rows[0]["GIA"]);
+                string hinhAnh = dt.Rows[0]["HINHANH"].ToString();
+
+                if (!string.IsNullOrEmpty(hinhAnh))
+                {
+                    string fullPath = Path.Combine(@"D:\\LTQL\\QLBH\\Project\\QuanLyNhaHangDaChiNhanhVer2\\QuanLyNhaHangDaChiNhanh\\img", hinhAnh);
+                    if (File.Exists(fullPath))
+                    {
+                        try
+                        {
+                            pictureBoxMonAn.Image = Image.FromFile(fullPath);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Không thể tải ảnh: " + ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        pictureBoxMonAn.Image = null; // clear nếu ảnh không tồn tại
+                    }
+                }
+                else
+                {
+                    pictureBoxMonAn.Image = null; // clear nếu không có hình
+                }
 
                 chiTietHoaDon.Rows.Add(maMon, tenMon, 1, donGia, 0, donGia);
             }
@@ -322,6 +393,52 @@ namespace QuanLyNhaHangDaChiNhanh
         private void btnPrint_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvChiTietHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvChiTietHoaDon.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn món cần xóa trong hóa đơn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa món đã chọn?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+                return;
+
+            foreach (DataGridViewRow selectedRow in dgvChiTietHoaDon.SelectedRows)
+            {
+                if (selectedRow.Cells["MAMON"].Value == null)
+                    continue;
+
+                string maMon = selectedRow.Cells["MAMON"].Value.ToString();
+
+                // Xóa khỏi chiTietHoaDon trên giao diện
+                foreach (DataRow row in chiTietHoaDon.Rows)
+                {
+                    if (row["MAMON"].ToString() == maMon)
+                    {
+                        chiTietHoaDon.Rows.Remove(row);
+                        break;
+                    }
+                }
+
+                // Xóa khỏi CSDL nếu đã lưu
+                string sqlDelete = "DELETE FROM CHITIETHOADON WHERE MAHD = @mahd AND MAMON = @mamon";
+                Dictionary<string, object> param = new Dictionary<string, object>();
+                param.Add("@mahd", maHoaDon);
+                param.Add("@mamon", maMon);
+
+                HamXuLy.RunSqlWithParams(sqlDelete, param);
+            }
+
+            MessageBox.Show("Đã xóa món khỏi hóa đơn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 

@@ -32,7 +32,7 @@ namespace QuanLyNhaHangDaChiNhanh
             HamXuLy.FillCombo("SELECT * FROM CHINHANH", cbChiNhanh, "TENCHINHANH", "MACHINHANH");
 
             //Load combobox loai khu
-            HamXuLy.FillCombo("SELECT * FROM KHU", cbMaKhu, "TENKHU", "MAKHU");
+            HamXuLy.FillCombo("SELECT * FROM KHU", cbMaKhu, "MAKHU", "MAKHU");
 
             cbTrangThai.Items.Add("Bàn Trống");
             cbTrangThai.Items.Add("Bàn Có Khách");
@@ -96,9 +96,9 @@ namespace QuanLyNhaHangDaChiNhanh
             btnCancel.Enabled = false;
             btnUndo.Enabled = true;
             btnRedo.Enabled = true;
-            btnBack.Enabled = false;
+            btnBack.Enabled = true;
         }
-        private void ClearForm() // HÀM XÓA CÁC KÍ TỰ TRÊN PANEL THÔNG TIN ĐỂ THÊM NHÂN VIÊN MỚI
+        private void ClearForm() 
         {
             txtTenBan.Text = "";
             cbMaKhu.SelectedIndex = 0;
@@ -146,13 +146,13 @@ namespace QuanLyNhaHangDaChiNhanh
             string tenban = txtTenBan.Text.Trim();
             string trangthai = cbTrangThai.Text;
             string machinhanh = cbChiNhanh.SelectedValue.ToString();
-            string MaKhu = cbMaKhu.SelectedValue.ToString();
+            string makhu = cbMaKhu.SelectedValue.ToString();
 
             HamXuLy.Connect();
 
             if (isAdding)
             {
-                string sql = "INSERT INTO BANAN (MABAN, TENBAN, MACHINHANH, TRANGTHAI, MAKHU) VALUES ('" + maban + "', N'" + tenban + "', '" + machinhanh + "','" + trangthai + "', '" + MaKhu + "')";
+                string sql = "INSERT INTO BANAN (MABAN, TENBAN, MACHINHANH, TRANGTHAI, MAKHU) VALUES ('" + maban + "', N'" + tenban + "', '" + machinhanh + "','" + trangthai + "', '" + makhu + "')";
                 HamXuLy.RunSQL(sql);
                 MessageBox.Show("Đã thêm bàn!");
             }
@@ -163,7 +163,7 @@ namespace QuanLyNhaHangDaChiNhanh
                              "TENBAN = N'" + tenban + "', " +
                              "MACHINHANH = '" + machinhanh + "', " +
                              "TRANGTHAI = N'" + trangthai + "', " +
-                             "MAKHU = '" + MaKhu + "' " +
+                             "MAKHU = '" + makhu + "' " +
                              "WHERE MABAN = '" + MaBan + "'";
                 HamXuLy.RunSQL(sql);
                 MessageBox.Show("Đã cập nhật thông tin bàn");
@@ -299,9 +299,7 @@ namespace QuanLyNhaHangDaChiNhanh
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmDashBoard f = new frmDashBoard();
-            f.Show();
+            this.Close();
         }
 
         private void btnNextPage_Click(object sender, EventArgs e)
