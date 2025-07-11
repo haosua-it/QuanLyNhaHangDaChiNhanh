@@ -25,6 +25,12 @@ namespace QuanLyNhaHangDaChiNhanh
             // Gọi logic lấy dữ liệu và hiển thị hóa đơn theo maHoaDon
             // Có thể load vào ReportViewer hoặc in bằng Crystal Report hoặc viết tay với PrintDocument
         }
+
+        private void frmInHoaDon_Load_1(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 
 }

@@ -375,11 +375,6 @@ namespace QuanLyNhaHangDaChiNhanh
             }*/
         }
 
-        private void btnGiamGia_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
 
@@ -441,6 +436,114 @@ namespace QuanLyNhaHangDaChiNhanh
             MessageBox.Show("Đã xóa món khỏi hóa đơn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void btnGiamGia_Click(object sender, EventArgs e)
+        {
+            if (chiTietHoaDon.Rows.Count == 0)
+            {
+                MessageBox.Show("Hóa đơn chưa có món ăn nào.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // Tính tổng tiền hiện tại của hóa đơn
+            decimal tongTien = 0;
+            foreach (DataRow row in chiTietHoaDon.Rows)
+            {
+                decimal soLuong, gia;
+                decimal.TryParse(row["SOLUONG"].ToString(), out soLuong);
+                decimal.TryParse(row["GIA"].ToString(), out gia);
+                tongTien += soLuong * gia;
+            }
+
+            // Truy vấn khuyến mãi hợp lệ
+            string sql = @"
+        SELECT TOP 1 * 
+        FROM KHUYENMAI 
+        WHERE TRANGTHAI = 1 
+            AND @now BETWEEN NGAYBATDAU AND NGAYKETTHUC
+        ORDER BY GIATRI DESC";
+
+            Dictionary<string, object> param = new Dictionary<string, object>();
+            param["@now"] = DateTime.Now;
+
+            DataTable dt = HamXuLy.GetDataToTable(sql, param);
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có khuyến mãi nào phù hợp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Lấy thông tin khuyến mãi tốt nhất
+            DataRow km = dt.Rows[0];
+            string tenKM = km["TENKM"].ToString();
+            int maKM = Convert.ToInt32(km["MAKM"]);
+            decimal giaTri = 0;
+            int maLoai = 0;
+
+            decimal.TryParse(km["GIATRI"].ToString(), out giaTri);
+            int.TryParse(km["MALOAI"].ToString(), out maLoai);
+
+            decimal tongGiamGia = 0;
+
+            // Áp dụng khuyến mãi
+            if (maLoai == 1) // Giảm theo phần trăm
+            {
+                foreach (DataRow row in chiTietHoaDon.Rows)
+                {
+                    decimal soLuong, gia;
+                    decimal.TryParse(row["SOLUONG"].ToString(), out soLuong);
+                    decimal.TryParse(row["GIA"].ToString(), out gia);
+
+                    decimal giam = soLuong * gia * giaTri / 100;
+                    row["GIAMGIA"] = Math.Round(giam, 0);
+                    tongGiamGia += Math.Round(giam, 0);
+                }
+            }
+            else if (maLoai == 2) // Giảm số tiền cố định (chia đều)
+            {
+                decimal giamTheoMon = giaTri / chiTietHoaDon.Rows.Count;
+                giamTheoMon = Math.Round(giamTheoMon, 0);
+
+                foreach (DataRow row in chiTietHoaDon.Rows)
+                {
+                    row["GIAMGIA"] = giamTheoMon;
+                    tongGiamGia += giamTheoMon;
+                }
+            }
+
+            // Tính tổng tiền sau giảm
+            decimal tongTienSauGiam = tongTien - tongGiamGia;
+
+            // Cập nhật vào bảng HOADON
+            string sqlUpdateHD = @"
+        UPDATE HOADON 
+        SET MAKM = @makm,
+            GIATRIKHUYENMAI = @giamgia,
+            TONGTIENHANG = @tongtien,
+            TONGTIENPHAITRA = @phaitra
+        WHERE MAHD = @mahd";
+
+            Dictionary<string, object> paramUpdate = new Dictionary<string, object>();
+            paramUpdate["@makm"] = maKM;
+            paramUpdate["@giamgia"] = tongGiamGia;
+            paramUpdate["@tongtien"] = tongTien;
+            paramUpdate["@phaitra"] = tongTienSauGiam;
+            paramUpdate["@mahd"] = maHoaDon;
+
+            HamXuLy.RunSqlWithParams(sqlUpdateHD, paramUpdate);
+
+            dgvChiTietHoaDon.Refresh(); // Cập nhật lại lưới
+
+            // ==== ĐỊNH DẠNG CỘT GIÁ & THÀNH TIỀN ====
+            dgvChiTietHoaDon.Columns["GIA"].DefaultCellStyle.Format = "N0";
+            dgvChiTietHoaDon.Columns["GIA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvChiTietHoaDon.Columns["THANHTIEN"].DefaultCellStyle.Format = "N0";
+            dgvChiTietHoaDon.Columns["THANHTIEN"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            // ==========================================
+
+            MessageBox.Show(
+                string.Format("Đã áp dụng khuyến mãi: {0}\nTổng giảm: {1:N0} VNĐ\nTổng phải trả: {2:N0} VNĐ",
+                tenKM, tongGiamGia, tongTienSauGiam),
+                "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
