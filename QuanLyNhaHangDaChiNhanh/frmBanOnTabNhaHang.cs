@@ -379,6 +379,7 @@ namespace QuanLyNhaHangDaChiNhanh
         {
             CapNhatHinhThucThanhToan("Tiền mặt");
         }
+
         private void CapNhatHinhThucThanhToan(string hinhThuc)
         {
             if (string.IsNullOrEmpty(selectedMaBan))
@@ -387,8 +388,8 @@ namespace QuanLyNhaHangDaChiNhanh
                 return;
             }
 
-            // Lấy mã hóa đơn chưa thanh toán của bàn
-            string sqlGetHD = "SELECT TOP 1 MAHD FROM HOADON WHERE MABAN = @maban AND TRANGTHAI = N'Nợ'";
+            // Cập nhật lại câu truy vấn: Trạng thái cần kiểm tra là 'Chưa thanh toán' chứ không phải 'Nợ'
+            string sqlGetHD = "SELECT TOP 1 MAHD FROM HOADON WHERE MABAN = @maban AND TRANGTHAI = N'Chưa thanh toán'";
             Dictionary<string, object> paramGetHD = new Dictionary<string, object>();
             paramGetHD.Add("@maban", selectedMaBan);
 
@@ -400,11 +401,11 @@ namespace QuanLyNhaHangDaChiNhanh
                 return;
             }
 
-            // Cập nhật hình thức thanh toán + trạng thái hóa đơn
+            // Cập nhật hình thức thanh toán và trạng thái hóa đơn
             string sql = @"
-        UPDATE HOADON 
-        SET HINHTHUCTHANHTOAN = @httt, TRANGTHAI = N'Đã thanh toán'
-        WHERE MAHD = @mahd";
+                UPDATE HOADON 
+                SET HINHTHUCTHANHTOAN = @httt, TRANGTHAI = N'Đã thanh toán'
+                WHERE MAHD = @mahd";
 
             Dictionary<string, object> param = new Dictionary<string, object>();
             param.Add("@httt", hinhThuc);
@@ -412,7 +413,25 @@ namespace QuanLyNhaHangDaChiNhanh
 
             HamXuLy.RunSqlWithParams(sql, param);
 
+            // Cập nhật trạng thái bàn về 'Đã in hóa đơn' hoặc 'Trống' tùy logic
+            string sqlUpdateBan = "UPDATE BANAN SET TRANGTHAI = N'Đã in hóa đơn' WHERE MABAN = @maban";
+            Dictionary<string, object> paramBan = new Dictionary<string, object>();
+            paramBan.Add("@maban", selectedMaBan);
+            HamXuLy.RunSqlWithParams(sqlUpdateBan, paramBan);
+
             MessageBox.Show("Đã cập nhật hình thức thanh toán: " + hinhThuc + "\nvà đánh dấu hóa đơn là đã thanh toán.", "Thông báo");
+            LoadBanTheoKhu();
+        }
+
+
+        private void flpBan_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnGiamGia_Click(object sender, EventArgs e)
+        {
+            //làm thêm chức năng giảm giá ở đây
         }
 
 

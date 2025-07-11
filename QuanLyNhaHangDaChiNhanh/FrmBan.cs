@@ -96,9 +96,9 @@ namespace QuanLyNhaHangDaChiNhanh
             btnCancel.Enabled = false;
             btnUndo.Enabled = true;
             btnRedo.Enabled = true;
-            btnBack.Enabled = false;
+            btnBack.Enabled = true;
         }
-        private void ClearForm() // HÀM XÓA CÁC KÍ TỰ TRÊN PANEL THÔNG TIN ĐỂ THÊM NHÂN VIÊN MỚI
+        private void ClearForm() 
         {
             txtTenBan.Text = "";
             cbMaKhu.SelectedIndex = 0;
@@ -299,9 +299,7 @@ namespace QuanLyNhaHangDaChiNhanh
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmDashBoard f = new frmDashBoard();
-            f.Show();
+            this.Close();
         }
 
         private void btnNextPage_Click(object sender, EventArgs e)
