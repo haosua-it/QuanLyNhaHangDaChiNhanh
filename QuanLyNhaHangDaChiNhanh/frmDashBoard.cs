@@ -204,7 +204,6 @@ namespace QuanLyNhaHangDaChiNhanh
             frmInvoice f = new frmInvoice();
             f.ShowDialog();
             this.Show();
-
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)

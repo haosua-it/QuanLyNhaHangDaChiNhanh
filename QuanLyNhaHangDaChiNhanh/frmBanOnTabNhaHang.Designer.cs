@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBanOnTabNhaHang));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTenKhachHang = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbKhu = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.flpBan = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblTenKhachHang = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +62,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1366, 50);
             this.panel1.TabIndex = 1;
+            // 
+            // lblTenKhachHang
+            // 
+            this.lblTenKhachHang.AutoSize = true;
+            this.lblTenKhachHang.Location = new System.Drawing.Point(570, 10);
+            this.lblTenKhachHang.Name = "lblTenKhachHang";
+            this.lblTenKhachHang.Size = new System.Drawing.Size(0, 14);
+            this.lblTenKhachHang.TabIndex = 9;
             // 
             // label5
             // 
@@ -225,6 +233,7 @@
             this.btnGiamGia.Text = "Giảm giá";
             this.btnGiamGia.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGiamGia.UseVisualStyleBackColor = false;
+            this.btnGiamGia.Click += new System.EventHandler(this.btnGiamGia_Click);
             // 
             // btnThanhToan
             // 
@@ -296,21 +305,14 @@
             this.flpBan.Name = "flpBan";
             this.flpBan.Size = new System.Drawing.Size(1361, 376);
             this.flpBan.TabIndex = 2;
-            // 
-            // lblTenKhachHang
-            // 
-            this.lblTenKhachHang.AutoSize = true;
-            this.lblTenKhachHang.Location = new System.Drawing.Point(570, 10);
-            this.lblTenKhachHang.Name = "lblTenKhachHang";
-            this.lblTenKhachHang.Size = new System.Drawing.Size(0, 14);
-            this.lblTenKhachHang.TabIndex = 9;
+            this.flpBan.Paint += new System.Windows.Forms.PaintEventHandler(this.flpBan_Paint);
             // 
             // frmBanOnTabNhaHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1370, 788);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));

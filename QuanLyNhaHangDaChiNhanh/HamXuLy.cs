@@ -451,6 +451,8 @@ namespace QuanLyNhaHangDaChiNhanh
             object result = null;
             try
             {
+                Connect(); // <--- KẾT NỐI 
+
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     if (parameters != null)
@@ -466,6 +468,10 @@ namespace QuanLyNhaHangDaChiNhanh
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi thực thi SQL: " + ex.Message, "Lỗi truy vấn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Disconnect(); // <--- ĐÓNG KẾT NỐI 
             }
             return result;
         }
