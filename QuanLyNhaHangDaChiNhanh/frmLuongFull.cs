@@ -24,6 +24,8 @@ namespace QuanLyNhaHangDaChiNhanh
         private void frmUsers_Load(object sender, EventArgs e)
         {
             HamXuLy.Connect();
+            btnDelete.Enabled = false;
+            btnAdd.Enabled = false;
             pnlLuongFull.Enabled = false;
             txtMaLuong.Enabled = false;
             txtTongLuong.Enabled = false; // Tổng lương là chỉ đọc
@@ -53,10 +55,10 @@ namespace QuanLyNhaHangDaChiNhanh
             txtThuong.Text = "";
             txtKhauTru.Text = "";
             txtTongLuong.Text = "";
-            btnAdd.Enabled = true;
+            btnAdd.Enabled = false;
             btnBack.Enabled = true;
             btnCancel.Enabled = true;
-            btnDelete.Enabled = true;
+            btnDelete.Enabled = false;
             btnEdit.Enabled = true;
             btnPrint.Enabled = true;
             btnRedo.Enabled = true;

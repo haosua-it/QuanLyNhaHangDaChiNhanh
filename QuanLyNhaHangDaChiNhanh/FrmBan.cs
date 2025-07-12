@@ -98,11 +98,7 @@ namespace QuanLyNhaHangDaChiNhanh
             btnRedo.Enabled = true;
             btnBack.Enabled = true;
         }
-<<<<<<< HEAD
-        private void ClearForm() // HÀM XÓA CÁC KÍ TỰ TRÊN PANEL THÔNG TIN
-=======
         private void ClearForm() 
->>>>>>> refs/remotes/origin/main
         {
             txtTenBan.Text = "";
             cbMaKhu.SelectedIndex = 0;
