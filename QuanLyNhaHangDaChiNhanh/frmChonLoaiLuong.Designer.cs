@@ -41,15 +41,15 @@
             this.label1.Location = new System.Drawing.Point(237, 97);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 25);
+            this.label1.Size = new System.Drawing.Size(211, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Chọn loại lương";
+            this.label1.Text = "Chọn loại nhân viên:";
             // 
             // cboLoaiLuong
             // 
             this.cboLoaiLuong.FormattingEnabled = true;
             this.cboLoaiLuong.Location = new System.Drawing.Point(512, 97);
-            this.cboLoaiLuong.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cboLoaiLuong.Margin = new System.Windows.Forms.Padding(5);
             this.cboLoaiLuong.Name = "cboLoaiLuong";
             this.cboLoaiLuong.Size = new System.Drawing.Size(461, 33);
             this.cboLoaiLuong.TabIndex = 1;
@@ -84,7 +84,7 @@
             this.Controls.Add(this.cboLoaiLuong);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmChonLoaiLuong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chọn loại lương:";

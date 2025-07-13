@@ -28,8 +28,7 @@ namespace QuanLyNhaHangDaChiNhanh
 
         private void frmInHoaDon_Load_1(object sender, EventArgs e)
         {
-
-            this.reportViewer1.RefreshReport();
+            
         }
     }
 

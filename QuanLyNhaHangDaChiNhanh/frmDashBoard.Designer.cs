@@ -93,10 +93,10 @@
             this.tabPage1.Controls.Add(this.btnStaffs);
             this.tabPage1.Controls.Add(this.btnSales);
             this.tabPage1.Controls.Add(this.btnUsers);
-            this.tabPage1.Location = new System.Drawing.Point(4, 31);
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1345, 729);
+            this.tabPage1.Size = new System.Drawing.Size(1345, 734);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hệ thống";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -188,6 +188,7 @@
             this.btnInvoice.Text = "Invoice";
             this.btnInvoice.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnInvoice.UseVisualStyleBackColor = false;
+            this.btnInvoice.Click += new System.EventHandler(this.btnInvoice_Click);
             // 
             // btnIngredients
             // 
@@ -348,10 +349,10 @@
             this.tabPage3.Controls.Add(this.btnTableNhaHang);
             this.tabPage3.Controls.Add(this.btnLogoutNhaHang);
             this.tabPage3.Controls.Add(this.btnInvoiceNhaHang);
-            this.tabPage3.Location = new System.Drawing.Point(4, 31);
+            this.tabPage3.Location = new System.Drawing.Point(4, 26);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1345, 729);
+            this.tabPage3.Size = new System.Drawing.Size(1345, 734);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nhà hàng";
             this.tabPage3.UseVisualStyleBackColor = true;

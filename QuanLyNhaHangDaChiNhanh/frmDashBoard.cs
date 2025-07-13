@@ -289,8 +289,8 @@ namespace QuanLyNhaHangDaChiNhanh
 
         private void btnShift_Click(object sender, EventArgs e)
         {
-            frmShift frm = new frmShift();
-            frm.Show();
+            frmXepCa frm = new frmXepCa();
+            frm.ShowDialog();
         }
 
         private void btnClients_Click(object sender, EventArgs e)
@@ -344,6 +344,11 @@ namespace QuanLyNhaHangDaChiNhanh
         {
             frmChonLoaiLuong frm = new frmChonLoaiLuong();
             frm.Show();
+        }
+
+        private void btnInvoice_Click(object sender, EventArgs e)
+        {
+
         }
 
 

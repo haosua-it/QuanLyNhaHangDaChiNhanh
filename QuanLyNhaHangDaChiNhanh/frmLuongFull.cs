@@ -21,9 +21,19 @@ namespace QuanLyNhaHangDaChiNhanh
         }
         private int currentPage = 1;
         private int pageSize = 10;
+        public string maLoaiNhanVien;
+
+        public frmLuongFull(string maloai)
+        {
+            InitializeComponent();
+            maLoaiNhanVien = maloai;
+        }
+
         private void frmUsers_Load(object sender, EventArgs e)
         {
             HamXuLy.Connect();
+            txtNamLam.Enabled = false;
+            txtThangLam.Enabled = false;
             btnDelete.Enabled = false;
             btnAdd.Enabled = false;
             pnlLuongFull.Enabled = false;
@@ -91,14 +101,19 @@ namespace QuanLyNhaHangDaChiNhanh
             luoiLuongFull.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             lblPage.Text = string.Format("Trang {0}", currentPage);
         }
-        public static DataTable ShowLuongPhanTrang(int pageNumber, int pageSize)
+        public DataTable ShowLuongPhanTrang(int pageNumber, int pageSize)
         {
             HamXuLy.Connect();
             SqlConnection conn = HamXuLy.conn;
             DataTable dt = new DataTable();
             int offset = (pageNumber - 1) * pageSize;
 
-            string sql = string.Format("SELECT * FROM LUONG_FULLTIME ORDER BY MALUONG OFFSET {0} ROWS FETCH NEXT {1} ROWS ONLY", offset, pageSize);
+            string sql = string.Format(@"
+    SELECT lf.* FROM LUONG_FULLTIME lf
+    JOIN NHANVIEN nv ON nv.MANHANVIEN = lf.MANHANVIEN
+    WHERE nv.MALOAI = '{0}'
+    ORDER BY MALUONG OFFSET {1} ROWS FETCH NEXT {2} ROWS ONLY", maLoaiNhanVien, offset, pageSize);
+
             try
             {
                 SqlDataAdapter da = new SqlDataAdapter(sql, conn);
