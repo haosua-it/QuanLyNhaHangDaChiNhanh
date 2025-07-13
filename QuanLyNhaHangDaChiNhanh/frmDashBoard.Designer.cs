@@ -115,6 +115,7 @@
             this.btnCatalogue.Text = "Catalogue";
             this.btnCatalogue.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCatalogue.UseVisualStyleBackColor = false;
+            this.btnCatalogue.Click += new System.EventHandler(this.btnCatalogue_Click);
             // 
             // btnSearch
             // 
@@ -288,9 +289,10 @@
             this.btnBrands.Name = "btnBrands";
             this.btnBrands.Size = new System.Drawing.Size(87, 81);
             this.btnBrands.TabIndex = 17;
-            this.btnBrands.Text = "Brands";
+            this.btnBrands.Text = "Branch";
             this.btnBrands.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBrands.UseVisualStyleBackColor = false;
+            this.btnBrands.Click += new System.EventHandler(this.btnBrands_Click);
             // 
             // btnStaffs
             // 
@@ -348,10 +350,10 @@
             this.tabPage3.Controls.Add(this.btnTableNhaHang);
             this.tabPage3.Controls.Add(this.btnLogoutNhaHang);
             this.tabPage3.Controls.Add(this.btnInvoiceNhaHang);
-            this.tabPage3.Location = new System.Drawing.Point(4, 31);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1345, 729);
+            this.tabPage3.Size = new System.Drawing.Size(1345, 735);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nhà hàng";
             this.tabPage3.UseVisualStyleBackColor = true;

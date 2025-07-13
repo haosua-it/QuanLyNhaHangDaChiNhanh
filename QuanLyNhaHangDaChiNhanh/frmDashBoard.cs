@@ -346,6 +346,22 @@ namespace QuanLyNhaHangDaChiNhanh
             frm.Show();
         }
 
+        private void btnBrands_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmBranch frm = new frmBranch();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void btnCatalogue_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmDanhMucMonAn frm = new frmDanhMucMonAn();
+            frm.ShowDialog();
+            this.Show();
+        }
+
 
     }
 }

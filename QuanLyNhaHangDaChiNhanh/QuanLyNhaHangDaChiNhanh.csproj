@@ -45,7 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BanAn.cs" />
+    <Compile Include="Branch.cs" />
     <Compile Include="Clients.cs" />
+    <Compile Include="Danhmucmonan.cs" />
     <Compile Include="FrmBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +59,12 @@
     </Compile>
     <Compile Include="frmBanOnTabNhaHang.Designer.cs">
       <DependentUpon>frmBanOnTabNhaHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBranch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBranch.Designer.cs">
+      <DependentUpon>frmBranch.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChonLoaiLuong.cs">
       <SubType>Form</SubType>
@@ -93,6 +101,12 @@
     </Compile>
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDanhMucMonAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDanhMucMonAn.Designer.cs">
+      <DependentUpon>frmDanhMucMonAn.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDashBoard.cs">
       <SubType>Form</SubType>
@@ -193,6 +207,9 @@
     <EmbeddedResource Include="frmBanOnTabNhaHang.resx">
       <DependentUpon>frmBanOnTabNhaHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBranch.resx">
+      <DependentUpon>frmBranch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChonLoaiLuong.resx">
       <DependentUpon>frmChonLoaiLuong.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDanhMucMonAn.resx">
+      <DependentUpon>frmDanhMucMonAn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDashBoard.resx">
       <DependentUpon>frmDashBoard.cs</DependentUpon>

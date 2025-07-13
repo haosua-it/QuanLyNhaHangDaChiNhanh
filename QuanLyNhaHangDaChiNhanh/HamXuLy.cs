@@ -545,5 +545,93 @@ namespace QuanLyNhaHangDaChiNhanh
             }
             return dt;
         }
+        public static DataTable ShowChiNhanhPhanTrang(int page, int pageSize)
+        {
+            Connect();
+            int offset = (page - 1) * pageSize;
+            string sql = string.Format("SELECT * FROM CHINHANH ORDER BY MACHINHANH OFFSET {0} ROWS FETCH NEXT {1} ROWS ONLY", offset, pageSize);
+            DataTable dt = new DataTable();
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi phân trang chi nhánh: " + ex.Message);
+            }
+            finally
+            {
+                Disconnect();
+            }
+
+            return dt;
+        }
+        public static DataTable ShowChiNhanh()
+        {
+            Connect(); // Kết nối CSDL
+            DataTable dt = new DataTable();
+            string sql = "SELECT * FROM CHINHANH";
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lấy dữ liệu chi nhánh: " + ex.Message);
+            }
+            finally
+            {
+                Disconnect();
+            }
+            return dt;
+        }
+        public static DataTable ShowDanhMucMonAnPhanTrang(int page, int pageSize)
+        {
+            Connect();
+            int offset = (page - 1) * pageSize;
+            string sql = string.Format("SELECT * FROM DANHMUCMON ORDER BY MADANHMUC OFFSET {0} ROWS FETCH NEXT {1} ROWS ONLY", offset, pageSize);
+            DataTable dt = new DataTable();
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi phân trang danh mục món ăn: " + ex.Message);
+            }
+            finally
+            {
+                Disconnect();
+            }
+
+            return dt;
+        }
+        public static DataTable ShowDanhMucMonAn()
+        {
+            Connect(); // Kết nối CSDL
+            DataTable dt = new DataTable();
+            string sql = "SELECT * FROM DANHMUCMON";
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lấy dữ liệu danh mục món ăn: " + ex.Message);
+            }
+            finally
+            {
+                Disconnect();
+            }
+            return dt;
+        }
+
+
     }
 }
