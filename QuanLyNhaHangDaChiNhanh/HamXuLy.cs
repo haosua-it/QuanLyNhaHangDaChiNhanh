@@ -118,18 +118,39 @@ namespace QuanLyNhaHangDaChiNhanh
         }
         public static DataTable GetDataToTable(string sql, Dictionary<string, object> parameters = null)
         {
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            if (parameters != null)
+            Connect(); 
+
+            DataTable dt = new DataTable();
+            try
             {
-                foreach (var p in parameters)
-                    cmd.Parameters.AddWithValue(p.Key, p.Value);
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    if (parameters != null)
+                    {
+                        foreach (var p in parameters)
+                        {
+                            cmd.Parameters.AddWithValue(p.Key, p.Value);
+                        }
+                    }
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lấy dữ liệu: " + ex.Message, "Lỗi SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Disconnect(); 
             }
 
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
             return dt;
         }
+
 
 
        public static int MaLonNhat(string bang, string cot)

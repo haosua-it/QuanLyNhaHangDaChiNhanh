@@ -38,6 +38,7 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnGiamGia = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHoaDon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,12 +142,29 @@
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // btnGiamGia
+            // 
+            this.btnGiamGia.BackColor = System.Drawing.Color.White;
+            this.btnGiamGia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGiamGia.Image = ((System.Drawing.Image)(resources.GetObject("btnGiamGia.Image")));
+            this.btnGiamGia.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnGiamGia.Location = new System.Drawing.Point(177, 667);
+            this.btnGiamGia.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGiamGia.Name = "btnGiamGia";
+            this.btnGiamGia.Size = new System.Drawing.Size(75, 70);
+            this.btnGiamGia.TabIndex = 113;
+            this.btnGiamGia.Text = "Giảm giá";
+            this.btnGiamGia.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGiamGia.UseVisualStyleBackColor = false;
+            this.btnGiamGia.Click += new System.EventHandler(this.btnGiamGia_Click);
+            // 
             // frmGoiMon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.btnGiamGia);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
@@ -180,5 +198,6 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnGiamGia;
     }
 }

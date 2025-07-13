@@ -16,11 +16,11 @@ namespace QuanLyNhaHangDaChiNhanh
         {
             InitializeComponent();
         }
-        // thao tác hoàn tác
+        
         private Stack<BanAn> undoStack = new Stack<BanAn>();
         private Stack<BanAn> redoStack = new Stack<BanAn>();
 
-        // phân trang
+        
         private int currentPage = 1;
         private int pageSize = 10;
 
@@ -28,16 +28,16 @@ namespace QuanLyNhaHangDaChiNhanh
         {
             HamXuLy.Connect();
 
-            //Load combobox loai chi nhanh
+            
             HamXuLy.FillCombo("SELECT * FROM CHINHANH", cbChiNhanh, "TENCHINHANH", "MACHINHANH");
 
-            //Load combobox loai khu
+            
             HamXuLy.FillCombo("SELECT * FROM KHU", cbMaKhu, "MAKHU", "MAKHU");
 
             cbTrangThai.Items.Add("Bàn Trống");
             cbTrangThai.Items.Add("Bàn Có Khách");
 
-            //Load danh sach ban
+            
             LoadBanAnPhanTrang();
             EnableForm(false);
         }

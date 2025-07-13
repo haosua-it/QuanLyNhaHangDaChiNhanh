@@ -14,16 +14,20 @@ namespace QuanLyNhaHangDaChiNhanh
     public partial class frmLuongPart : Form
     {
 
-        public frmLuongPart()
+        public string maLoaiNhanVien;
+
+        public frmLuongPart(string maloai)
         {
             InitializeComponent();
+            maLoaiNhanVien = maloai;
         }
         private int currentPage = 1;
         private int pageSize = 10;
         private void frmUsers_Load(object sender, EventArgs e)
         {
             HamXuLy.Connect();
-            pnlLuongPart.Enabled = false;
+
+            txtSoGioCong.Enabled = false;
             txtMaLuong.Enabled = false;
             txtTongLuong.Enabled = false; // Tổng lương là chỉ đọc
             cboMaNhanVien.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -32,11 +36,34 @@ namespace QuanLyNhaHangDaChiNhanh
             HamXuLy.FillCombo(sqlNhanVien, cboMaNhanVien, "HOTEN", "MANHANVIEN");
 
             LoadLuongPhanTrang();
-            txtSoGioCong.TextChanged += new EventHandler(CapNhatTongLuong);
             txtLuongTheoGio.TextChanged += new EventHandler(CapNhatTongLuong);
             txtThuong.TextChanged += new EventHandler(CapNhatTongLuong);
             txtKhauTru.TextChanged += new EventHandler(CapNhatTongLuong);
+            cboMaNhanVien.SelectedIndexChanged += (s, ev) => TinhSoGioCong();
+            txtThangLam.TextChanged += (s, ev) => TinhSoGioCong();
+            txtNamLam.TextChanged += (s, ev) => TinhSoGioCong();
+
         }
+        private void TinhSoGioCong()
+        {
+            if (string.IsNullOrWhiteSpace(txtThangLam.Text) || string.IsNullOrWhiteSpace(txtNamLam.Text)) return;
+            if (cboMaNhanVien.SelectedIndex == -1) return;
+
+            int manv = Convert.ToInt32(cboMaNhanVien.SelectedValue);
+            int thang = int.Parse(txtThangLam.Text);
+            int nam = int.Parse(txtNamLam.Text);
+
+            string sql = string.Format(@"
+        SELECT ISNULL(SUM(DATEDIFF(MINUTE, GIOVAO, GIORA)), 0) / 60
+        FROM CHAMCONG
+        WHERE MANHANVIEN = {0} AND MONTH(NGAY) = {1} AND YEAR(NGAY) = {2}
+    ", manv, thang, nam);
+
+            string gioCong = HamXuLy.GetFieldValue(sql);
+            txtSoGioCong.Text = gioCong;
+        }
+
+
         private void reset()
         {
             pnlLuongPart.Enabled = false;
@@ -73,11 +100,21 @@ namespace QuanLyNhaHangDaChiNhanh
             decimal thuong = 0;
             decimal khauTru = 0;
 
-            if (decimal.TryParse(txtLuongTheoGio.Text, out luongTheoGio) &&
-                int.TryParse(txtSoGioCong.Text, out soGioCong))
-            {
-                decimal.TryParse(txtThuong.Text, out thuong);
+            // Nếu để trống thì gán "0" vào cho an toàn
+            if (string.IsNullOrWhiteSpace(txtLuongTheoGio.Text)) txtLuongTheoGio.Text = "0";
+            if (string.IsNullOrWhiteSpace(txtSoGioCong.Text)) txtSoGioCong.Text = "0";
+            if (string.IsNullOrWhiteSpace(txtThuong.Text)) txtThuong.Text = "0";
+            if (string.IsNullOrWhiteSpace(txtKhauTru.Text)) txtKhauTru.Text = "0";
+
+            // Thử parse từng giá trị
+            bool isValid =
+                decimal.TryParse(txtLuongTheoGio.Text, out luongTheoGio) &&
+                int.TryParse(txtSoGioCong.Text, out soGioCong) &&
+                decimal.TryParse(txtThuong.Text, out thuong) &&
                 decimal.TryParse(txtKhauTru.Text, out khauTru);
+
+            if (isValid)
+            {
 
                 decimal tongLuong = soGioCong * luongTheoGio + thuong - khauTru;
                 txtTongLuong.Text = tongLuong.ToString("N0");
@@ -87,6 +124,7 @@ namespace QuanLyNhaHangDaChiNhanh
                 txtTongLuong.Text = "Lỗi nhập liệu";
             }
         }
+
         private void LoadLuongPhanTrang()
         {
             DataTable dt = ShowLuongPhanTrang(currentPage, pageSize);
@@ -107,14 +145,18 @@ namespace QuanLyNhaHangDaChiNhanh
             luoiLuongPart.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             lblPage.Text = string.Format("Trang {0}", currentPage);
         }
-        public static DataTable ShowLuongPhanTrang(int pageNumber, int pageSize)
+        public DataTable ShowLuongPhanTrang(int pageNumber, int pageSize)
         {
             HamXuLy.Connect();
             SqlConnection conn = HamXuLy.conn;
             DataTable dt = new DataTable();
             int offset = (pageNumber - 1) * pageSize;
 
-            string sql = string.Format("SELECT * FROM LUONG_PARTTIME ORDER BY MALUONG OFFSET {0} ROWS FETCH NEXT {1} ROWS ONLY", offset, pageSize);
+            string sql = string.Format(@"
+    SELECT lf.* FROM LUONG_PARTTIME lf
+    JOIN NHANVIEN nv ON nv.MANHANVIEN = lf.MANHANVIEN
+    WHERE nv.MALOAI = '{0}'
+    ORDER BY MALUONG OFFSET {1} ROWS FETCH NEXT {2} ROWS ONLY", maLoaiNhanVien, offset, pageSize);
             try
             {
                 SqlDataAdapter da = new SqlDataAdapter(sql, conn);

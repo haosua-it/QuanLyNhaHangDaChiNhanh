@@ -32,8 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -114,6 +117,12 @@
     <Compile Include="frmDashBoard.Designer.cs">
       <DependentUpon>frmDashBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDinhMuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDinhMuc.Designer.cs">
+      <DependentUpon>frmDinhMuc.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGoiMon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,7 +201,18 @@
     <Compile Include="frmUsers.Designer.cs">
       <DependentUpon>frmUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmXepCa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXepCa.Designer.cs">
+      <DependentUpon>frmXepCa.cs</DependentUpon>
+    </Compile>
     <Compile Include="HamXuLy.cs" />
+    <Compile Include="inRP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>inRP.xsd</DependentUpon>
+    </Compile>
     <Compile Include="KhuyenMai.cs" />
     <Compile Include="MonAn.cs" />
     <Compile Include="NguyenVatLieu.cs" />
@@ -200,6 +220,11 @@
     <Compile Include="NhanVien.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLYNHAHANGDACHINHANHDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLYNHAHANGDACHINHANHDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Session.cs" />
     <EmbeddedResource Include="FrmBan.resx">
       <DependentUpon>FrmBan.cs</DependentUpon>
@@ -233,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDashBoard.resx">
       <DependentUpon>frmDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDinhMuc.resx">
+      <DependentUpon>frmDinhMuc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGoiMon.resx">
       <DependentUpon>frmGoiMon.cs</DependentUpon>
@@ -273,6 +301,9 @@
     <EmbeddedResource Include="frmUsers.resx">
       <DependentUpon>frmUsers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmXepCa.resx">
+      <DependentUpon>frmXepCa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -282,6 +313,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="inRP.xsc">
+      <DependentUpon>inRP.xsd</DependentUpon>
+    </None>
+    <None Include="inRP.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>inRP.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="inRP.xss">
+      <DependentUpon>inRP.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -291,6 +333,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QLYNHAHANGDACHINHANHDataSet.xsc">
+      <DependentUpon>QLYNHAHANGDACHINHANHDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLYNHAHANGDACHINHANHDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLYNHAHANGDACHINHANHDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLYNHAHANGDACHINHANHDataSet.xss">
+      <DependentUpon>QLYNHAHANGDACHINHANHDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

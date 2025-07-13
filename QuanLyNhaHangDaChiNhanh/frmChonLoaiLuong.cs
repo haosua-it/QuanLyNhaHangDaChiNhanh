@@ -25,33 +25,28 @@ namespace QuanLyNhaHangDaChiNhanh
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (cboLoaiLuong.Text == "Lương Full - Time")
+            string maLoai = cboLoaiLuong.SelectedValue.ToString();
+
+            if (maLoai == "LNV002" || maLoai == "LNV003") // Nhân viên chính thức
             {
-                frmLuongFull frm = new frmLuongFull();
+
+                frmLuongPart frm = new frmLuongPart(maLoai);
                 frm.Show();
-                this.Close();
             }
             else
             {
-                frmLuongPart frm = new frmLuongPart();
+                frmLuongFull frm = new frmLuongFull(maLoai);
                 frm.Show();
-                this.Close();
             }
+
+            this.Close();
         }
 
         private void frmChonLoaiLuong_Load(object sender, EventArgs e)
         {
             cboLoaiLuong.DropDownStyle = ComboBoxStyle.DropDownList;
-            DataTable dtLoaiLuong = new DataTable();
-            dtLoaiLuong.Columns.Add("Text");
-            dtLoaiLuong.Columns.Add("Value");
-
-            dtLoaiLuong.Rows.Add("Lương Full - Time", 1);
-            dtLoaiLuong.Rows.Add("Lương Part - Time", 0);
-
-            cboLoaiLuong.DataSource = dtLoaiLuong;
-            cboLoaiLuong.DisplayMember = "Text";
-            cboLoaiLuong.ValueMember = "Value";
+            string sql = "SELECT MALOAI, TENLOAI FROM LOAINHANVIEN";
+            HamXuLy.FillCombo(sql, cboLoaiLuong, "TENLOAI", "MALOAI");
         }
     }
 }

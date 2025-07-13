@@ -28,19 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
+            // 
+            // reportViewer1
+            // 
+            reportDataSource1.Name = "DataSet1";
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyNhaHangDaChiNhanh.Report1.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(13, 3);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(555, 346);
+            this.reportViewer1.TabIndex = 0;
             // 
             // frmInHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 372);
+            this.Controls.Add(this.reportViewer1);
             this.Name = "frmInHoaDon";
             this.Text = "frmInHoaDon";
+            this.Load += new System.EventHandler(this.frmInHoaDon_Load_1);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

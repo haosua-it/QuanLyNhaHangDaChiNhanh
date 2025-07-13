@@ -19,7 +19,6 @@ namespace QuanLyNhaHangDaChiNhanh
         private Stack<Clients> undoStack = new Stack<Clients>();
         private Stack<Clients> redoStack = new Stack<Clients>();
 
-        // phân trang
         private int currentPage = 1;
         private int pageSize = 10;
         private void frmClients_Load(object sender, EventArgs e)
@@ -83,7 +82,7 @@ namespace QuanLyNhaHangDaChiNhanh
             btnRedo.Enabled = true;
             btnBack.Enabled = false;
         }
-        private void ClearForm() // HÀM XÓA CÁC KÍ TỰ TRÊN PANEL THÔNG TIN ĐỂ THÊM NHÂN VIÊN MỚI
+        private void ClearForm()
         {
             txtMaKhachHang.Text = "";
             txtTenKhachHang.Text = "";

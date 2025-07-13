@@ -289,8 +289,8 @@ namespace QuanLyNhaHangDaChiNhanh
 
         private void btnShift_Click(object sender, EventArgs e)
         {
-            frmShift frm = new frmShift();
-            frm.Show();
+            frmXepCa frm = new frmXepCa();
+            frm.ShowDialog();
         }
 
         private void btnClients_Click(object sender, EventArgs e)
@@ -346,6 +346,7 @@ namespace QuanLyNhaHangDaChiNhanh
             frm.Show();
         }
 
+<<<<<<< HEAD
         private void btnBrands_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -360,6 +361,11 @@ namespace QuanLyNhaHangDaChiNhanh
             frmDanhMucMonAn frm = new frmDanhMucMonAn();
             frm.ShowDialog();
             this.Show();
+=======
+        private void btnInvoice_Click(object sender, EventArgs e)
+        {
+
+>>>>>>> 832bbacd3e358467f05cf332538b3ddc80ac7b08
         }
 
 

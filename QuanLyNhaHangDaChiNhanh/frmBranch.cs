@@ -16,11 +16,9 @@ namespace QuanLyNhaHangDaChiNhanh
         {
             InitializeComponent();
         }
-        // thao tác hoàn tác
         private Stack<Branch> undoStack = new Stack<Branch>();
         private Stack<Branch> redoStack = new Stack<Branch>();
 
-        // phân trang
         private int currentPage = 1;
         private int pageSize = 10;
 
