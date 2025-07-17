@@ -377,6 +377,11 @@ namespace QuanLyNhaHangDaChiNhanh
 
         }
 
+        private void pnlNguoiDung_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
 
     }
 }

@@ -175,7 +175,9 @@
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.dtgvChucVu);
             this.Name = "frmChucVu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chức Vụ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmChucVu_Load);
             this.pnlChucVu.ResumeLayout(false);
             this.pnlChucVu.PerformLayout();

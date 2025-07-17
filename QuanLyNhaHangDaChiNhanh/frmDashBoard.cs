@@ -311,7 +311,10 @@ namespace QuanLyNhaHangDaChiNhanh
 
         private void btnMenuNhaHang_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            frmMenu f = new frmMenu();
+            f.ShowDialog();
+            this.Show();
         }
 
         private void btnTable_Click(object sender, EventArgs e)
@@ -346,7 +349,7 @@ namespace QuanLyNhaHangDaChiNhanh
             frm.Show();
         }
 
-<<<<<<< HEAD
+
         private void btnBrands_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -361,11 +364,21 @@ namespace QuanLyNhaHangDaChiNhanh
             frmDanhMucMonAn frm = new frmDanhMucMonAn();
             frm.ShowDialog();
             this.Show();
-=======
+        }
         private void btnInvoice_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            frmHoaDon frm = new frmHoaDon();
+            frm.ShowDialog();
+            this.Show();
+        }
 
->>>>>>> 832bbacd3e358467f05cf332538b3ddc80ac7b08
+        private void btnClientsNhaHang_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmClients frm = new frmClients();
+            frm.ShowDialog();
+            this.Show();
         }
 
 

@@ -525,6 +525,7 @@
             this.Name = "frmStaffs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhân viên";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmStaffs_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

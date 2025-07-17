@@ -502,6 +502,7 @@
             this.Name = "frmLuongPart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhân viên";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmUsers_Load);
             this.pnlLuongPart.ResumeLayout(false);
             this.pnlLuongPart.PerformLayout();

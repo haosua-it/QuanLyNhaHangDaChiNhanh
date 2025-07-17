@@ -96,6 +96,7 @@
             this.pnlNguoiDung.Name = "pnlNguoiDung";
             this.pnlNguoiDung.Size = new System.Drawing.Size(1346, 157);
             this.pnlNguoiDung.TabIndex = 0;
+            this.pnlNguoiDung.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlNguoiDung_Paint);
             // 
             // txtEmail
             // 
@@ -503,6 +504,7 @@
             this.Name = "frmUsers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhân viên";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmUsers_Load);
             this.pnlNguoiDung.ResumeLayout(false);
             this.pnlNguoiDung.PerformLayout();

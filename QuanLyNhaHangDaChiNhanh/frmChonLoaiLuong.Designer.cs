@@ -88,6 +88,7 @@
             this.Name = "frmChonLoaiLuong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chọn loại lương:";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmChonLoaiLuong_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

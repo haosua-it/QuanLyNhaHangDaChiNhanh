@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmShift));
             this.pnlNguoiDung = new System.Windows.Forms.Panel();
+            this.dtpKetThuc = new System.Windows.Forms.DateTimePicker();
+            this.dtpBatDau = new System.Windows.Forms.DateTimePicker();
             this.txtTenCaLam = new System.Windows.Forms.TextBox();
             this.txtMaCaLam = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -54,8 +56,6 @@
             this.lblPage = new System.Windows.Forms.Label();
             this.luoiCaLamViec = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
-            this.dtpBatDau = new System.Windows.Forms.DateTimePicker();
-            this.dtpKetThuc = new System.Windows.Forms.DateTimePicker();
             this.pnlNguoiDung.SuspendLayout();
             this.pnlNguoiDungNut.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.luoiCaLamViec)).BeginInit();
@@ -76,6 +76,24 @@
             this.pnlNguoiDung.Name = "pnlNguoiDung";
             this.pnlNguoiDung.Size = new System.Drawing.Size(1346, 157);
             this.pnlNguoiDung.TabIndex = 0;
+            // 
+            // dtpKetThuc
+            // 
+            this.dtpKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpKetThuc.Location = new System.Drawing.Point(803, 94);
+            this.dtpKetThuc.Name = "dtpKetThuc";
+            this.dtpKetThuc.Size = new System.Drawing.Size(315, 29);
+            this.dtpKetThuc.TabIndex = 16;
+            this.dtpKetThuc.Value = new System.DateTime(2025, 7, 6, 14, 3, 0, 0);
+            // 
+            // dtpBatDau
+            // 
+            this.dtpBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpBatDau.Location = new System.Drawing.Point(803, 59);
+            this.dtpBatDau.Name = "dtpBatDau";
+            this.dtpBatDau.Size = new System.Drawing.Size(315, 29);
+            this.dtpBatDau.TabIndex = 16;
+            this.dtpBatDau.Value = new System.DateTime(2025, 7, 6, 14, 3, 0, 0);
             // 
             // txtTenCaLam
             // 
@@ -372,24 +390,6 @@
             this.label11.TabIndex = 1;
             this.label11.Text = "Tìm kiếm bằng họ tên:";
             // 
-            // dtpBatDau
-            // 
-            this.dtpBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpBatDau.Location = new System.Drawing.Point(803, 59);
-            this.dtpBatDau.Name = "dtpBatDau";
-            this.dtpBatDau.Size = new System.Drawing.Size(315, 29);
-            this.dtpBatDau.TabIndex = 16;
-            this.dtpBatDau.Value = new System.DateTime(2025, 7, 6, 14, 3, 0, 0);
-            // 
-            // dtpKetThuc
-            // 
-            this.dtpKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpKetThuc.Location = new System.Drawing.Point(803, 94);
-            this.dtpKetThuc.Name = "dtpKetThuc";
-            this.dtpKetThuc.Size = new System.Drawing.Size(315, 29);
-            this.dtpKetThuc.TabIndex = 16;
-            this.dtpKetThuc.Value = new System.DateTime(2025, 7, 6, 14, 3, 0, 0);
-            // 
             // frmShift
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
@@ -404,6 +404,7 @@
             this.Name = "frmShift";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhân viên";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmShift_Load);
             this.pnlNguoiDung.ResumeLayout(false);
             this.pnlNguoiDung.PerformLayout();

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
@@ -36,21 +35,26 @@
             // reportViewer1
             // 
             reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = null;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyNhaHangDaChiNhanh.Report1.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(13, 3);
+            this.reportViewer1.Location = new System.Drawing.Point(17, 4);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(555, 346);
+            this.reportViewer1.Size = new System.Drawing.Size(739, 425);
             this.reportViewer1.TabIndex = 0;
             // 
             // frmInHoaDon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 372);
+            this.ClientSize = new System.Drawing.Size(773, 458);
             this.Controls.Add(this.reportViewer1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmInHoaDon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmInHoaDon";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmInHoaDon_Load_1);
             this.ResumeLayout(false);
 

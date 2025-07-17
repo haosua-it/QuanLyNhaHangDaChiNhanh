@@ -38,6 +38,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlNguoiDungNut = new System.Windows.Forms.Panel();
+            this.btnThemcalam = new System.Windows.Forms.Button();
             this.txtMaChamCong = new System.Windows.Forms.TextBox();
             this.btnPrevPage = new System.Windows.Forms.Button();
             this.btnNextPage = new System.Windows.Forms.Button();
@@ -55,7 +56,6 @@
             this.lblPage = new System.Windows.Forms.Label();
             this.luoiXepCa = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
-            this.btnThemcalam = new System.Windows.Forms.Button();
             this.pnlXepCa.SuspendLayout();
             this.pnlNguoiDungNut.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.luoiXepCa)).BeginInit();
@@ -160,6 +160,16 @@
             this.pnlNguoiDungNut.Name = "pnlNguoiDungNut";
             this.pnlNguoiDungNut.Size = new System.Drawing.Size(1346, 575);
             this.pnlNguoiDungNut.TabIndex = 1;
+            // 
+            // btnThemcalam
+            // 
+            this.btnThemcalam.Location = new System.Drawing.Point(813, 515);
+            this.btnThemcalam.Name = "btnThemcalam";
+            this.btnThemcalam.Size = new System.Drawing.Size(147, 51);
+            this.btnThemcalam.TabIndex = 113;
+            this.btnThemcalam.Text = "Thêm ca làm";
+            this.btnThemcalam.UseVisualStyleBackColor = true;
+            this.btnThemcalam.Click += new System.EventHandler(this.btnThemcalam_Click);
             // 
             // txtMaChamCong
             // 
@@ -379,16 +389,6 @@
             this.label11.TabIndex = 1;
             this.label11.Text = "Tìm kiếm bằng họ tên:";
             // 
-            // btnThemcalam
-            // 
-            this.btnThemcalam.Location = new System.Drawing.Point(813, 515);
-            this.btnThemcalam.Name = "btnThemcalam";
-            this.btnThemcalam.Size = new System.Drawing.Size(147, 51);
-            this.btnThemcalam.TabIndex = 113;
-            this.btnThemcalam.Text = "Thêm ca làm";
-            this.btnThemcalam.UseVisualStyleBackColor = true;
-            this.btnThemcalam.Click += new System.EventHandler(this.btnThemcalam_Click);
-            // 
             // frmXepCa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
@@ -403,6 +403,7 @@
             this.Name = "frmXepCa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhân viên";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmUsers_Load);
             this.pnlXepCa.ResumeLayout(false);
             this.pnlXepCa.PerformLayout();
